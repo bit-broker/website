@@ -1,0 +1,112 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "bit-broker"
+theme = "infinity"
+
+# HTML before the closing </head>
+[params]
+customHead = ""
+
+# Navigation
+[params.navigation]
+logo = "images/logo.png"
+home = "Home"
+about = "About"
+service = "Services"
+contact = "Contact"
+
+# Hero Area
+[params.hero]
+enable            = true
+bg                = "images/header-bg.jpg"
+title1            = "BIT"
+title2            = "BROKER"
+subtitle          = "Share data with confidence"
+btnText           = "Find out more"
+
+# counter
+disableCountdown  = true
+
+# About Section
+[params.about]
+enable      = true
+heading     = "The Data Sharing Imperative"
+description1 = "Your data is a key asset - within it lies the solutions to some of your companies most pressing challenges. There is an extensive network of companies, academics and start-ups which can help you interpret your data and tease the stories from within it. They can employ an ever-increasing range of techniques and technologies to help realise its latent value."
+description2 = "But how can you confidently share your data with external entities?"
+description3 = "BitBroker is a complete, policy-based data sharing solution. It facilitates data sharing by ensuring that you can always maintain control of: who is seeing your data, the data segments which are visible to them, the routes by which data can be drawn and the legal basis on which it can be accessed and used."
+
+[[params.about.sliderItem]]
+image   = "images/about/1.jpg"
+[[params.about.sliderItem]]
+image   = "images/about/2.jpg"
+[[params.about.sliderItem]]
+image   = "images/about/3.jpg"
+[[params.about.sliderItem]]
+image   = "images/about/2.jpg"
+
+
+# Service Section
+[params.service]
+enable      = true
+title       = "An end-to-end suite of data sharing services"
+subtitle    = "BitBroker provides everthing you will need to share data with partners in secure and controlled ways"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-database"
+title   = "Heterogenous data sources"
+description = "On-board complex data sets from sources as diverse as web APIs, databases, live sensors, even spreadsheets"
+delay   = "0s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-plug"
+title   = "3rd party connector architecture"
+description = "Controlled, community data contribution, with all submissions isolated and tracked to maintain system integrity"
+delay   = "0.2s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-book"
+title   = "Comprehensive cataloging services"
+description = "Track, search and discover the existence of and key metadata about every entity instance across the entire domain"
+delay   = "0.4s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-file-contract"
+title   = "Flexible data sharing policies"
+description = "Simple tools to design and deploy detailed policy covering access control, data segmentation and legal context"
+delay   = "0.6s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-code"
+title   = "Modern, scalable, secure APIs"
+description = "Comprehensive, scalable, APIs offering RESTful and streaming access to the catalog, entities and time series"
+delay   = "0.8s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-users"
+title   = "Complete end user and key management"
+description = "Manage users and keys. See what they are doing, require them to agree your terms, revoke access to bad actors"
+delay   = "1s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-balance-scale"
+title   = "Comprehensive legal underpinning"
+description = "A suite of legal resources: reach-for data licences, attibution models, terms and conditions, acceptable use, etc."
+delay   = "1.2s"
+
+[[params.service.serviceItem]]
+icon    = "fas fa-cogs"
+title   = "A complete end-to-end solution"
+description = "Do everything from your browser via a simple, branded, web application designed for non-technical people"
+delay   = "1.5s"
+
+# Call to Action Section
+[params.cta]
+enable      = false
+bg          = "images/call-to-action.jpg"
+title       = "Subscribe to our mailing list"
+subtitle    = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+
+[params.contact]
+enable      = true
+title       = "Get In Touch"
+subtitle    = "We are heads down in the garage putting the final touches on the BitBroker solution. If you want to get more information, get early access, lend a hand or just say hello, then drop us an email to team@bit-broker.io"

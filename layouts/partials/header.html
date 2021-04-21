@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> {{ .Title }} </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ hugo.Generator }}
+    {{"<!-- Fonts -->" | safeHTML }}
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    {{ "<!-- Stylesheets -->" | safeHTML }}
+    <link rel="stylesheet" href="{{ `css/bootstrap.min.css` | absURL }}">
+    <link rel="stylesheet" href="{{ `css/themefisher-fonts.css` | absURL }}">
+    <link rel="stylesheet" href="{{ `css/owl.carousel.css` | absURL }}">
+    <link rel="stylesheet" href="{{ `css/animate.css` | absURL }}">
+    <link rel="stylesheet" href="{{ `css/style.css` | absURL }}">
+    <link rel="stylesheet" href="{{ `css/custom.css` | absURL }}">
+    {{"<!-- Responsive Stylesheet -->" | safeHTML }}
+    <link rel="stylesheet" href="{{ `css/responsive.css` | absURL }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    {{ $.Site.Params.customHead | safeHTML }}
+</head>
+
+<body id="body">

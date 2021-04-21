@@ -9,7 +9,11 @@
                             {{ with .Site.Params.contact.title }}
                             <h2>{{ . }}</h2>
                             {{ end }}
-                            {{ with .Site.Params.contact.subtitle }}
+                            {{ with .Site.Params.contact.subtitle1 }}
+                                <p>{{ . }}</p>
+                            {{ end }}
+                            <br/>
+                            {{ with .Site.Params.contact.subtitle2 }}
                                 <p>{{ . }}</p>
                             {{ end }}
                         </div>

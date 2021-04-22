@@ -117,4 +117,4 @@ subtitle = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiu
 enable = true
 title = "Get In Touch"
 subtitle1 = "We are heads down in the garage putting the final touches on the BitBroker solution."
-subtitle2 = "If you want to get more information, get early access, lend a hand or just say hello, then drop us an email to team@bit-broker.io"
+subtitle2 = "If you want to get more information, get early access, lend a hand or just say hello, then do drop us an [email](mailto:team@bit-broker.io)"

@@ -10,11 +10,11 @@
                             <h2>{{ . }}</h2>
                             {{ end }}
                             {{ with .Site.Params.contact.subtitle1 }}
-                                <p>{{ . }}</p>
+                                <p>{{ . | markdownify }}</p>
                             {{ end }}
                             <br/>
                             {{ with .Site.Params.contact.subtitle2 }}
-                                <p>{{ . }}</p>
+                                <p>{{ . | markdownify }}</p>
                             {{ end }}
                         </div>
                     </div>

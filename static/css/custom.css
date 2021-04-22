@@ -1,4 +1,12 @@
 
+.navbar-brand img {
+  width: 80px;
+}
+
+.navigation .navbar-toggler {
+  opacity: 0.5;
+}
+
 .btn-home {
   background-color: #b1d234;
   border-radius: 0px;
@@ -42,4 +50,40 @@
   font-size: 20px;
   line-height: 25px;
   margin: 0px;
+}
+
+@media only screen and (max-width:900px) {
+
+  .navbar-brand img {
+      width: 60px;
+  }
+
+  .hero-area h1 {
+    font-size: 60px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .hero-area p {
+    font-size: 29px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+@media only screen and (max-width:600px) {
+
+  .hero-area h1 {
+    font-size: 51px;
+    padding-top: 0;
+    padding-bottom: 13px;
+
+  }
+
+  .hero-area p {
+    font-size: 25px;
+    line-height: 1;
+    white-space: normal;
+  }
+
 }

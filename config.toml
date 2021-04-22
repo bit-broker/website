@@ -7,6 +7,14 @@ theme = "infinity"
 [params]
 customHead = ""
 
+# social media link summaries
+[params.summary]
+name = "BitBroker"
+home = "https://www.bit-broker.io/"
+description = "BitBroker is an end-to-end solution which allows organisations to share data with external entities in the context of robust policy - controlling precisely who can see what, when and how."
+image = "images/logo-large.png"
+
+
 # Navigation
 [params.navigation]
 logo = "images/logo.png"

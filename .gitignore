@@ -1,2 +1,7 @@
+# OS files
 **/.DS_Store
 **/desktop.ini
+
+# Hugo output
+public/
+resources/

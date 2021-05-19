@@ -1,0 +1,58 @@
+
+span.bit {
+    color: #de781f;
+}
+
+span.broker {
+    color: #1f85de;
+}
+
+.lead .sub-heading {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.lead {
+    font-size: 1.1rem;
+}
+
+.td-search-input {
+    background: #333;
+    opacity: 0.75;
+}
+
+.-bg-dark p > a:hover {
+    color: #fff;
+}
+
+.about {
+    text-align: center;
+}
+
+.section img {
+    width: 80%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 35px;
+}
+
+.td-block-padding, .td-default main section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.td-page-meta {
+    display: none;
+}
+
+header::after {
+    content: 'ALPHA';
+    position: fixed;
+    top:8px;
+    right: -56px;
+    background: indianred;
+    color: white;
+    padding: 0.4rem 4rem;
+    transform: rotate(40deg);
+    z-index: 99;
+}

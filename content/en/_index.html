@@ -6,18 +6,135 @@ sitap:
   priority: 1.0
 ---
 
-{{< blocks/cover image_anchor="top" height="full" >}}
-<div class="mx-auto">
-  <h1 class="display-1">Welcome to <span class="bit">Bit</span><span class="broker">Broker</span></h1>
-  <p class="lead sub-heading mt-2">Share data with confidence</p>
-  <p class="mt-2">BitBroker is an end-to-end, open-source solution which allows organisations to <em>share data</em> within the context of robust policy. BitBroker can catalog complex, diverse, heterogenous datasets. Data owners can then create and <em>deploy policies</em> controlling: <em>what</em> can been seen, <em>who</em> can see it, <em>how</em> they can access it and the <em>legal context</em> for the exchange.</p>
-  <p class="mt-5">
-    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/about" >}}">
-      Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
-    </a>
-    <a class="btn btn-lg btn-info mr-3 mb-4" href="{{< relref "/docs" >}}">
-      Documentation <i class="fas fa-book ml-2 "></i>
-    </a>
-  </p>
+<div class="landing">
+{{< blocks/section color="white" >}}
+<div class="split">
+  <div class="part copy">
+    <div class="reveal-bottom">
+      <h1>Welcome to BitBroker</h1>
+      <p>BitBroker is a policy-based, data sharing engine which enables you to securely share:</p>
+      <ul>
+        <li>The data segments you <span class="noun">permit</span></li>
+        <li>In ways which you <span class="noun">allow</span></li>
+        <li>With organisations that you <span class="noun">approve</span></li>
+      </ul>
+      <p>It's a complete, end-to-end data sharing solution.</p>
+      <h2>Share Your Data with Confidence</h2>
+    </div>
+  </div>
+  <div class="part">
+    <img class="reveal-right" src="/images/intro1.png" />
+  </div>
 </div>
-{{< /blocks/cover >}}
+{{< /blocks/section >}}
+{{< blocks/section color="lightgray" >}}
+<div class="split">
+  <div class="part">
+    <img class="reveal-left bordered" src="/images/intro2.gif" />
+  </div>
+  <div class="part copy">
+    <div class="reveal-bottom">
+      <h2>Release Data » Realise Value</h2>
+      <p>Hidden within your private data are the answers to your organisations most pressing and vital problems.</p>
+      <p>There is an explosion in technologies which are able to release this latent value. There is an explosion in services offered by innovative and dyanmic groups who can apply these technologies on your behalf.</p>
+      <p>But - in order to leverage these advances, you need secure and robust ways to share your data with other groups, both inside and outside your organisation.</p>
+      <p><span class="noun">BitBroker</span> faciliates data sharing <em>on your terms </em> - freeing up your data and allowing it to tell it's story.</p>
+    </div>
+  </div>
+</div>
+{{< /blocks/section >}}
+{{< blocks/section color="white" >}}
+<div class="split">
+  <div class="part copy">
+    <div class="reveal-bottom">
+      <h2>Design and Deploy Flexible Policies</h2>
+      <p>Using simple, browser based tools you can design Data Sharing Policies offering fine-grained controll over three axis:</p>
+      <ul>
+        <li><span class="noun">Data Segment</span>: What data is being shared.</li>
+        <li><span class="noun">Access Control</span>: How it can be consumed.</li>
+        <li><span class="noun">Legal Context</span>: Which uses are permitted.</li>
+      </ul>
+      <p>Deploy your policies with a few clicks and then leave it to <span class="noun">BitBroker</span> to mangage the mechanics, operation and policing on your behalf.</p>
+    </div>
+  </div>
+  <div class="part">
+    <img class="reveal-right mt-5" src="/images/intro3.png" />
+  </div>
+</div>
+{{< /blocks/section >}}
+{{< blocks/section color="lightgray" >}}
+<div class="split triple">
+  <div class="part">
+    <img class="icon reveal-bottom" src="/images/data-segment.png" />
+    <div class="reveal-bottom">
+      <h3 class="mt-0">Data Segment</h3>
+      <h4>What data is being shared</h4>
+      <ul class="items">
+        <li>By domain entity type</li>
+        <li>By entity property</li>
+        <li>by location or geography</li>
+        <li>By complex query</li>
+        <li>By sample size</li>
+        <li>Entity hiding</li>
+        <li>Field masking</li>
+      </ul>
+    </div>
+  </div>
+  <div class="part">
+    <img class="icon reveal-bottom" src="/images/access-control.png" />
+    <div class="reveal-bottom">
+      <h3 class="mt-0">Access Control</h3>
+      <h4>How it can be consumed</h4>
+      <ul class="items">
+        <li>Rate limits</li>
+        <li>Quotas</li>
+        <li>Key expiry</li>
+        <li>Key renewals</li>
+        <li>IP restrictions</li>
+        <li>Geography restrictions</li>
+        <li>Domain restrictions</li>
+      </ul>
+    </div>  </div>
+  <div class="part">
+    <img class="icon reveal-bottom" src="/images/legal-context.png" />
+    <div class="reveal-bottom">
+      <h3 class="mt-0">Legal Context</h3>
+      <h4>Which uses are permitted</h4>
+      <ul class="items">
+        <li>Licensing</li>
+        <li>Attribution</li>
+        <li>Terms and Conditions</li>
+        <li>Acceptable Content</li>
+        <li>GDPR</li>
+        <li>Privacy impact statement</li>
+        <li>Fair Use</li>
+      </ul>
+    </div>  </div>
+</div>
+{{< /blocks/section >}}
+{{< blocks/section color="white" >}}
+<div class="split single">
+  <div class="part copy">
+    <div class="reveal-bottom">
+      <h2>More information will go here</h2>
+    </div>
+  </div>
+</div>
+{{< /blocks/section >}}
+<script>
+
+  const observer = new IntersectionObserver (ctrls => {
+      ctrls.forEach(ctrl => {
+          if (ctrl.isIntersecting) {
+              ctrl.target.classList.replace('reveal-left'  , 'from-left'  );
+              ctrl.target.classList.replace('reveal-top'   , 'from-top'   );
+              ctrl.target.classList.replace('reveal-right' , 'from-right' );
+              ctrl.target.classList.replace('reveal-bottom', 'from-bottom');
+          }
+      });
+  });
+
+  document.querySelectorAll('.reveal-left, .reveal-top, .reveal-right, .reveal-bottom').forEach(i => observer.observe(i));
+
+</script>
+</div>

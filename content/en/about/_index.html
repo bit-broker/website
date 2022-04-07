@@ -8,66 +8,40 @@ menu:
 layout: docs
 ---
 
-{{% blocks/cover height="auto" %}}
-
-<h1 class="display-1">Welcome to <span class="bit">Bit</span><span class="broker">Broker</span></h1>
-<p class="lead sub-heading mt-2">Share data with confidence</p>
-
-Read on to find out more about BitBroker, or visit our [documentation](/docs/) to get started!
-
-{{% /blocks/cover %}}
-
-{{% blocks/section type="section" color="200" %}}
-<div class="about">
-
-### BitBroker is a <span class="bit">policy based data sharing</span> platform.
-
-![BitBroker Overview](/images/about-1.png)
-
-#### It allows data owners to share <span class="broker">selected portions</span> of their data in <span class="broker">controlled</span> and <span class="broker">managed</span> ways with <span class="broker">chosen</span> third parties
+<div class="landing">
+{{< blocks/section color="white" >}}
+<div class="split single">
+  <div class="part">
+    <div class="reveal-bottom">
+      <h1>About to BitBroker</h1>
+      <p>More information will go here:</p>
+      <ul class="items">
+        <li>Licensing</li>
+        <li>Team</li>
+        <li>Privacy</li>
+        <li>Cookies</li>
+        <li>Image Rights</li>
+        <li>etc</li>
+      </ul>
+      <p>This is the boring legal parts.</p>
+    </div>
+  </div>
 </div>
-{{% /blocks/section %}}
+{{< /blocks/section >}}
+<script>
 
-{{% blocks/section type="section" color="white" %}}
-<div class="about">
+  const observer = new IntersectionObserver (ctrls => {
+      ctrls.forEach(ctrl => {
+          if (ctrl.isIntersecting) {
+              ctrl.target.classList.replace('reveal-left'  , 'from-left'  );
+              ctrl.target.classList.replace('reveal-top'   , 'from-top'   );
+              ctrl.target.classList.replace('reveal-right' , 'from-right' );
+              ctrl.target.classList.replace('reveal-bottom', 'from-bottom');
+          }
+      });
+  });
 
-### A complete, <span class="bit">horizontal</span>, <span class="bit">end-to-end</span> solution for <span class="bit">non-technical domain experts</span>
+  document.querySelectorAll('.reveal-left, .reveal-top, .reveal-right, .reveal-bottom').forEach(i => observer.observe(i));
 
-![BitBroker Features](/images/about-2.png)
-
-#### Built from <span class="broker">industry proven</span> and <span class="broker">scalable</span> web technologies
+</script>
 </div>
-{{% /blocks/section %}}
-
-{{% blocks/section type="section" color="200" %}}
-<div class="about">
-
-### Create and deploy <span class="bit">data sharing policies</span> giving <span class="bit">fine grained control</span> over access to your data
-
-![BitBroker Policy](/images/about-3.png)
-
-#### Data Segment: <span class="broker">which subset</span>, Access Control: <span class="broker">how accessed</span>, Legal Context: <span class="broker">what contract</span>
-</div>
-{{% /blocks/section %}}
-
-{{% blocks/section type="section" color="white" %}}
-<div class="about">
-
-### <span class="bit">Flexible</span> policy definitions allow you to be <span class="bit">open</span> or <span class="bit">restrictive</span> as the situation demands
-
-![BitBroker Policy](/images/about-4.png)
-
-#### A range of <span class="broker">reach for license types</span>, makes sharing data <span class="broker">quick</span>, <span class="broker">simple</span> and <span class="broker">robust</span>
-</div>
-{{% /blocks/section %}}
-
-{{% blocks/section type="section" color="200" %}}
-<div class="about">
-
-### Deploy as <span class="bit">many policies</span> as you need, either on a <span class="bit">public</span> or <span class="bit">private cloud</span> infrastructure
-
-![BitBroker Policy](/images/about-5.png)
-
-#### BitBroker will <span class="broker">police your policies</span> to give you <span class="broker">assurance</span> that your data is being <span class="broker">shared as defined</span>
-</div>
-{{% /blocks/section %}}

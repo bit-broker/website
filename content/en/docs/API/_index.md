@@ -1,5 +1,5 @@
 ---
-title: "Data Consumer API"
+title: "Consumer APIs"
 weight: 5
 description: >
   Optional guidance and recommendations about organizing, authoring, and managing your technical documentation.

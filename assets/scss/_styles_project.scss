@@ -62,6 +62,21 @@ footer.bg-dark {
     ul {
         padding-top: 7px;
     }
+
+    .copy {
+        padding-top: 7px;
+    }
+
+    .links {
+        small {
+            color: grey;
+        }
+
+        a {
+            color: whitesmoke;
+            margin: 0 10px;
+        }
+    }
 }
 
 header::after {
@@ -170,10 +185,23 @@ header::after {
             background-image: url("/images/background.jpg");
             background-size: cover;
             background-attachment: fixed;
+            background-color: #000040;
             color: white;
 
             h1, h2, h3 {
                 color: #fada5e;
+            }
+
+            h4 {
+                color: #f0e68c;
+            }
+
+            a {
+                color: #fada5e;
+
+                &:hover {
+                    color: gold;
+                }
             }
 
             .copy {

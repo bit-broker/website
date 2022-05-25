@@ -8,40 +8,103 @@ menu:
 layout: docs
 ---
 
-<div class="landing">
+<div class="bbk legal">
 {{< blocks/section color="white" >}}
-<div class="split single">
-  <div class="part">
-    <div class="reveal-bottom">
-      <h1>About to BitBroker</h1>
-      <p>More information will go here:</p>
-      <ul class="items">
-        <li>Licensing</li>
-        <li>Team</li>
-        <li>Privacy</li>
-        <li>Cookies</li>
-        <li>Image Rights</li>
-        <li>etc</li>
-      </ul>
-      <p>This is the boring legal parts.</p>
-    </div>
-  </div>
+<div class="split">
+  <h1>About BitBroker</h1>
+  <p>Here are some important legal notices about the use of this website:</p>
+  <ul>
+    <li><a href="#terms">Terms and Conditions</a></li>
+    <li><a href="#cookies">Cookie Policy</a></li>
+    <li><a href="#privacy">Privacy Policy</a></li>
+  </ul>
+  <p>Please take careful note of these policies and refer to them before you contact us about legal aspects of using this website.</p>
+  <h3 id="contact">Contact Us</h3>
+  <p>We would really love to hear your thoughts about this website, about BitBroker or just about anything else.</p>
+  <p>If you have issues or questions, we would encourage you first to have a good root around the <a href="/docs">public documentation</a>. Here you should find the answer to the most frequent questions. We will improve this documentation whenever new questions arise.</p>
+  <p>If you don't find an answer to your question or issue, then please feel free to <a href="https://github.com/bit-broker/bit-broker/issues">open a new issue</a> on the <a href="https://github.com/bit-broker">main organisation wide repo</a>. We endeavour to respond to all new issues in a prompt and timely manner. We might move your issue to one of the sub-repos, if it more appropriately belongs there.</p>
+  <p>If you have a specific issue with one component which makes up BitBroker, then you should open an issue on <a href="https://github.com/orgs/bit-broker/repositories">that repository</a> directly. But, please do search through the existing open issue first in order to minimise duplication and potentially save yourself time. If you find an open issue already, do add a note to it explaining your perspective and experiences.</p>
+  <p>If all else fails, then feel free to <a href="mailto:team@bit-broker.io">drop us an email</a>. Please include as much detail about your question or issue to help us resolve it as quickly as possible</p>
 </div>
 {{< /blocks/section >}}
-<script>
-
-  const observer = new IntersectionObserver (ctrls => {
-      ctrls.forEach(ctrl => {
-          if (ctrl.isIntersecting) {
-              ctrl.target.classList.replace('reveal-left'  , 'from-left'  );
-              ctrl.target.classList.replace('reveal-top'   , 'from-top'   );
-              ctrl.target.classList.replace('reveal-right' , 'from-right' );
-              ctrl.target.classList.replace('reveal-bottom', 'from-bottom');
-          }
-      });
-  });
-
-  document.querySelectorAll('.reveal-left, .reveal-top, .reveal-right, .reveal-bottom').forEach(i => observer.observe(i));
-
-</script>
+{{< blocks/section color="white" >}}
+<div class="split">
+  <h2 id="terms">Terms and Conditions</h2>
+  <p>If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our <a href="#privacy">Privacy Policy</a> and <a href="#cookies">Cookie Policy</a> govern the relationship with you in relation to this website. If you disagree with any part of these Terms and Conditions, the <a href="#privacy">Privacy Policy</a> or the <a href="#cookies">Cookie Policy</a>, please do not use our website.</p>
+  <p>The term 'BitBroker' or 'us' or 'we' refers to the owner of the website. The term 'you' refers to the user or viewer of our website.</p>
+  <p>The use of this website is subject to the following terms of use:</p>
+  <ul>
+    <li>The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
+    <li>This website uses cookies to monitor browsing preferences, as documented in the <a href="#cookies">Cookie Policy</a>.</li>
+    <li>Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+    <li>Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
+    <li>This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.</li>
+    <li>All trade marks reproduced in this website which are not the property of, or licensed to, the operator are acknowledged on the website.</li>
+    <li>Unauthorised use of this website may give rise to a claim for damages and/or be a criminal offence.</li>
+    <li>From time to time this website may also include links to other websites. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility for the content of the linked website(s).</li>
+    <li>Your use of this website and any dispute arising out of such use of the website is subject to the laws of England, Northern Ireland, Scotland and Wales.</li>
+  </ul>
+  <p>Questions or comments regarding these Terms and Conditions should be made in writing to the email address provided on the <a href="#contact">contact</a> section of this page.</p>
+</div>
+{{< /blocks/section >}}
+{{< blocks/section color="white" >}}
+<div class="split">
+  <h2 id="cookies">Cookie Policy</h2>
+  <p>Our website uses Cookies to help us provide you with a useful and reliable browsing experience and to help us improve our site. Cookies are small files of letters and numbers that are stored on your device. When someone visits our website, we collect standard internet log information and details of visitor behaviour patterns. We collect this information in a way which does not personally identify anyone.</p>
+  <p>Cookies are small text files that are placed on your device to help our website provide a better user experience. Cookies are stored on your individual device and you have full control over their use.</p>
+  <h3>How to change your cookie settings</h3>
+  <p>You may deactivate or restrict the transmission of cookies by changing the settings of your web browser. Cookies that are already stored may be deleted at any time. To find out more about cookies and how to manage or delete them, visit <a href="http://www.aboutcookies.org.uk/">www.aboutcookies.org.uk</a>. To find information relating to your browsers, visit the browser developer's website. To opt out of being tracked by Google Analytics across all websites click <a href="http://tools.google.com/dlpage/gaoptout">here</a>.</p>
+  <p>If you choose to disable cookies, you may not be able to use all the features on our website.</p>
+  <h3>Types of Cookies we use on this site</h3>
+  <p>We use a variety of cookies from ourselves and our partners to help operate this website.</p>  
+  <h4>First Party Cookies</h4>
+  <p>These are necessary Cookies that are set by this website directly. These Cookies are essential to the running of our website and are kept for the duration of a user's visit. These keep track of things such as the session ID itself and how visitor has chosen to view the site.</p>
+  <h4>Third Party Cookies</h4>
+  <p>These are Cookies set by other suppliers which we may be using to enhance our site and which are controlled by them. The following section details third party Cookies you might encounter through this site. For more information on these Cookies or to opt-out of third parties collecting any data regarding your interaction on our website, please refer to their websites for further information.</p>
+  <p>Like many websites, we use <strong>Google Analytics</strong> to collect information about visitor behaviour, such as the number of visitors to the various parts of our website. We do this to compile reports that help us improve our site. Google Analytics stores information about what pages you visit, how long you are on the site, how you got here, what documents you download and what you click on. This analytics data is not tied to personally identifiable information (e.g. your name or address) so this information cannot be used to identify who you are.</p>
+  <p>You can find more detailed information about the Google Analytics Cookies we use by clicking <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">here</a>. You can find out more about Google's position on data privacy as regards to its analytics service, including information about the Google Analytics opt-out browser add-on in the Privacy Controls section <a href="https://support.google.com/analytics/answer/6004245">here</a>.</p>
+  <h4>Other Third Party Cookies</h4>
+  <p>We may use third party plugins or integrate with other websites or services (for example: AccuWeather, Twitter, YouTube, Instagram, etc).</p>
+  <p>For these to work they may set Cookies through our site. We do not control these Cookies and you should refer to their websites for their respective privacy policies or for further information on how to opt out of them collecting any data regarding your interaction on our website. Alternatively you may deactivate or restrict the transmission of Cookies by changing the settings of your web browser.</p>
+</div>
+{{< /blocks/section >}}
+{{< blocks/section color="white" >}}
+<div class="split">
+  <h2 id="privacy">Privacy Policy</h2>
+  <p>We are committed to protecting and preserving the privacy of our users when visiting our site or communicating electronically with us.</p>
+  <p>This policy sets out how we process any personal data we collect from you or that you provide to us. We confirm that we will keep your information secure and that we will comply fully with all applicable UK Data Protection legislation and regulations. Please read the following carefully to understand what happens to personal data that you choose to provide to us, or that we collect from you when you visit this site. By visiting this website you are accepting and consenting to the practices described in this policy.</p>
+  <h3>Types of information we may collect</h3>
+  <p>We may collect, store and use the following kinds of personal information about individuals who visit and use our website:</p>
+  <h4>Information you supply to us</h4>
+  <p>We do not ask you to provide us with any personal information via the website. We do not require you to register or login to the website to access the information which it contains. Hence, we do not hold any personal information about you. However, you may choose to contact us via the email address provided on our <a href="#contact">contact</a> section of this page. Such emails may be held on our servers indefinitely. Hence, we encourage you to not include unnecessary personal details in your correspondences to us.</p>
+  <h4>Information we automatically collect about you</h4>
+  <p>With regard to each of your visits to our website, we may automatically collect information including the following:</p>
+  <ul>
+    <li><strong>Technical information</strong>, including your Internet protocol (IP) address, browser type and version, operating system and platform, etc.</li>
+    <li><strong>Information about your visit</strong>, including what pages you visit, how long you are on the site, how you got to the site (including date and time); page response times, length of visit, what you click on, documents downloaded and download errors, etc.</li>
+  </ul>
+  <h4>Cookies</h4>
+  <p>Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. For detailed information on the cookies we use and the purposes for which we use them see our <a href="#cookies">Cookie Policy</a>.</p>
+  <h3>How we may use the information we collect</h3>
+  <p>We use collected information as aggregate data to help us maintain this site and to ensure the site is working properly. We do not use this information to identify individuals, except for site security or law enforcement purposes. Specifically, we use the information collected in the following ways:</p>
+  <h4>Information you supply to us.</h4>
+  <p>We will use this information to provide you with information and/or services that you request from us or to help resolve any issues which you may raise with us.</p>
+  <h4>Information we automatically collect about you</h4>
+  <p>We will use this information to administer our site including troubleshooting and statistical purposes; to improve our site to ensure that content is presented in the most effective manner for you and for your computer; security and debugging as part of our efforts to keep our site safe and secure.</p>
+  <p>This information is collected anonymously and is not linked to information that identifies you as an individual. We use <strong>Google Analytics</strong> to track this information. Find out how Google uses your data via <a href="https://support.google.com/analytics/answer/6004245">this page</a>.</p>
+  <h3>Disclosure of your information</h3>
+  <p>Any information you provide to us may be stored on a secure server, which may be situated outside the EU. We use a trusted third-party website and hosting provider to facilitate the running and management of this website. The hosting provider cannot access, provide, rectify or delete any data that they store on our behalf without permission.</p>
+  <p>We do not rent, sell or share personal information about you with other people or non-affiliated companies.</p>
+  <p>We will use all reasonable efforts to ensure that your personal data is not disclosed to regional/national institutions and authorities, unless required by law or other regulations.</p>
+  <p>Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.</p>
+  <h3>Third-party links</h3>
+  <p>Our site may, from time to time, contain links to and from the third-party websites. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies. Please check these policies before you submit any personal data to these websites.</p>
+  <h3>Your rights to access to your personal data</h3>
+  <p>You have the right to ensure that your personal data is being processed lawfully (“Subject Access Right”). Your subject access right can be exercised in accordance with data protection laws and regulations. Any subject access request must be made in writing to the email address provided on our <a href="#contact">contact</a> section of this page. If you have a complaint about how we have used your information, you have the right to complain to the Information Commissioner’s Office (ICO).
+  <h3>Changes to our Privacy Policy</h3>
+  <p>Any changes we may make to our Privacy Policy in the future will be posted on this page. Please check back frequently to see any updates or changes to our Privacy Policy.</p>
+  <h3>Contact</h3>
+  <p>Questions, comments and requests regarding this Privacy Policy should be made in writing to the email address provided on our <a href="#contact">contact</a> section of this page.
+</div>
+{{< /blocks/section >}}
 </div>

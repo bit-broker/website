@@ -102,7 +102,6 @@ header::after {
 
     * {
         font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
     }
 
     h1, h2, h3, h4 {
@@ -155,6 +154,7 @@ header::after {
 
             li {
                 font-size: 1.15rem;
+                padding-bottom: 4px;
 
                 &:before {
                     content: '✓';
@@ -262,7 +262,7 @@ header::after {
             img {
                 width: 90%;
                 border-radius: 15px;
-                margin-top: 40px;
+                margin-top: 20px;
                 margin-left: 8%;
             }
 
@@ -286,6 +286,12 @@ header::after {
                 padding: 10px;
                 box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
                 transition: all .2s ease-in-out;
+            }
+
+            img.icon.logo {
+                border: 0;
+                margin-left: 25%;
+                margin-top: 35%;
             }
 
             img.icon.small {
@@ -374,6 +380,13 @@ header::after {
 }
 
 .bbk.legal {
+
+  ul {
+      li {
+          padding-bottom: 6px;
+      }
+  }
+
     .split {
         max-width: 800px;
     }
@@ -382,7 +395,6 @@ header::after {
 @media only screen and (max-width: 1024px) {
 
     footer.bg-dark {
-
         font-size: 1rem;
 
         i {
@@ -440,7 +452,7 @@ header::after {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 767px) {
 
       footer.bg-dark {
 
@@ -482,6 +494,10 @@ header::after {
                 &.copy {
                     width: 100%;
                 }
+
+                &.squish {
+                    display: none;
+                }
             }
 
             .button {
@@ -500,7 +516,7 @@ header::after {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
 
   footer.bg-dark {
 

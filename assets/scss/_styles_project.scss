@@ -8,8 +8,6 @@ body::after {
    content: url("/images/background.jpg");
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Roboto+Lato&display=swap');
-
 @keyframes from-bottom {
     from { transform: translateY(50px); opacity: 0; }
     to   { transform: translateY( 0px); opacity: 1; }
@@ -103,12 +101,12 @@ header::after {
 .bbk {
 
     * {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 200;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
     }
 
     h1, h2, h3, h4 {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 
     h1 {

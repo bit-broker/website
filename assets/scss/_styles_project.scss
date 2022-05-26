@@ -375,6 +375,12 @@ header::after {
     }
 }
 
+.bbk.legal {
+    .split {
+        max-width: 800px;
+    }
+}
+
 @media only screen and (max-width: 1024px) {
 
     footer.bg-dark {

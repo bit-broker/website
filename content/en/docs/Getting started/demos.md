@@ -1,9 +1,10 @@
+
 ---
-title: "The Catalog"
-linkTitle: "Catalog"
-weight: 4
+title: "Demo Instance"
+linkTitle: "Demo Instance"
+weight: 1
 description: >
-  Learn about the BitBroker data catalog and how it facilitates search, discovery and access.
+  Explore the demonstration instance of BitBroker to learn what its all about.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

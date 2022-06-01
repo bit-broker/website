@@ -1,0 +1,63 @@
+
+.td-sidebar-nav {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+
+    & > .td-sidebar-nav__section {
+      	padding-top: .5rem;
+      	padding-left: 1rem;
+    }
+
+    .td-sidebar-link__page {
+      	font-weight: 200;
+    }
+}
+
+#TableOfContents {
+    font-size: 0.9rem;
+}
+
+.td-content {
+
+    .alert {
+        background: #f8f8f8;
+        border-width: 0 0 0 8px !important;
+        font-size: 0.9rem;
+    }
+
+    .stamp {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        padding-top: 4px;
+        width: 100%;
+        text-align: center;
+    }
+
+    table * {
+        font-size: 0.85rem;
+    }
+
+    pre > code {
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
+    & > h2, .h2 {
+        font-size: 1.6rem;
+    }
+
+    & > h2:not(:first-child) {
+    	  margin-top: 2rem;
+    }
+
+    .code-toolbar .toolbar {
+        margin-right: 0.6rem;
+        margin-top: 0.45rem;
+
+        .toolbar-item button {
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border: 1px solid lightgrey;
+        }
+    }
+}

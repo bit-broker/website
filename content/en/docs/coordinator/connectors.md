@@ -9,7 +9,7 @@ Connectors are a main component of the BitBroker system. You will find [more det
 
 Connectors are always created within the context of housing [entity types](todo), which can be created and manipulated using [other APIs](todo) described earlier in this documentation.
 
-{{% alert color="info" %}}
+{{% alert color="primary" %}}
 In order to use the sample calls in this section, first [create the housing entity](todo) as outlined in the previous section.
 {{% /alert %}}
 
@@ -70,7 +70,9 @@ Attribute | Necessity | Validation Rules
 Connector IDs need to be unique across an operating BitBroker instance.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
 You should choose your connector IDs with care as these cannot be changed once created.
+{{% /alert %}}
 
 ## Updating a connector
 

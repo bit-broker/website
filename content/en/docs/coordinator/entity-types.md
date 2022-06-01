@@ -63,7 +63,9 @@ Entity type IDs need to be unique across an operating BitBroker instance.
 Timeseries IDs need to be unique within their housing entity type.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
 You should choose your entity type IDs with care as these cannot be changed once created.
+{{% /alert %}}
 
 ## Updating an Entity Type
 

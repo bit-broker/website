@@ -264,7 +264,7 @@ Any policy keys which were assigned to a deleted user will be rescinded as part 
 You cannot delete yourself from the system. If you attempt this, the system will return `HTTP/1.1 405 Method Not Allowed`. This is done in order to prevent a situation where there are no users present within an operating instance.
 {{% /alert %}}
 
-## User Addendum information
+## User Addendum Information
 
 Observant readers will have noted an addendum section at the bottom of the user details object:
 

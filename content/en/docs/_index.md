@@ -10,7 +10,7 @@ menu:
 
 This documentation explains all the concepts and processes that you will need to know to get started with BitBroker.
 
-{{% alert title="Note" color="warning" %}}
+{{% alert color="primary" %}}
 This documentation is still work-in-progress and will be updated as the project progresses.
 {{% /alert %}}
 

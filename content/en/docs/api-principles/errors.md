@@ -5,11 +5,11 @@ weight: 4
 description: How API errors are handled and communicated
 ---
 
-All errors returned by all API services are presented in a standard error format. This complete list of errors which you may encounter are listed on the earlier page detailing the [API structure](todo).
+All errors returned by all API services are presented in a standard error format. This complete list of errors which you may encounter are listed in the earlier page detailing the [API structure](/docs/api-principles/structure/#api-returns).
 
 #### Standard Error Format
 
-All errors will be present in a common strucute as follows:
+All errors will be present in a common structure as follows:
 
 ```js
 {
@@ -27,11 +27,11 @@ Attribute | Presense | Description
 --- | --- | ---
 code | <div class="stamp">always</div> | The standard [HTTP response code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 status | <div class="stamp">always</div> | The standard text associated with the HTTP response code
-message | <div class="stamp">always</div> | A string sometimes containing extra information about the error condition
+message | <div class="stamp">always</div> | A string (sometimes) containing extra information about the error condition
 
 #### Validation Error Format
 
-In situations which lead to a validation error of inbound data, the response code will always be `HTTP/1.1 400 Bad Request`. In this case of such errors, the `message` attribute will always contain an array of validation errors:
+In situations which lead to a validation error on inbound data, the response code will always be `HTTP/1.1 400 Bad Request`. In the case of such errors, the `message` attribute will always contain an array of validation errors:
 
 ```js
 {
@@ -54,7 +54,7 @@ In situations which lead to a validation error of inbound data, the response cod
 }
 ```
 
-Here the message attributes are as follows:
+Here the message attributes will be as follows:
 
 Attribute | Presense | Description
 --- | --- | ---
@@ -63,4 +63,4 @@ message.name | <div class="stamp">always</div> | A string indicating the id of t
 message.index | <div class="stamp">always</div> | A integer indicating the index of the erroring item, when it is within an array - _this will be null for attributes which are not arrays_
 message.reason | <div class="stamp">always</div> | A string indicating the validation error
 
-The validation error structure is designed to make it simple to integrate such errors into an end-user website.
+The validation error structure is designed to make it simple to integrate such errors into an end-user experience.

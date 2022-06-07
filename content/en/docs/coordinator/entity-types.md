@@ -13,7 +13,7 @@ All API calls in BitBroker require [authorisation](/docs/api-principles/authoris
 
 ## Creating a New Entity Type
 
-New entity types can be created by issuing an `HTTP/POST` to the `/entity/:eid` end-point. 
+New entity types can be created by issuing an `HTTP/POST` to the `/entity/:eid` end-point.
 
 In order to create an entity type, you must select a unique entity type ID (`eid`) for it.
 
@@ -70,7 +70,7 @@ Timeseries IDs are required to be unique within their housing entity type.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-You should choose your entity type IDs (`eid`) with care as these cannot be changed once created.
+You should choose your entity type IDs (`eid`) with care, as these cannot be changed once created.
 {{% /alert %}}
 
 ## Updating an Entity Type

@@ -7,7 +7,7 @@ description: APIs for creating and manipulating data connectors
 
 Connectors are a main component of the BitBroker system. You will find [more details about connectors](/docs/concepts/connectors/), within the [key concepts](/docs/concepts/) section of this documentation.
 
-Connectors are always created within the context of housing [entity types](/docs/concepts/entity-types/), which can be created and manipulated using [other part of this API](/docs/coordinator/entity-types/#creating-a-new-entity-type) described earlier in this documentation.
+Connectors are always created within the context of housing [entity types](/docs/concepts/entity-types/), which can be created and manipulated using [other part of this API](/docs/coordinator/entity-types/#creating-a-new-entity-type), described earlier in this documentation.
 
 {{% alert color="primary" %}}
 All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
@@ -72,12 +72,14 @@ Attribute | Necessity | Validation Rules
 `webhook` | <div class="stamp">optional</div> | String between 1 and 256 characters long<br/>Must conform to URI format
 `cache` | <div class="stamp">optional</div> | Integer between 0 and 31536000
 
+Details about the _meaning_ of these attributes can be found within the [key concepts](/docs/concepts/connectors/) section of this documentation.
+
 {{% alert color="info" %}}
 Connector IDs are required to be unique across an operating BitBroker instance.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-You should choose your connector ID (`cid`) with care as these cannot be changed once created.
+You should choose your connector ID (`cid`) with care, as these cannot be changed once created.
 {{% /alert %}}
 
 ## Updating a connector

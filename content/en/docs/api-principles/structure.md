@@ -48,7 +48,7 @@ HTTP Response | Type | API Call State
 Whenever you receive an error response (`HTTP/1.1 4**`), the response body will contain further information within a [standard error response](/docs/api-principles/errors/) format.
 
 {{% alert color="warning" %}}
-Responses of `HTTP/1.1 500 Server error` should never be returned in normal operation. If you see such an error, do help us to identify and rectify the underlying problem. Please [raise an issue](https://github.com/bit-broker/bit-broker/issues) in our GitHub repositary describing, in as much detail as possible, the circumstances which lead to the error.
+Responses of `HTTP/1.1 500 Server Error` should never be returned in normal operation. If you see such an error, do help us to identify and rectify the underlying problem. Please [raise an issue](https://github.com/bit-broker/bit-broker/issues) in our GitHub repositary describing, in as much detail as possible, the circumstances which lead to the error.
 {{% /alert %}}
 
 #### API Versioning

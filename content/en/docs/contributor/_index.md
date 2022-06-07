@@ -2,7 +2,13 @@
 title: "Contributor API"
 linkTitle: "Contributor API"
 weight: 6
-description: The internal API for contribution of data to a BitBroker instance
+description: The API for managing the contribution of data to a BitBroker instance
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The Contributor API is the API which is used for submitting data contributions into the  BitBroker [catalog](/docs/concepts/catalog/). It is tightly connected with the concepts of [entity types](/docs/concepts/entity-types/) and their associated [data connectors](/docs/concepts/connectors/).
+
+It is important that you understand these, and other [key concepts](/docs/concepts/), before you begin using the Contributor API.
+
+{{% alert color="primary" %}}
+Before you use this API, you should become familiar with the general, system-wide [API principles](/docs/api-principles/) - which are used across all three BitBroker API sets. This covers topics such as API structures, error reporting and handling, authorisation, server names and ports, etc.
+{{% /alert %}}

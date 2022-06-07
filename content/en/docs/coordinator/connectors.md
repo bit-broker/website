@@ -169,7 +169,7 @@ This will return a JSON object as follows:
 [Connector keys](/docs/api-principles/authorisation/#obtaining-a-contributor-key) are not stored in an accessible way within the system and hence not present in this returned document.
 {{% /alert %}}
 
-Other sections of this document will explain what the [`is_live`](#promoting-a-connector-to-live) and [`in_session`](/docs/contributor/sessions/) attributes refer to.
+Other sections of this document will explain what the [`is_live`](#promoting-a-connector-to-live) and [`in_session`](docs/contributor/records/#sessions) attributes refer to.
 
 ## Promoting a Connector to Live
 

@@ -52,7 +52,9 @@ New users will be present in the system right away. They can immediately take pa
 
 ## Updating a User
 
-Existing users can have their profile updated by issuing an `HTTP/PUT` to the `/user/:uid` end-point. In order to update a user, you must know their user ID (`uid`).
+Existing users can have their profile updated by issuing an `HTTP/PUT` to the `/user/:uid` end-point.
+
+In order to update a user, you must know their user ID (`uid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2 \
@@ -76,7 +78,7 @@ HTTP/1.1 204 No Content
 You cannot update the user's email address, which was specified when they were created. Email addresses are system-wide unique identifiers. If you need to update an email address, your only option is to create a new user with that address.
 {{% /alert %}}
 
-The validation rules for updated user information, is the same as that for [creating new users](#creating-a-new-user).
+The validation rules for updated user information, are the same as that for [creating new users](#creating-a-new-user).
 
 ## List of Existing Users
 
@@ -114,7 +116,9 @@ Each user on the system will be returned within this array. Later sections of th
 
 ## Details of an Existing User
 
-You can obtain the details of an existing user by issuing an `HTTP/GET` to the `/user/:uid` end-point. In order to obtain details of a user, you must know their user ID (`uid`).
+You can obtain the details of an existing user by issuing an `HTTP/GET` to the `/user/:uid` end-point.
+
+In order to obtain details of a user, you must know their user ID (`uid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2
@@ -138,7 +142,9 @@ Later sections of this document will explain what the [`coordinator`](#promoting
 
 ## Finding a User via Email Address
 
-You can find an existing user via their email address by issuing an `HTTP/GET` to the `/user/email/:email` end-point. In order to obtain details of a user, you must know their current email address.
+You can find an existing user via their email address by issuing an `HTTP/GET` to the `/user/email/:email` end-point.
+
+In order to obtain details of a user, you must know their current `email` address.
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/email/alice%40domain.com
@@ -164,7 +170,9 @@ This will return a JSON object as follows:
 
 ## Promoting a User to Coordinator
 
-Existing users can be promoted to assign them [coordinator status](/docs/concepts/users/#coordinators) by issuing an `HTTP/POST` to the `/user/:uid/coordinator` end-point. In order to promote a user, you must know their user ID (`uid`).
+Existing users can be promoted to assign them [coordinator status](/docs/concepts/users/#coordinators) by issuing an `HTTP/POST` to the `/user/:uid/coordinator` end-point.
+
+In order to promote a user, you must know their user ID (`uid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/coordinator \
@@ -185,7 +193,7 @@ The body of this response will contain the coordinator key, which the newly prom
 ```
 
 {{% alert color="info" %}}
-It is expected that _promoting_ user will distribute this coordinator key to the _promoted_ user.
+It is expected that _promoting_ user will _securely_ distribute this coordinator key to the _promoted_ user.
 {{% /alert %}}
 
  Promoted users will gain coordinator privileges right away. When getting details for such users, their coordinator status will be reflected in the `coordinator` attribute:
@@ -208,7 +216,9 @@ If you attempt to promote a user who is _already_ a coordinator, it will result 
 
 ## Demoting a User from Coordinator
 
-Existing users can be demoted from [coordinator status](/docs/concepts/users/#coordinators) by issuing an `HTTP/DELETE` to the `/user/:uid/coordinator` end-point. In order to demote a user, you must know their user ID (`uid`).
+Existing users can be demoted from [coordinator status](/docs/concepts/users/#coordinators) by issuing an `HTTP/DELETE` to the `/user/:uid/coordinator` end-point.
+
+In order to demote a user, you must know their user ID (`uid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/coordinator \
@@ -250,7 +260,9 @@ You cannot demote yourself from being a coordinator. If you attempt this, the sy
 
 ## Deleting a User
 
-Existing users can be deleted from the system by issuing an `HTTP/DELETE` to the `/user/:uid` end-point. In order to delete a user, you must know their user ID (`uid`).
+Existing users can be deleted from the system by issuing an `HTTP/DELETE` to the `/user/:uid` end-point.
+
+In order to delete a user, you must know their user ID (`uid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2 \

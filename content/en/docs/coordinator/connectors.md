@@ -5,19 +5,23 @@ weight: 3
 description: APIs for creating and manipulating data connectors
 ---
 
-Connectors are a main component of the BitBroker system. You will find [more details about connectors](todo), within the [key concepts](todo) section of this documentation.
+Connectors are a main component of the BitBroker system. You will find [more details about connectors](/docs/concepts/connectors/), within the [key concepts](/docs/concepts/) section of this documentation.
 
-Connectors are always created within the context of housing [entity types](todo), which can be created and manipulated using [other APIs](todo) described earlier in this documentation.
+Connectors are always created within the context of housing [entity types](/docs/concepts/entity-types/), which can be created and manipulated using [other part of this API](/docs/coordinator/entity-types/#creating-a-new-entity-type) described earlier in this documentation.
 
 {{% alert color="primary" %}}
-In order to use the sample calls in this section, first [create the housing entity](todo) as outlined in the previous section.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
 {{% /alert %}}
 
-Before you use this API, you should become familiar with the general, system-wide [API principles](todo) - which are used across all three BitBroker API sets. These principles include topics such as [standard logical server names and ports](todo), [RESTful designs](todo), [authorisation](todo), [error handling](todo), etc.
+{{% alert color="primary" %}}
+In order to use the sample calls in this section, first [create the housing entity](/docs/coordinator/entity-types/#creating-a-new-entity-type) as outlined in the previous section.
+{{% /alert %}}
 
 ## Creating a New Connector
 
-New connectors can be created by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid` end-point. Connectors are always created within the context of a housing entity type and, hence, you must know its ID (eid). In order to create a connector, you must select a unique connector ID (cid) for it (see later section on validation rules).
+New connectors can be created by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid` end-point.
+
+Connectors are always created within the context of a housing [entity type](/docs/concepts/entity-types/) and, hence, you must know its ID (`eid`). In order to create a connector, you must select a unique connector ID (`cid`) for it.
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
@@ -34,14 +38,14 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
 EOF
 ```
 
-This will result in:
+This will result in a response as follows:
 
 ```
 HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
 ```
 
-The body of this response will contain the [connector ID](todo) and [connector key](todo) which the new data connector should utilise to make it's [data contributions](todo). For example:
+The body of this response will contain the [connector ID](todo) and [connector key](todo) which the new data connector should utilise to make it's [data contributions](/docs/contributor/). For example:
 
 ```js
 {
@@ -50,13 +54,15 @@ The body of this response will contain the [connector ID](todo) and [connector k
 }
 ```
 
-It is expected that coordinator user will distribute this connector ID and key to the operator of the new data connector.
-
-{{% alert color="warning" %}}
-Connector keys are not stored within the system. If you lose this connector key, you will be forced to delete and recreate the connector to obtain a new one.
+{{% alert color="info" %}}
+It is expected that coordinator user will _securely_ distribute the connector ID and key to the operator of the new data connector.
 {{% /alert %}}
 
-The following validation rules exist for the body of a new connector request.
+{{% alert color="warning" %}}
+Connector keys are _not_ stored within the system. If you lose this connector key, you will be forced to delete and recreate the connector to obtain a new one. This can have [major implications](/docs/api-principles/authorisation/#obtaining-a-contributor-key) for an operating instance.
+{{% /alert %}}
+
+The following validation rules will be applied for the body of a new connector request.
 
 Attribute | Necessity | Validation Rules
 --- | --- | ---
@@ -67,16 +73,18 @@ Attribute | Necessity | Validation Rules
 `cache` | <div class="stamp">optional</div> | Integer between 0 and 31536000
 
 {{% alert color="info" %}}
-Connector IDs need to be unique across an operating BitBroker instance.
+Connector IDs are required to be unique across an operating BitBroker instance.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-You should choose your connector IDs with care as these cannot be changed once created.
+You should choose your connector ID (`cid`) with care as these cannot be changed once created.
 {{% /alert %}}
 
 ## Updating a connector
 
-Existing connectors can have their profile updated by issuing an `HTTP/PUT` to the `/entity/:eid/connector/:cid` end-point. In order to update a connector, you must know it's connector ID (cid).
+Existing connectors can have their profile updated by issuing an `HTTP/PUT` to the `/entity/:eid/connector/:cid` end-point.
+
+In order to update a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
@@ -93,17 +101,17 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
 EOF
 ```
 
-This will result in:
+This will result in a response as follows:
 
 ```
 HTTP/1.1 204 No Content
 ```
 
-The validation rules for updated connector information, is the same as that for [creating new connectors](#creating-a-new-connector).
+The validation rules for updated connector information, are the same as that for [creating new connectors](#creating-a-new-connector).
 
 ## List of Existing Connectors
 
-You can obtain a list of all the existing connectors housed within a parent entity type by issuing an `HTTP/GET` to the `/entity/:eid/connector` end-point.
+You can obtain a list of all the existing connectors housed within a parent [entity type](/docs/concepts/entity-types/) by issuing an `HTTP/GET` to the `/entity/:eid/connector` end-point.
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector
@@ -123,11 +131,13 @@ This will return a JSON array as follows:
 ]
 ```
 
-Each connector is housed within a parent entity type will be returned within this array. Note: There is currently no paging on this API.
+Each connector, housed within a parent entity type, will be returned within this array. Note: There is currently no paging on this API.
 
 ## Details of an Existing Connector
 
-You can obtain the details of an existing connector by issuing an `HTTP/GET` to the `/entity/:eid/connector/:cid` end-point. In order to obtain details of a connector, you must know it's connector ID (cid).
+You can obtain the details of an existing connector by issuing an `HTTP/GET` to the `/entity/:eid/connector/:cid` end-point.
+
+In order to obtain details of a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
@@ -154,14 +164,16 @@ This will return a JSON object as follows:
 ```
 
 {{% alert color="info" %}}
-Connector keys are not stored within the system and hence not present in this returned document.
+[Connector keys](/docs/api-principles/authorisation/#obtaining-a-contributor-key) are not stored in an accessible way within the system and hence not present in this returned document.
 {{% /alert %}}
 
-Later sections of this document will explain what the [is_live](todo) and [in_session](todo) attributes refer to.
+Other sections of this document will explain what the [`is_live`](#promoting-a-connector-to-live) and [`in_session`](/docs/contributor/sessions/) attributes refer to.
 
 ## Promoting a Connector to Live
 
-Connectors can be promoted to live status by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid/live` end-point. In order to promote a connector, you must know it's connector ID (cid).
+Connectors can be promoted to [live status](todo) by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid/live` end-point.
+
+In order to promote a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
@@ -169,13 +181,13 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
      --include
 ```
 
-This will result in:
+This will result in a response as follows:
 
 ```
 HTTP/1.1 204 No Content
 ```
 
-When getting details for promoted connectors, their is_live status will be reflected in the corresponding attribute:
+When getting details for promoted connectors, their `is_live` status will be reflected in the corresponding attribute:
 
 ```js
 {
@@ -196,16 +208,18 @@ When getting details for promoted connectors, their is_live status will be refle
 ```
 
 {{% alert color="info" %}}
-If you attempt to promote a connector which is already live, this will still result in an `HTTP/1.1 204 No Content`. Such requests are benign and will not impact the connector status.
+If you attempt to promote a connector which is _already_ live, it will still result in an `HTTP/1.1 204 No Content` response. Such requests are benign and will not impact the connector's status.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Promoting connectors will cause all the staged records which they have contributed to [the Catalog](todo) to become visible for calls to the [Consumer API](todo).
+Promoting connectors will cause all the staged records which they have contributed to [the Catalog](/docs/concepts/catalog/) to become visible for calls to the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 ## Demoting a Connector from Live
 
-Existing connectors can be demoted from live status by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid/live` end-point. In order to demote a connector, you must know it's connector ID (cid).
+Existing connectors can be demoted from [live status](todo) by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid/live` end-point.
+
+In order to demote a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
@@ -213,13 +227,13 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
      --include
 ```
 
-This will result in:
+This will result in a response as follows:
 
 ```
 HTTP/1.1 204 No Content
 ```
 
-When getting details for such users, their live status will be reflected in the corresponding attribute:
+When getting details for such users, their `is_live` status will be reflected in the corresponding attribute:
 
 ```js
 {
@@ -240,16 +254,18 @@ When getting details for such users, their live status will be reflected in the 
 ```
 
 {{% alert color="info" %}}
-If you attempt to demote a connector which is not live, this will still result in an `HTTP/1.1 204 No Content`. Such requests are benign and will not impact the connector status.
+If you attempt to demote a connector which is _not_ live, this will still result in an `HTTP/1.1 204 No Content` response. Such requests are benign and will not impact the connector's status.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Demoting connectors will remove all the records which they have contributed to [the Catalog](todo) from calls to the [Consumer API](todo). Users holding on to full qualified URLs to such records will instead receive `HTTP/1.1 404 Not Found` responses.
+Demoting connectors will remove all the records which they have contributed to [the Catalog](/docs/concepts/catalog/) from calls to the [Consumer API](/docs/consumer/). Users holding on to full qualified URLs for such records, will instead receive `HTTP/1.1 404 Not Found` responses.
 {{% /alert %}}
 
 ## Deleting a connector
 
-Existing connectors can be deleted from the system by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid` end-point. In order to delete a connector, you must know it's connector ID (cid).
+Existing connectors can be deleted from the system by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid` end-point.
+
+In order to delete a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
 curl --request DELETE \
@@ -257,20 +273,20 @@ curl --request DELETE \
      http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
 ```
 
-This will result in:
+This will result in a response as follows:
 
 ```
 HTTP/1.1 204 No Content
 ```
 
 {{% alert color="warning" %}}
-Deleting a connector will also remove all the records which it has contributed to the [the Catalog](todo).
+Deleting a connector will also remove all the records which it has contributed to the [the Catalog](/docs/concepts/catalog/).
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Deleting a connector will also remove its ability to contribute data. No further contribution will be accepted and all subsequent calls to the [Contributor API](todo) will fail.
+Deleting a connector will also remove its ability to contribute data. No further contribution will be accepted and all subsequent calls to the [Contributor API](/docs/contributor/) will fail.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Any policy keys which were issued where this connector's records formed part of the data segment, will no longer return entity instances contributed by it. In some circumstances, this could render policy keys unfit for purpose.
+Any [policy](/docs/concepts/policy/) keys which were issued where this connector's records formed part of the [data segment](/docs/concepts/policy/#data-segment), will no longer return entity instances contributed by it. In some circumstances, this could render policy keys unfit for purpose.
 {{% /alert %}}

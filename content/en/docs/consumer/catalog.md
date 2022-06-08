@@ -5,80 +5,244 @@ weight: 1
 description: The catalog API enabling search and discovery services for entity instances
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+All the entity instances being managed by BitBroker are recorded with [the catalog](/concepts/catalog/). This Catalog API is used to search this index and to discover entity instances which are needed by applications. The Catalog API returns list of entity instances, which are then accessible via the [Entity API](/docs/consumer/entity/).
 
-__Implicit Equality__
+In this section, we will explore the capablities of the Catalog API in depth.
 
-```
-{ 'name': 'United Kingdom' }
-```
+{{% alert color="primary" %}}
+A quick way to get going with building your own applications is to adapt the [example apps](/docs/examples/applications/) which use this and the other [Consumer APIs](/docs/consumer/).
+{{% /alert %}}
 
-__Equals / Not Equals__
-```
-{ 'entity.capital': { '$eq': 'London' } }
-{ 'entity.capital': { '$ne': 'Paris' } }
-```
+{{% alert color="info" %}}
+All Consumer API calls happen in the context of a [data sharing policy](/docs/concepts/policy/). The policy defines a data segment which you are allowed to access. Any queries which you make using the Catalog API can only operate within the data segment you are permitted access to.
+{{% /alert %}}
 
-__Less Than (or Equal to)__
-```
-{ 'entity.population': { '$lt': 100000 } }
-{ 'entity.population': { '$lte': 100000 } }
-{ 'name': { '$lt': 'China'} }
-```
+{{% alert color="primary" %}}
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance.
+{{% /alert %}}
 
-__Greater Than (or Equal to)__
-```
-{ 'entity.population': { '$gt': 10000000 } }
-{ 'entity.population': { '$gte': 10000000 } }
-{ 'name': { '$gt': 'Mexico'} }
+## Querying the Catalog
+
+You can query the catalog by issuing an `HTTP/GET` to the `/catalog` end-point.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog
 ```
 
-__In / Not In__
-```
-{ 'name': { '$in': ['United Kingdom', 'India', 'France'] } }
-{ 'name': { '$nin': ['United Kingdom', 'India', 'France'] } }
-```
+This will return an empty JSON array.
 
-__Logical Operators__
-```
-{ '$and': [
-    { 'entity.continent': 'Europe' },
-    { 'entity.population': { '$gt': 50000000 } }
-] }
+The catalog API will return a list of entity instances which match the submitted query string. The query string is submitted by adding a `q` URL parameter to the call. Submitting no query string, results in an empty array (as opposed to all items). NOTE: lists returned by the API will be dispatched in [pages](todo)
 
-{ '$or': [
-    { 'entity.literacy': { '$lt': 0.5 } },
-    { 'entity.population': { '$gt': 50000000 } }
-] }
+For example, using the query string:
 
-{ '$nor': [
-    { 'name': 'United Kingdom' },
-    { 'entity.population': { '$gt': 50000000 }
-] }
-
-{ '$not': { 'name': 'United Kingdom' } }
+```js
+q={"name" : "India"}
 ```
 
-__Regular Expressions__
-```
-{ 'name': { '$regex': 'United .*', '$options': 'i' } }
+Would return the following JSON array:
+
+```js
+[
+    {
+        "id": "917d0311c687e5ffb28c91a9ea57cd3a306890d0",
+        "url": "http://bbk-consumer:8003/v1/entity/country/917d0311c687e5ffb28c91a9ea57cd3a306890d0",
+        "type": "country",
+        "name": "India",
+        "legal": []
+    }
+]
 ```
 
-__Geo Spatial Queries__
-```
-{ 'entity.location': { '$near': { '$geometry': {
-    type: 'Point',
-    coordinates: [-3.435973, 55.378051] }, '$minDistance': 0, '$maxDistance': 750000 } } }
+Here we have one matching entity instance. The API returns [Entity API](/docs/consumer/entity/) links to matching instance.
 
-{ 'entity.location': { '$within': { '$geometry': {
-    type: 'Polygon',
-    coordinates: [
-        [
-            [-12.386341, 59.062341],
-            [-12.386341, 49.952269],
-            [2.500282, 49.952269],
-            [2.500282, 59.062341],
-            [-12.386341, 59.062341]
-        ]
-    ] } } }
+{{% alert color="primary" %}}
+In the examples here we show the query strings in readable JSON format, but when actual calls are made the query string is required to be [url encoded](https://www.w3schools.com/tags/ref_urlencode.asp).
+{{% /alert %}}
+
+### Querying Options
+
+Here we will go through each available query option one-by-one, giving an example of each.
+
+{{% alert color="info" %}}
+All query strings are [url encoded](https://www.w3schools.com/tags/ref_urlencode.asp) JSON objects. The query string syntax used is loosely based on the query language used within [Mongo DB](https://www.mongodb.com/).
+{{% /alert %}}
+
+#### Implicit Equality
+
+This query format is a shorthand for using the `$eq` operator
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name": "India" }'
+```
+
+#### Equals / Not Equals
+
+The `$eq` and `$ne` operators work for a range of data types such as integers, floats and strings.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.capital": { "$eq": "London" } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.capital": { "$ne": "Paris" } }'
+```
+
+#### Less Than (or Equal to)
+
+The `$lt` and `$lte` operators work for a range of data types such as integers, floats and strings.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.population": { "$lt": 100000 } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.population": { "$lte": 100000 } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name": { "$lt": "China"} }'
+```
+
+#### Greater Than (or Equal to)
+
+The `$gt` and `$gte` operators work for a range of data types such as integers, floats and strings.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.population": { "$gt": 100000 } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "entity.population": { "$gte": 100000 } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name": { "$gt": "Mexico"} }'
+```
+
+#### In / Not In
+
+The `$in` and `$nin` operators are for searching within arrays only.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name": {
+         "$in": ["United Kingdom", "India", "France"]
+     } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name": {
+         "$nin": ["United Kingdom", "India", "France"]
+     } }'
+```
+
+#### Logical Operators
+
+The `$and`, `$or` and `$nor` operators can be combined in any combination.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "$and": [
+         { "entity.continent": "Europe" },
+         { "entity.population": { "$gt": 50000000 } }
+     ] }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "$or": [
+         { "entity.continent": "Europe" },
+         { "entity.population": { "$gt": 50000000 } }
+     ] }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "$nor": [
+         { "name": "United Kingdom" },
+         { "entity.population": { "$gt": 50000000 } }
+     ] }'
+```
+
+#### Regular Expressions
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={ "name":
+         { "$regex": "United .*", "$options": "i" }
+     }'
+```
+
+#### Geo Spatial Queries
+
+The `$near` operator is used to find entity instances close to a [GeoJSON](https://geojson.org/) geometry. The `$min` and `$max` parameters are specified in metres. You must specify either one of `$min` or `$max` or both together. The `$geometry` attribute must be present.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={
+         "entity.location": {
+             "$near": {
+                 "$max": 750000,
+                 "$min": 0,
+                 "$geometry": {
+                     "type": "Point",
+                     "coordinates": [
+                         -3.435973,
+                         55.378051
+                     ]
+                 }
+             }
+         }
+     }'
+```
+
+The `$within` operator is used to find entity instances inside a closed [GeoJSON](https://geojson.org/) geometry. The `$geometry` attribute must be present.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --data-urlencode 'q={
+        "entity.location": {
+          "$within": {
+            "$geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [ -12.386341, 59.062341 ],
+                  [ -12.386341, 49.952269 ],
+                  [   2.500282, 49.952269 ],
+                  [   2.500282, 59.062341 ],
+                  [ -12.386341, 59.062341 ]
+                ]
+              ]
+            }
+          }
+        }
+      }'
 ```

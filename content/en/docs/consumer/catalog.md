@@ -190,6 +190,8 @@ curl http://bbk-consumer:8003/v1/catalog \
 
 #### Regular Expressions
 
+The `$regex` operator allows for the use of [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) to query any string attribute.
+
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \

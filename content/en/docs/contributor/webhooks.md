@@ -1,7 +1,7 @@
 ---
 title: "Hosting a Webhooks"
 linkTitle: "Webhooks"
-weight: 2
+weight: 3
 description: How to use webhooks to incorporate live and on-demand data
 ---
 
@@ -134,6 +134,8 @@ The system will then merge this live information with the catalog record to send
 ### Timeseries End-point
 
 The timeseries end-point is used by BitBroker to get a timeseries information associated with an entity instance previously submitted into the catalog.
+
+Not all entity type will have timeseries associated with them. When they do, then this callback is vital, since no timeseries data points are held within [the catalog](/docs/concepts/catalog/) itself. Only the existence of timeseries and key metadata about them is stored.
 
 The timeseries end-point has the following signature:
 

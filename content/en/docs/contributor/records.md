@@ -1,13 +1,13 @@
 ---
 title: "Contributing Records"
-linkTitle: "Records"
+linkTitle: "Submitting Records"
 weight: 1
 description: How connectors contribute entity instance records to BitBroker
 ---
 
 All the data being managed by a BitBroker instance, enters the system via the [Contribution API](/docs/contributor/). The process of contributing such data is documented in detail in this section.
 
-First, we will consider the basic use case of contributing entity instance records. Later sections will go on to detail more advanced use cases, such as [hosting a webhook](/docs/contributor/webhooks/) for live, on-demand data and contribution of [timeseries data](/docs/contributor/timeseries/).
+In this section, we will consider the basic use case of contributing entity instance records. Laters sections of this documentation will detail how you can contribute [live, on-demand data](/docs/contributor/webhooks/#entity-end-point) and [timeseries data](/docs/contributor/webhooks/#timeseries-end-point).
 
 {{% alert color="primary" %}}
 Contributing data is tightly bound with the concepts of [entity types](/docs/concepts/entity-types/) and their associated [data connectors](/docs/concepts/connectors/). All contributions happen in the context of these important system elements. It is vital that you fully understand these and other [key concepts](/docs/concepts/) before using this API to contribute records.

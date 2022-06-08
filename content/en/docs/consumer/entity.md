@@ -29,7 +29,7 @@ You can query for a list of known entity types by issuing an `HTTP/GET` to the `
 curl http://bbk-consumer:8003/v1/entity
 ```
 
-This will return an empty JSON array as follows:
+This will return a JSON array as follows:
 
 ```js
 [
@@ -49,7 +49,11 @@ This will return an empty JSON array as follows:
 ]
 ```
 
-Each entity type which you are permitted to see, will be returned within this array. NOTE: lists retrieved from this API will be returned in [pages](/docs/consumer/#paging)
+Each entity type which you are permitted to see, will be returned within this array.
+
+{{% alert color="info" %}}
+Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging-lists)
+{{% /alert %}}
 
 ### Entity Instance Lists
 
@@ -88,7 +92,11 @@ This will return an empty JSON array as follows:
 ]
 ```
 
-Each entity instance which you are permitted to see, will be returned within this array. NOTE: lists retrieved from this API will be returned in [pages](/docs/consumer/#paging)
+Each entity instance which you are permitted to see, will be returned within this array.
+
+{{% alert color="info" %}}
+Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging-lists)
+{{% /alert %}}
 
 ### Entity Instance Details
 
@@ -98,7 +106,7 @@ You can ger the details of a particular entity instance by issuing an `HTTP/GET`
 curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0
 ```
 
-This will return an empty JSON object as follows:
+This will return a JSON object as follows:
 
 ```js
 {
@@ -141,4 +149,4 @@ This will return an empty JSON object as follows:
 }
 ```
 
-You can only get details of entity instances which you are permitted to see. 
+You can only get details of entity instances which you are permitted to see.

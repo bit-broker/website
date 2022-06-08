@@ -15,9 +15,32 @@ All Consumer API calls happen in the context of a [data sharing policy](/docs/co
 Before you use this API, you should become familiar with the general, system-wide [API principles](/docs/api-principles/) - which are used across all three BitBroker API sets. This covers topics such as API structures, error reporting and handling, authorisation, server names and ports, etc.
 {{% /alert %}}
 
+#### Paging Lists
+
+It is possible that record lists returned from APIs may run to a great many records. There is a hard limit to how many records will be returned in a single call to any Consumer API.
+
+{{% alert color="warning" %}}
+The hard limit to how many records will be returned in a single call to the Consumer API is __250__
+{{% /alert %}}
+
+It is possible to page access to record lists by using a set of URL query parameters, as follows:
+
+Attribute | Necessity | Description
+--- | --- | ---
+`limit` | <div class="stamp">optional</div> | An integer number of data records, between 1 and 250
+`offset` | <div class="stamp">optional</div> | A positive integer index of the earlier desired record
+
+If the paging parameters are incorrect, the API will respond with a [standard validation error](/docs/api-principles/errors/#validation-error-format) containing details of the violation.
+
+If the specified `offset` is greater than the count of records available, the API will return an empty list. Using `limit` and `offset` you can page your way through long list, getting the entire list a page at a time.
+
+{{% alert color="info" %}}
+Timeseries data has [separate paging semantics](/docs/consumer/timeseries/#paging-timeseries), which is more attuned to it's time-value pair data points.
+{{% /alert %}}
+
 #### Rate and Quota Limits
 
-All Consumer API calls happen in the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines a _rate and quota limit_ on calls you can make with the Consumer API. These should have been communicated to you by the coordinator user who gave you your consumer access key.
+All Consumer API calls happen within the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines a _rate and quota limit_ on calls you can make with the Consumer API. These should have been communicated to you by the coordinator user who gave you your consumer access key.
 
 * Rate - the maximum calls-per-second that you are allowed to make (e.g. 250)
 * Quota - the total calls you can make in a given period (e.g. 86,400 per day)
@@ -32,7 +55,7 @@ This response will persist until the breach has expired.
 
 #### Legal Notices
 
-All Consumer API calls happen in the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines the _legal context_ under which data access is permitted. A legal notice will be present at the end of every entity instance record returned by any part of the Consumer API.
+All Consumer API calls happen within the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines the _legal context_ under which data access is permitted. A legal notice will be present at the end of every entity instance record returned by any part of the Consumer API.
 
 These legal notices are in the form of a JSON array of objects, each with three attributes:
 

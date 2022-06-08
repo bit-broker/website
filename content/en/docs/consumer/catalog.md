@@ -31,7 +31,11 @@ curl http://bbk-consumer:8003/v1/catalog
 
 This will return an empty JSON array.
 
-The catalog API will return a list of entity instances which match the submitted query string. The query string is submitted by adding a `q` URL parameter to the call. Submitting no query string, results in an empty array (as opposed to all items). NOTE: lists retrieved from this API will be returned in [pages](/docs/consumer/#paging)
+The catalog API will return a list of entity instances which match the submitted query string. The query string is submitted by adding a `q` URL parameter to the call. Submitting no query string, results in an empty array (as opposed to all items).
+
+{{% alert color="info" %}}
+Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging-lists)
+{{% /alert %}}
 
 For example, using the query string:
 

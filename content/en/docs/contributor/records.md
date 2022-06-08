@@ -14,9 +14,12 @@ Contributing data is tightly bound with the concepts of [entity types](/docs/con
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [contributor API token](/docs/api-principles/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+A quick way to get going building your own data connectors is to adapt the [example connectors](/docs/examples/connectors/) which have been built for a range of data sources.
 {{% /alert %}}
 
+{{% alert color="primary" %}}
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [contributor API token](/docs/api-principles/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+{{% /alert %}}
 
 ## Contributing Records to the Catalog
 

@@ -7,14 +7,14 @@ description: The catalog API enabling search and discovery services for entity i
 
 All the entity instances being managed by BitBroker are recorded with [the catalog](/concepts/catalog/). This Catalog API is used to search this index and to discover entity instances which are needed by applications. The Catalog API returns list of entity instances, which are then accessible via the [Entity API](/docs/consumer/entity/).
 
-In this section, we will explore the capablities of the Catalog API in depth.
+In this section, we will explore the capabilities of the Catalog API in depth.
 
 {{% alert color="primary" %}}
 A quick way to get going with building your own applications is to adapt the [example apps](/docs/examples/applications/) which use this and the other [Consumer APIs](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
-All Consumer API calls happen in the context of a [data sharing policy](/docs/concepts/policy/). The policy defines a data segment which you are allowed to access. Any queries which you make using the Catalog API can only operate within the data segment you are permitted access to.
+All Consumer API calls happen within the context of a [data sharing policy](/docs/concepts/policy/). The policy defines a data segment which you are allowed to access. Any queries which you make using the Catalog API can only operate within the data segment you are permitted access to.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
@@ -31,7 +31,7 @@ curl http://bbk-consumer:8003/v1/catalog
 
 This will return an empty JSON array.
 
-The catalog API will return a list of entity instances which match the submitted query string. The query string is submitted by adding a `q` URL parameter to the call. Submitting no query string, results in an empty array (as opposed to all items). NOTE: lists returned by the API will be dispatched in [pages](todo)
+The catalog API will return a list of entity instances which match the submitted query string. The query string is submitted by adding a `q` URL parameter to the call. Submitting no query string, results in an empty array (as opposed to all items). NOTE: lists retrieved from this API will be returned in [pages](/docs/consumer/#paging)
 
 For example, using the query string:
 

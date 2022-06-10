@@ -78,6 +78,10 @@ Details about the _meaning_ of these attributes can be found within the [key con
 Connector IDs are required to be unique across an operating BitBroker instance.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+Connector who present no webhook are required to submit complete entity instance records to the catalog. Before making the decision as to whether to host a webhook or not, careful note should be taken on the distinction between [data vs metadata](/docs/concepts/catalog/#data-vs-metadata) within the catalog.
+{{% /alert %}}
+
 {{% alert color="warning" %}}
 You should choose your connector ID (`cid`) with care, as these cannot be changed once created.
 {{% /alert %}}

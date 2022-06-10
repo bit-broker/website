@@ -5,7 +5,9 @@ weight: 3
 description: How to use webhooks to incorporate live and on-demand data
 ---
 
-It is an expectation that the BitBroker catalog contains information which is useful to enable search and discovery of entity instances. Hence it contains key metadata - but it does not normally contain actual entity data. This is pulled on-demand via a webhook hosted by the data connector who contributed the entity record. The distinction between data and metadata [is covered in more detail](todo) in the [key concepts](/docs/concepts/) documentation.
+It is an expectation that the BitBroker catalog contains information which is useful to enable search and discovery of entity instances. Hence it contains key metadata - but it does not normally contain actual entity data. This is pulled on-demand via a webhook hosted by the data connector who contributed the entity record.
+
+The distinction between data and metadata [is covered in more detail](/docs/concepts/catalog/#data-vs-metadata) in the [key concepts](/docs/concepts/) documentation. Depending on how data and metadata is balanced in a BitBroker instance, there may or may not be a requirement to host a webhook.
 
 In this section we will outline how to implement a webhook within a data container.
 

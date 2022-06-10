@@ -27,7 +27,7 @@ The list of known entity types forms the entire basis of a BitBroker instance. T
 
 #### Entity Instances
 
-The whole point of entity types, is to provide some structure for the list of entity instances - which form the bedrock of the data which BitBroker is managing. Entity instances are submitted into the BitBroker [catalogue](/docs/concepts/catalog/) via contributions from [data connectors](/docs/concepts/connectors/).
+The whole point of entity types, is to provide some structure for the list of entity instances - which form the bedrock of the data which BitBroker is managing. Entity instances are submitted into the BitBroker [catalog](/docs/concepts/catalog/) via contributions from [data connectors](/docs/concepts/connectors/).
 
 #### Entity Schemas
 

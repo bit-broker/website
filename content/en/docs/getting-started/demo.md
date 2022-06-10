@@ -8,14 +8,14 @@ description: Explore the demonstration instance of BitBroker
 
 Here you will find information about a range of BitBroker demo applications and connectors to help you understand what BitBroker is and how it can operate in complex data sharing scenarios.
 
-Most importantly it will help you get started building your applications which use BitBroker data or your [data connectors](/docs/concepts/connectors/) to contribute data into the system.
+Most importantly it will help you get started building your own applications which use BitBroker data or your own [data connectors](/docs/concepts/connectors/) to contribute data into the system.
 
 {{% alert color="info" %}}
-Our [examples repository](https://github.com/bit-broker/examples) includes support for deploying the example connectors and applications against a BitBroker deployment, via a set of [supporting scripts](https://github.com/bit-broker/examples/tree/main/development/scripts). This can be either using [Helm](https://helm.sh/) or [Docker-Compose](https://docs.docker.com/compose/).
+Our [examples repository](https://github.com/bit-broker/examples) includes support for deploying the example connectors and applications against a BitBroker deployment, via a set of [supporting scripts](https://github.com/bit-broker/examples/tree/main/development/scripts). This can be via either [Helm](https://helm.sh/) or [Docker-Compose](https://docs.docker.com/compose/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The Connectors are deployed supporting two example datasets: [countries](https://github.com/bit-broker/bit-broker/blob/main/tests/data/country.json) and [heritage sites](https://github.com/bit-broker/bit-broker/blob/main/tests/data/heritage-site.json).
+The example connectors are deployed supporting two example datasets: [countries](https://github.com/bit-broker/bit-broker/blob/main/tests/data/country.json) and [heritage sites](https://github.com/bit-broker/bit-broker/blob/main/tests/data/heritage-site.json).
 {{% /alert %}}
 
 ### Demo Applications

@@ -3,7 +3,7 @@
 title: "Demos and Examples"
 linkTitle: "Demos & Examples"
 weight: 1
-description: Explore the demonstration instance of BitBroker to learn what its all about
+description: Explore the demonstration instance of BitBroker 
 ---
 
 Here you will find information about a range of BitBroker demo applications and connectors to help you understand what BitBroker is and how it can operate in complex data sharing scenarios.

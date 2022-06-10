@@ -69,7 +69,7 @@ Attribute | Necessity | Validation Rules
 `description` | <div class="stamp">required</div> | String between 1 and 8192 characters long
 `access_control` | <div class="stamp">required</div> | An object describing how data can be accessed
 `access_control.enabled` | <div class="stamp">required</div> | A boolean string either 'true' or 'false'
-`access_control.quota` | <div class="stamp">optional</div> | An object describing how data quotas
+`access_control.quota` | <div class="stamp">optional</div> | An object describing allowable data quotas
 `access_control.quota.max_number` | <div class="stamp">optional</div> | An integer greater than 0
 `access_control.quota.interval_type` | <div class="stamp">optional</div> | One of an enumeration of either 'day' or 'month'
 `access_control.rate` | <div class="stamp">optional</div> | An integer greater than 0

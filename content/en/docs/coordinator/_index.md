@@ -1,7 +1,7 @@
 ---
 title: "Coordinator API"
 linkTitle: "Coordinator API"
-weight: 5
+weight: 4
 description: The main administrative API for the management of users, entity types, connectors and policies
 ---
 

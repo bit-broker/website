@@ -1,7 +1,7 @@
 ---
 title: "Key Concepts"
 linkTitle: "Key Concepts"
-weight: 3
+weight: 2
 description: All the key concepts that you need to understand to get the best out of BitBroker
 ---
 

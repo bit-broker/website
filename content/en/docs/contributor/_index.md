@@ -1,7 +1,7 @@
 ---
 title: "Contributor API"
 linkTitle: "Contributor API"
-weight: 6
+weight: 5
 description: The API for managing the contribution of data to a BitBroker instance
 ---
 

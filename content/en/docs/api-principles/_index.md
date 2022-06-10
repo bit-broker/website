@@ -1,7 +1,7 @@
 ---
 title: "API Principles"
 linkTitle: "API Principles"
-weight: 4
+weight: 3
 description: Foundational principles which cut-across all the BitBroker API sets
 ---
 

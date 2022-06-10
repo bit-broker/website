@@ -2,7 +2,7 @@
 ---
 title: "Local Docker Install"
 linkTitle: "Local Install"
-weight: 2
+weight: 3
 description: Get a BitBroker instance up-and-running on your local machine using Docker Desktop
 ---
 

@@ -1,8 +1,8 @@
 
 ---
 title: "Full Kubernetes Deployment"
-linkTitle: "Kubernetes Deployment"
-weight: 4
+linkTitle: "K8S Deployment"
+weight: 2
 description: Deploying a full instances into your cloud using Kubernetes
 ---
 

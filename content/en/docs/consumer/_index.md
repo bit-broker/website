@@ -1,7 +1,7 @@
 ---
 title: "Consumer API"
 linkTitle: "Consumer API"
-weight: 7
+weight: 6
 description: The outward facing API which consumers will use to access data from BitBroker
 ---
 

@@ -3,20 +3,28 @@
 title: "Demos and Examples"
 linkTitle: "Demos & Examples"
 weight: 1
-description: Explore the demonstration instance of BitBroker 
+description: Explore the demonstration instance of BitBroker
 ---
 
 Here you will find information about a range of BitBroker demo applications and connectors to help you understand what BitBroker is and how it can operate in complex data sharing scenarios.
 
 Most importantly it will help you get started building your applications which use BitBroker data or your [data connectors](/docs/concepts/connectors/) to contribute data into the system.
 
+{{% alert color="info" %}}
+Our [examples repository](https://github.com/bit-broker/examples) includes support for deploying the example connectors and applications against a BitBroker deployment, via a set of [supporting scripts](https://github.com/bit-broker/examples/tree/main/development/scripts). This can be either using [Helm](https://helm.sh/) or [Docker-Compose](https://docs.docker.com/compose/).
+{{% /alert %}}
+
+{{% alert color="info" %}}
+The Connectors are deployed supporting two example datasets: [countries](https://github.com/bit-broker/bit-broker/blob/main/tests/data/country.json) and [heritage sites](https://github.com/bit-broker/bit-broker/blob/main/tests/data/heritage-site.json).
+{{% /alert %}}
+
 ### Demo Applications
 
 We have a number of example applications, which allow users to explore [policy](/docs/concepts/policy/) based access to data via the [Consumer API](/docs/consumer/).
 
-#### Policy-Based Data Explorer
+#### Data Explorer
 
-[This application](todo) allows you explore the entire [Consumer API](/docs/consumer/) by directly trying out a number of interactive scenarios. It has a set of example data and polices already pre-installed and running.
+[This application](https://demo.bit-broker.io/apps/explorer/) allows you explore the entire [Consumer API](/docs/consumer/) by directly trying out a number of interactive scenarios. It has a set of example data and polices already pre-installed and running.
 
 You can explore using the [Catalog API](/docs/consumer/catalog/) to try different, complex catalog queries. You can see how the results of these queries differ in the light of different policies - which you can switch between simply in the application.
 
@@ -25,43 +33,51 @@ Once you have executed a query and obtain [entity instance records](/docs/concep
 Finally, for `country` data, you can also see the [Timeseries API](/docs/consumer/timeseries/) in actions and integrated with a [charting library](https://www.chartjs.org/).
 
 {{% alert color="info" %}}
-All the [source code for this demo](https://github.com/bit-broker/examples/tree/main/apps/explorer) is available in the [examples repo](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
+All the [source code for this demo](https://github.com/bit-broker/examples/tree/main/apps/explorer) is available in the [examples repository](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
 {{% /alert %}}
 
-## Maps
+#### Mapping Sample
 
-This app allows users to access countries & heritage site entity data presented in a map context, again according to the policy selected from a set of pre-defined policies.
+[This application](https://demo.bit-broker.io/apps/map/) allows you explore the [Consumer API](/docs/consumer/) via the medium of a mapping application. It has a set of example data and polices already pre-installed and running. The geographical attributes within the example data is used to populate a map view of the data records.
 
-## Connectors
+You can explore how the application outputs are changed in the light of different policies - which you can switch between simply in the application.
 
-We have two types of example connector:
+{{% alert color="info" %}}
+All the [source code for this demo](https://github.com/bit-broker/examples/tree/main/apps/map) is available in the [examples repository](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
+{{% /alert %}}
 
-- file-based (initial data set loaded from a file)
-- RDBMS (PostGres)
+### Connectors
 
-Both implementations fetch and merge 3rd party data in their entity webhooks for the country data set, and both support timeseries data for the country data set.
+Here we provide a range of [data connectors](/docs/concepts/connectors/) to help you understand what they are and how to build your own. Indeed, it is hoped that you can simple modify one of these data connectors to achieve your own data submission aims.
 
-Our initial implementations are node javascript; we aim to expand the range of language implementations in future.
+{{% alert color="info" %}}
+We will endeavour to increase the example data connectors here over time. Offering more choices of both data sources and implementation languages. We welcome help from the community on this and [you are encouraged](https://github.com/bit-broker/.github/blob/main/profile/README.md) to submit your own data connectors in the sample set.
+{{% /alert %}}
 
-### nodejs-file
+We currently have two types of example connector:
+
+* File-based - dataset loaded direcly from a file
+* RDBMS - data drawn from a PostGres instance
+
+All implementations upload data to the BitBroker [catalog](/docs/concepts/catalog/). They also fetch and return third-party data in their entity [webhooks](/docs/contributor/webhooks/) for the example `country` dataset, and both support time series data for the `country` dataset.
+
+{{% alert color="info" %}}
+All the [source code for these connectors](https://github.com/bit-broker/examples/tree/main/connectors) is available in the [examples repository](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
+{{% /alert %}}
+
+#### nodejs-file
 
 Node js file-based data connector.
 
-- initial data set loaded from a file over http
-- supports json, xlsx & csv formatted data
+- initial dataset loaded from a file over http
+- supports json, xlsx and csv formatted data
 - implements catalog session
-- implements entity & timeseries webhooks
+- implements entity and timeseries webhooks
 
-### nodejs-RDBMS
+#### nodejs-RDBMS
 
 PostGreSQL backed data connector.
 
-- initial data set loaded from PostGreSQL
+- initial dataset loaded from PostGreSQL
 - implements catalog session
-- implements entity & timeseries webhooks
-
-## Build & Deployment
-
-This repository includes support for deploying the example connectors and apps against a BitBroker deployment, either using Helm or Docker-Compose, with a set of supporting scripts. The Connectors are deplyed supporting two data sets, countries & heritage sites.
-
-see [README.MD](./development/scripts/README.MD)
+- implements entity and timeseries webhooks

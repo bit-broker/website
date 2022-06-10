@@ -5,4 +5,8 @@ weight: 6
 description: Managing data consumers and their associated data access keys
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Access to data within a BitBroker instance is always permitted within the context of a [consumer](/docs/concepts/users/#consumers) and a [policy](/docs/concepts/policy/). The connection between these two system concepts is called an access.
+
+In practice these are manifested as access keys which [authorise](/docs/api-principles/authorisation/) the consumers calls to the [Consumer API](/docs/consumer/). Such accesses can only be [created, managed and rescinded](/docs/coordinator/access/) by [coordinator](/docs/concepts/users/#coordinators) users.
+
+Since an access is in the context of a policy, it restricts it's holder to the designated [data segment](/docs/concepts/policy/#data-segment) and [access control](/docs/concepts/policy/#access-control).

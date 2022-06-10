@@ -5,4 +5,10 @@ weight: 7
 description: Create, deploy and operate a branded developer portal to manage your data user community.
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Coming Soon...
+
+{{% alert color="info" %}}
+APIs can be hard work for non-technical people!
+
+Watch-this-space for a full portal, which will allow configuration, management and operation of a BitBroker instance with just clicks in a browser.
+{{% /alert %}}

@@ -81,3 +81,15 @@ Please respect the legal basis under which the data is being shared. Coordinator
 {{% /alert %}}
 
 It is possible that the coordinator user who gave you your consumer access key will have more information about the legal basis of use of the data. They may require you to perform additional legal steps in order to be given an consumer access key.
+
+#### Accessing "Staged" Records
+
+It is important to understand that [data connectors](/docs/concepts/connectors/) might be in a _live_ or _staged_ state. That is their contribution might be approved for the live catalog, or might be being held back into a staging space only.
+
+When staged, any records they contributed will not be visible in any part of the Consumer API. This concept is [outlined in more detail](/docs/concepts/connectors/#live-vs-staging-connectors) in the key concepts documentation.
+
+When developing a new connector, it is often useful to be able to see data from it alongside other public data. There is a mechanism available in the Consumer API which allows data connectors to see how their records will look alongside other existing public records.
+
+In order to achieve this, connectors authors can send in a list of connector IDs in a private HTTP header attribute to any part of the Consumer API. Only connector authors will be aware of their connector ids. They can send up to 16 connectors in a single request header. The API will then include in responses, records contributed by those connectors _as if_ they were live.
+
+The header they should use for this is `x-bbk-connectors`. This should be a string value which is a comma separated list of connector IDs without any spaces.

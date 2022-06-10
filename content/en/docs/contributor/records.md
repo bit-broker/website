@@ -36,11 +36,11 @@ The process of contributing entity instance records into [the catalog](/docs/con
 These steps are achieved via an HTTP based API which we outline in detail below. Each data connector will have a private end-point on this API which is waiting for its contributions.
 
 {{% alert color="primary" %}}
-It is important to understand the distinction between data and metadata in the context of the BitBroker instance. It is an expectation that only metadata is being contributed into the catalog and that live data is kept back for on-demand requests. This distinction is [outlined in more detail](todo) in the key concepts documentation.
+It is important to understand the distinction between _data_ and _metadata_ in the context of the BitBroker instance. It is an expectation that only metadata is being contributed into the catalog and that live data is kept back for on-demand requests. This distinction is [outlined in more detail](todo) in the key concepts documentation.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-It is important to understand that data connectors might be in a live or staged state. That is thier contribution might be approved for the live catalog, or might be being held back into a staging space only. This concept is [outlined in more detail](todo) in the key concepts documentation.
+It is important to understand that data connectors might be in a _live_ or _staged_ state. That is their contribution might be approved for the live catalog, or might be being held back into a staging space only. This concept is [outlined in more detail](/docs/concepts/connectors/#live-vs-staging-connectors) in the key concepts documentation. There is a [mechanism available](/docs/consumer/#accessing-staged-records) in the [Consumer API](/docs/consumer/) which allows data connectors to see how their records will look alongside other existing public records.
 {{% /alert %}}
 
 {{% alert color="info" %}}

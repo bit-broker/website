@@ -6,18 +6,27 @@ weight: 1
 description: Explore the demonstration instance of BitBroker to learn what its all about
 ---
 
+Here you will find information about a range of BitBroker demo applications and connectors to help you understand what BitBroker is and how it can operate in complex data sharing scenarios.
 
-# Examples
+Most importantly it will help you get started building your applications which use BitBroker data or your [data connectors](/docs/concepts/connectors/) to contribute data into the system.
 
-A set of example BitBroker applications and connectors, with associated data, build and deployment scripts.
+### Demo Applications
 
-## Applications
+We have a number of example applications, which allow users to explore [policy](/docs/concepts/policy/) based access to data via the [Consumer API](/docs/consumer/).
 
-We have the following example apps, both of which allow users to explore policy-based access to data via the BitBroker consumer API:
+#### Policy-Based Data Explorer
 
-## Policy-Based data Explorer
+[This application](todo) allows you explore the entire [Consumer API](/docs/consumer/) by directly trying out a number of interactive scenarios. It has a set of example data and polices already pre-installed and running.
 
-This app allows users to choose from a set of pre-defined policies, and to try using different catalog queries in the context of those polices to explore the data that can be accessed using the consumer API hierarchy (catalog > entity > timeseries)
+You can explore using the [Catalog API](/docs/consumer/catalog/) to try different, complex catalog queries. You can see how the results of these queries differ in the light of different policies - which you can switch between simply in the application.
+
+Once you have executed a query and obtain [entity instance records](/docs/concepts/entity-types/#entity-instances) you can use the [Entity API](/docs/consumer/entity/) to browse the whole list and inspect the details of individual entities.
+
+Finally, for `country` data, you can also see the [Timeseries API](/docs/consumer/timeseries/) in actions and integrated with a [charting library](https://www.chartjs.org/).
+
+{{% alert color="info" %}}
+All the [source code for this demo](https://github.com/bit-broker/examples/tree/main/apps/explorer) is available in the [examples repo](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
+{{% /alert %}}
 
 ## Maps
 

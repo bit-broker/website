@@ -59,7 +59,7 @@ Attribute | Necessity | Validation Rules
 `timeseries.value` | <div class="stamp">required</div> | String between 1 and 256 characters long
 `timeseries.unit` | <div class="stamp">required</div> | String between 1 and 256 characters long
 
-Details about the _meaning_ of these attributes can be found within the [key concepts](/docs/concepts/entity-types/) section of this documentation.
+Details about the _meaning_ of these attributes can be found within the [key concepts](/docs/concepts/entity-types/) section of this documentation. The `schema` attribute is a powerful concept, which is [explained in more detail](/docs/concepts/entity-types/#entity-schemas) there.
 
 {{% alert color="info" %}}
 Entity type IDs are required to be unique across an operating BitBroker instance.
@@ -67,6 +67,10 @@ Entity type IDs are required to be unique across an operating BitBroker instance
 
 {{% alert color="info" %}}
 Timeseries IDs are required to be unique within their housing entity type.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+By convention, entity types are expressed in the singular, non-plural form. So, for example, `product` is preferred over `products`.
 {{% /alert %}}
 
 {{% alert color="warning" %}}

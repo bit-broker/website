@@ -177,7 +177,7 @@ Other sections of this document will explain what the [`is_live`](#promoting-a-c
 
 ## Promoting a Connector to Live
 
-Connectors can be promoted to [live status](todo) by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid/live` end-point.
+Connectors can be promoted to [live status](/docs/concepts/connectors/#live-vs-staging-connectors) by issuing an `HTTP/POST` to the `/entity/:eid/connector/:cid/live` end-point.
 
 In order to promote a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
@@ -223,7 +223,7 @@ Promoting connectors will cause all the staged records which they have contribut
 
 ## Demoting a Connector from Live
 
-Existing connectors can be demoted from [live status](todo) by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid/live` end-point.
+Existing connectors can be demoted from [live status](/docs/concepts/connectors/#live-vs-staging-connectors) by issuing an `HTTP/DELETE` to the `/entity/:eid/connector/:cid/live` end-point.
 
 In order to demote a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 

@@ -36,7 +36,7 @@ The process of contributing entity instance records into [the catalog](/docs/con
 These steps are achieved via an HTTP based API which we outline in detail below. Each data connector will have a private end-point on this API which is waiting for its contributions.
 
 {{% alert color="primary" %}}
-It is important to understand the distinction between _data_ and _metadata_ in the context of the BitBroker instance. It is an expectation that only metadata is being contributed into the catalog and that live data is kept back for on-demand requests. This distinction is [outlined in more detail](todo) in the key concepts documentation.
+It is important to understand the distinction between _data_ and _metadata_ in the context of the BitBroker instance. It is an expectation that only metadata is being contributed into the catalog and that live data is kept back for on-demand requests. This distinction is [outlined in more detail](/docs/concepts/catalog/#data-vs-metadata) in the key concepts documentation.
 {{% /alert %}}
 
 {{% alert color="primary" %}}

@@ -56,8 +56,8 @@ We will endeavour to increase the example data connectors here over time. Offeri
 
 We currently have two types of example connector:
 
-* File-based - dataset loaded direcly from a file
-* RDBMS - data drawn from a PostGres instance
+* File based - dataset loaded direcly from a file
+* RDBMS - data drawn from a relational database
 
 All implementations upload data to the BitBroker [catalog](/docs/concepts/catalog/). They also fetch and return third-party data in their entity [webhooks](/docs/contributor/webhooks/) for the example `country` dataset, and both support time series data for the `country` dataset.
 
@@ -65,19 +65,19 @@ All implementations upload data to the BitBroker [catalog](/docs/concepts/catalo
 All the [source code for these connectors](https://github.com/bit-broker/examples/tree/main/connectors) is available in the [examples repository](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
 {{% /alert %}}
 
-#### nodejs-file
+#### NodeJS » File Based
 
-Node js file-based data connector.
+This [example connector](https://github.com/bit-broker/examples/tree/main/connectors/nodejs/file) is implemented in [NodeJS](https://nodejs.org/en/) and uses a simple file as its source data store. Key characteristics of this connector are:
 
-- initial dataset loaded from a file over http
-- supports json, xlsx and csv formatted data
-- implements catalog session
-- implements entity and timeseries webhooks
+* Initial dataset loaded from a file over HTTP
+* Supports for a range of file types: [JSON](https://www.json.org/json-en.html), [Microsoft Excel](https://www.microsoft.com/en-gb/microsoft-365/excel), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), etc
+* Implements [catalog](http://localhost:1313/docs/concepts/catalog/) updating via [sessions](http://localhost:1313/docs/contributor/records/#sessions)
+* Implements all [webhook](http://localhost:1313/docs/contributor/webhooks/) end-points
 
-#### nodejs-RDBMS
+#### NodeJS » RDBMS
 
-PostGreSQL backed data connector.
+This [example connector](https://github.com/bit-broker/examples/tree/main/connectors/nodejs/rdbms) is implemented in [NodeJS](https://nodejs.org/en/) and uses a [PostgreSQL](https://www.postgresql.org/) database as its source data store. Key characteristics of this connector are:
 
-- initial dataset loaded from PostGreSQL
-- implements catalog session
-- implements entity and timeseries webhooks
+* Initial dataset loaded via [SQL](https://en.wikipedia.org/wiki/SQL) calls on a [relational database](https://en.wikipedia.org/wiki/Relational_database#RDBMS)
+* Implements [catalog](http://localhost:1313/docs/concepts/catalog/) updating via [sessions](http://localhost:1313/docs/contributor/records/#sessions)
+* Implements all [webhook](http://localhost:1313/docs/contributor/webhooks/) end-points

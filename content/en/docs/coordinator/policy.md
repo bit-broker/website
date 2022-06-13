@@ -8,7 +8,7 @@ description: APIs for creating and manipulating policies
 Data Sharing Policies are a main component of the BitBroker system. You will find [more details about policies](/docs/concepts/policy/), within the [key concepts](/docs/concepts/) section of this documentation.
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Creating a New Policy
@@ -22,6 +22,7 @@ curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
      --request POST \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "The Most Populated Countries", \
@@ -106,6 +107,7 @@ curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
      --request PUT \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "This is a new name", \
@@ -158,7 +160,8 @@ The validation rules for updated policy information, are the same as that for [c
 You can obtain a list of all the existing policies by issuing an `HTTP/GET` to the `/policy` end-point.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/policy
+curl http://bbk-coordinator:8001/v1/policy \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -184,7 +187,8 @@ You can obtain the details of an existing policy by issuing an `HTTP/GET` to the
 In order to obtain details of a policy, you must know it's policy ID (`pid`).
 
 ```shell
-curl http://bbk-coordinator:8001/v1/policy/over-a-billion
+curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:
@@ -231,9 +235,10 @@ Existing policies can be deleted from the system by issuing an `HTTP/DELETE` to 
 In order to delete a policy, you must know it's policy ID (`pid`).
 
 ```shell
-curl --request DELETE \
+curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
+     --request DELETE \
      --include \
-     http://bbk-coordinator:8001/v1/policy/over-a-billion
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

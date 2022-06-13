@@ -14,7 +14,7 @@ In order to use the sample calls in this section, you must create first the [use
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Creating a New Access
@@ -26,7 +26,8 @@ Accesses are always created within the context of a [user](/docs/concepts/users/
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion \
      --request POST \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -56,7 +57,8 @@ Accesses are always created within the context of a [user](/docs/concepts/users/
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion \
      --request PUT \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -86,7 +88,8 @@ You can obtain a list of all the existing accesses a user has by issuing an `HTT
 Accesses are always created within the context of a [user](/docs/concepts/users/) and, hence, you must know the user ID (`uid`) to list their accesses.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user/2/access
+curl http://bbk-coordinator:8001/v1/user/2/access \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -111,7 +114,8 @@ Each access the user has will be returned within this array. Note: There is curr
 A shorter list of accesses by user can also be obtained when you ask for the [details of an individual user](/docs/coordinator/user/#details-of-an-existing-user). For example:
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user/2
+curl http://bbk-coordinator:8001/v1/user/2 \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -141,7 +145,8 @@ You can obtain the details of an existing access by issuing an `HTTP/GET` to the
 Accesses are always created within the context of a [user](/docs/concepts/users/) and a [policy](/docs/concepts/policy/). Hence, you must know the user ID (`uid`) and the policy ID (`pid`) to get it's details.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion
+curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:
@@ -169,9 +174,10 @@ Existing accesses can be deleted from the system by issuing an `HTTP/DELETE` to 
 Accesses are always created within the context of a [user](/docs/concepts/users/) and a [policy](/docs/concepts/policy/). Hence, you must know the user ID (`uid`) and the policy ID (`pid`) to delete one.
 
 ```shell
-curl --request DELETE \
+curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion \
+     --request DELETE \
      --include \
-     http://bbk-coordinator:8001/v1/user/2/access/over-a-billion
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

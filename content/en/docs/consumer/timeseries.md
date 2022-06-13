@@ -18,7 +18,7 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Consumer API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ### Getting Timeseries Data
@@ -28,7 +28,8 @@ You can query for a list timeseries data by issuing an `HTTP/GET` to the `/entit
 Timeseries are always housed within a parent entity type and each has a unique ID on that entity type. Hence you will need to know the entity type ID (`type`), the entity instance ID ('id') and timeseries ID ('tsid'), in order to get access to such data points.
 
 ```shell
-curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0/timeseries/population
+curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0/timeseries/population \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:

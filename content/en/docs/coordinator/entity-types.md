@@ -8,7 +8,7 @@ description: APIs for creating and manipulating entity types
 Entity Types are a main component of the BitBroker system. You will find [more details about entity types](/docs/concepts/entity-types/), within the [key concepts](/docs/concepts/) section of this documentation.
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Creating a New Entity Type

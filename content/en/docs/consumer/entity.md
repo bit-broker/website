@@ -18,7 +18,7 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Consumer API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ### Entity Types Lists
@@ -26,7 +26,8 @@ All API calls in BitBroker require [authorisation](/docs/api-principles/authoris
 You can query for a list of known entity types by issuing an `HTTP/GET` to the `/entity` end-point.
 
 ```shell
-curl http://bbk-consumer:8003/v1/entity
+curl http://bbk-consumer:8003/v1/entity \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -60,7 +61,8 @@ Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging
 You can query for a list of entity instances of a given entity type by issuing an `HTTP/GET` to the `/entity/:type` end-point.
 
 ```shell
-curl http://bbk-consumer:8003/v1/entity/country
+curl http://bbk-consumer:8003/v1/entity/country \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return an empty JSON array as follows:
@@ -103,7 +105,8 @@ Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging
 You can ger the details of a particular entity instance by issuing an `HTTP/GET` to the `/entity/:type/:id` end-point.
 
 ```shell
-curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0
+curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0 \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:

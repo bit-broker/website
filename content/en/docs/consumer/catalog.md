@@ -18,7 +18,7 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-principles/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Consumer API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Querying the Catalog
@@ -26,7 +26,8 @@ All API calls in BitBroker require [authorisation](/docs/api-principles/authoris
 You can query the catalog by issuing an `HTTP/GET` to the `/catalog` end-point.
 
 ```shell
-curl http://bbk-consumer:8003/v1/catalog
+curl http://bbk-consumer:8003/v1/catalog \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return an empty JSON array.
@@ -78,6 +79,7 @@ This query format is a shorthand for using the `$eq` operator
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name": "India" }'
 ```
 
@@ -88,12 +90,14 @@ The `$eq` and `$ne` operators work for a range of data types such as integers, f
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.capital": { "$eq": "London" } }'
 ```
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.capital": { "$ne": "Paris" } }'
 ```
 
@@ -104,18 +108,21 @@ The `$lt` and `$lte` operators work for a range of data types such as integers, 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.population": { "$lt": 100000 } }'
 ```
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.population": { "$lte": 100000 } }'
 ```
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name": { "$lt": "China"} }'
 ```
 
@@ -126,18 +133,21 @@ The `$gt` and `$gte` operators work for a range of data types such as integers, 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.population": { "$gt": 100000 } }'
 ```
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "entity.population": { "$gte": 100000 } }'
 ```
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name": { "$gt": "Mexico"} }'
 ```
 
@@ -148,6 +158,7 @@ The `$in` and `$nin` operators are for searching within arrays only.
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name": {
          "$in": ["United Kingdom", "India", "France"]
      } }'
@@ -156,6 +167,7 @@ curl http://bbk-consumer:8003/v1/catalog \
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name": {
          "$nin": ["United Kingdom", "India", "France"]
      } }'
@@ -168,6 +180,7 @@ The `$and`, `$or` and `$nor` operators can be combined in any combination.
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "$and": [
          { "entity.continent": "Europe" },
          { "entity.population": { "$gt": 50000000 } }
@@ -177,6 +190,7 @@ curl http://bbk-consumer:8003/v1/catalog \
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "$or": [
          { "entity.continent": "Europe" },
          { "entity.population": { "$gt": 50000000 } }
@@ -186,6 +200,7 @@ curl http://bbk-consumer:8003/v1/catalog \
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "$nor": [
          { "name": "United Kingdom" },
          { "entity.population": { "$gt": 50000000 } }
@@ -199,6 +214,7 @@ The `$regex` operator allows for the use of [regular expressions](https://develo
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={ "name":
          { "$regex": "United .*", "$options": "i" }
      }'
@@ -211,6 +227,7 @@ The `$near` operator is used to find entity instances close to a [GeoJSON](https
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={
          "entity.location": {
              "$near": {
@@ -233,6 +250,7 @@ The `$within` operator is used to find entity instances inside a closed [GeoJSON
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
      --get \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-urlencode 'q={
         "entity.location": {
           "$within": {

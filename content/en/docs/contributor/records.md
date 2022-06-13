@@ -18,7 +18,11 @@ A quick way to get going building your own data connectors is to adapt the [exam
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [contributor API token](/docs/api-principles/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-principles/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+{{% /alert %}}
+
+{{% alert color="primary" %}}
+The sample calls in this section will not work as-is. Contributor API calls require the use of session IDs, which are generated on-demand. Hence the sample calls here are merely illustrative.
 {{% /alert %}}
 
 ## Contributing Records to the Catalog
@@ -125,7 +129,8 @@ You will also need to select one of the three session `modes` from `stream`, `ac
 
 ```shell
 curl http://bbk-contributor:8002/v1/connector/9afcf3235500836c6fcd9e82110dbc05ffbb734b/session/open/stream \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -162,6 +167,7 @@ curl http://bbk-contributor:8002/v1/connector/9afcf3235500836c6fcd9e82110dbc05ff
      --request POST \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      [ ]
 EOF
@@ -343,7 +349,8 @@ Finally you will also need to select one of the two valid `commits` from `true` 
 
 ```shell
 curl http://bbk-contributor:8002/v1/connector/9afcf3235500836c6fcd9e82110dbc05ffbb734b/session/4527eff4-d9cf-41c0-9ecc-8e06b57fcf54/close/true \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

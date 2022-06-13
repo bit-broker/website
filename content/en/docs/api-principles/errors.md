@@ -5,7 +5,7 @@ weight: 4
 description: How API errors are handled and communicated
 ---
 
-All errors returned by all API services are presented in a standard error format. This complete list of errors which you may encounter are listed in the earlier page detailing the [API structure](/docs/api-principles/structure/#api-returns).
+All errors returned by all API services are presented in a standard error format. This complete list of errors which you may encounter are listed in the earlier page detailing the [API structure](/docs/api-principles/structure/#api-responses).
 
 #### Standard Error Format
 

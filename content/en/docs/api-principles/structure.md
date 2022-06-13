@@ -28,7 +28,7 @@ When posting data via an API (most often as part of a _create_ or _update_ actio
 
 When posting data via an API, the HTTP header `Content-Type` should always be set to `application/json`.
 
-#### API Returns
+#### API Responses
 
 RESTful APIs use HTTP response codes to indicate the return status from the call. BitBroker uses a subset of the standard [HTTP response codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) and maps them to call state as follows:
 

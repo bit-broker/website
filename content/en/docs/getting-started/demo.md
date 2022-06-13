@@ -46,7 +46,7 @@ You can explore how the application outputs are changed in the light of differen
 All the [source code for this demo](https://github.com/bit-broker/examples/tree/main/apps/map) is available in the [examples repository](https://github.com/bit-broker/examples) of our [GitHub](https://github.com/bit-broker).
 {{% /alert %}}
 
-### Connectors
+### Demo Data Connectors
 
 Here we provide a range of [data connectors](/docs/concepts/connectors/) to help you understand what they are and how to build your own. Indeed, it is hoped that you can simple modify one of these data connectors to achieve your own data submission aims.
 

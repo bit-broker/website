@@ -67,7 +67,7 @@ Attribute | Necessity | Validation Rules
 --- | --- | ---
 `pid` | <div class="stamp">required</div> | String between 3 and 32 characters long<br/>Consisting of lowercase letters, numbers and dashes only <br/>Starting with a lowercase letter<br/>Conforming to the regex expression `^[a-z][a-z0-9-]+$`
 `name` | <div class="stamp">required</div> | String between 1 and 64 characters long
-`description` | <div class="stamp">required</div> | String between 1 and 8192 characters long
+`description` | <div class="stamp">required</div> | String between 1 and 2048 characters long
 `access_control` | <div class="stamp">required</div> | An object describing how data can be accessed
 `access_control.enabled` | <div class="stamp">required</div> | A boolean string either 'true' or 'false'
 `access_control.quota` | <div class="stamp">optional</div> | An object describing allowable data quotas
@@ -79,7 +79,7 @@ Attribute | Necessity | Validation Rules
 `data_segment.field_masks` | <div class="stamp">optional</div> | An array of strings<br/>An empty array
 `legal_context` | <div class="stamp">optional</div> | An array of 0 to 100 of object outling the legal basis of data sharing
 `legal_context.type` | <div class="stamp">required</div> | One of an enumeration 'attribution', 'contact', 'license', 'note', 'source' or 'terms'
-`legal_context.text` | <div class="stamp">required</div> | String between 1 and 8192 characters long
+`legal_context.text` | <div class="stamp">required</div> | String between 1 and 256 characters long
 `legal_context.link` | <div class="stamp">required</div> | String between 1 and 1024 characters long<br/>Must conform to URI format
 
 Details about the _meaning_ of these attributes can be found within the [key concepts](/docs/concepts/policy/) section of this documentation.

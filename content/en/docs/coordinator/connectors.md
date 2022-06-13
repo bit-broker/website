@@ -69,8 +69,8 @@ Attribute | Necessity | Validation Rules
 --- | --- | ---
 `cid` | <div class="stamp">required</div> | String between 3 and 32 characters long<br/>Consisting of lowercase letters, numbers and dashes only <br/>Starting with a lowercase letter<br/>Conforming to the regex expression `^[a-z][a-z0-9-]+$`
 `name` | <div class="stamp">required</div> | String between 1 and 64 characters long
-`description` | <div class="stamp">required</div> | String between 1 and 8192 characters long
-`webhook` | <div class="stamp">optional</div> | String between 1 and 256 characters long<br/>Must conform to URI format
+`description` | <div class="stamp">required</div> | String between 1 and 2048 characters long
+`webhook` | <div class="stamp">optional</div> | String between 1 and 1024 characters long<br/>Must conform to URI format
 `cache` | <div class="stamp">optional</div> | Integer between 0 and 31536000
 
 Details about the _meaning_ of these attributes can be found within the [key concepts](/docs/concepts/connectors/) section of this documentation.

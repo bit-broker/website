@@ -52,7 +52,7 @@ Attribute | Necessity | Validation Rules
 --- | --- | ---
 `eid` | <div class="stamp">required</div> | String between 3 and 32 characters long<br/>Consisting of lowercase letters, numbers and dashes only <br/>Starting with a lowercase letter<br/>Conforming to the regex expression `^[a-z][a-z0-9-]+$`
 `name` | <div class="stamp">required</div> | String between 1 and 64 characters long
-`description` | <div class="stamp">required</div> | String between 1 and 8192 characters long
+`description` | <div class="stamp">required</div> | String between 1 and 2048 characters long
 `schema` | <div class="stamp">optional</div> | A valid [JSON Schema](https://json-schema.org/) document
 `timeseries` | <div class="stamp">optional</div> | A list of timeseries which are present on this entity type
 `timeseries.id` | <div class="stamp">required</div> | String between 3 and 32 characters long<br/>Consisting of lowercase letters, numbers and dashes only <br/>Starting with a lowercase letter<br/>Conforming to the regex expression `^[a-z][a-z0-9-]+$`

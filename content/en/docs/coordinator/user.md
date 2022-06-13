@@ -8,9 +8,8 @@ description: APIs for creating and manipulating users
 Users are a main component of the BitBroker system. You will find [more details about users](/docs/concepts/users/), within the [key concepts](/docs/concepts/) section of this documentation.
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
-
 ## Creating a New User
 
 New users can be created by issuing an `HTTP/POST` to the `/user` end-point.
@@ -20,6 +19,7 @@ curl http://bbk-coordinator:8001/v1/user \
      --request POST \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Alice", \
@@ -61,6 +61,7 @@ curl http://bbk-coordinator:8001/v1/user/2 \
      --request PUT \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Bob" \
@@ -85,7 +86,8 @@ The validation rules for updated user information, are the same as that for [cre
 You can obtain a list of all the existing users by issuing an `HTTP/GET` to the `/user` end-point.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user
+curl http://bbk-coordinator:8001/v1/user \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -121,7 +123,8 @@ You can obtain the details of an existing user by issuing an `HTTP/GET` to the `
 In order to obtain details of a user, you must know their user ID (`uid`).
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user/2
+curl http://bbk-coordinator:8001/v1/user/2 \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:
@@ -147,7 +150,8 @@ You can find an existing user via their email address by issuing an `HTTP/GET` t
 In order to obtain details of a user, you must know their current `email` address.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/user/email/alice%40domain.com
+curl http://bbk-coordinator:8001/v1/user/email/alice%40domain.com \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 {{% alert color="info" %}}
@@ -177,7 +181,8 @@ In order to promote a user, you must know their user ID (`uid`).
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/coordinator \
      --request POST \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -223,7 +228,8 @@ In order to demote a user, you must know their user ID (`uid`).
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/coordinator \
      --request DELETE \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -267,7 +273,8 @@ In order to delete a user, you must know their user ID (`uid`).
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2 \
      --request DELETE \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

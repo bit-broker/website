@@ -1,14 +1,33 @@
 <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 <script>
+
+// --- initialise cookie consent
+
 window.cookieconsent.initialise({
-  "palette": {
-    "popup": { "background": "#000" },
-    "button": { "background": "#f1d600" }
-  },
-  "content" : {
-    "message": "By using this website, you agree to accept the <a href='/about/#terms'>Terms and Conditions</a>, <a href='/about/#privacy'>Privacy Policy</a> and <a href='/about/#cookies'>Cookies Policy</a>.",
-    "dismiss": "Accept"
-  },
-  "showLink": false
+    "palette": {
+        "popup": { "background": "#000" },
+        "button": { "background": "#f1d600" }
+    },
+    "content" : {
+        "message": "By using this website, you agree to accept the <a href='/about/#terms'>Terms and Conditions</a>, <a href='/about/#privacy'>Privacy Policy</a> and <a href='/about/#cookies'>Cookies Policy</a>.",
+        "dismiss": "Accept"
+    },
+    "showLink": false
 });
+
+// --- initialise API token replacement
+
+window.onload = function() {
+    document.querySelector("input#access-token").addEventListener("change", function(event) {
+        let TOKEN_HEADER = "x-bbk-auth-token:";
+        let TOKEN_PLACEHOLDER = "your-token-goes-here"
+
+        Array.from(document.getElementsByClassName("token string")).forEach(function(element) {
+            if (element.textContent.includes(TOKEN_HEADER)) {
+                element.textContent = `"${ TOKEN_HEADER} ${ event.target.value.length ? event.target.value : TOKEN_PLACEHOLDER }"`;
+            }
+        });
+    });
+};
+
 </script>

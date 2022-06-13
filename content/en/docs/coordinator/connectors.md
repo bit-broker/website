@@ -10,11 +10,11 @@ Connectors are a main component of the BitBroker system. You will find [more det
 Connectors are always created within the context of housing [entity types](/docs/concepts/entity-types/), which can be created and manipulated using [other part of this API](/docs/coordinator/entity-types/#creating-a-new-entity-type), described earlier in this documentation.
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
+In order to use the sample calls in this section, first [create the housing entity](/docs/coordinator/entity-types/#creating-a-new-entity-type) as outlined in the previous section.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-In order to use the sample calls in this section, first [create the housing entity](/docs/coordinator/entity-types/#creating-a-new-entity-type) as outlined in the previous section.
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Creating a New Connector
@@ -28,6 +28,7 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
      --request POST \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Wikipedia", \
@@ -97,6 +98,7 @@ curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
      --request PUT \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Wikipedia", \
@@ -120,7 +122,8 @@ The validation rules for updated connector information, are the same as that for
 You can obtain a list of all the existing connectors housed within a parent [entity type](/docs/concepts/entity-types/) by issuing an `HTTP/GET` to the `/entity/:eid/connector` end-point.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/entity/country/connector
+curl http://bbk-coordinator:8001/v1/entity/country/connector \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -146,7 +149,8 @@ You can obtain the details of an existing connector by issuing an `HTTP/GET` to 
 In order to obtain details of a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
-curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
+curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:
@@ -184,7 +188,8 @@ In order to promote a connector, you must know the ID of its housing [entity typ
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
      --request POST \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -230,7 +235,8 @@ In order to demote a connector, you must know the ID of its housing [entity type
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia/live \
      --request DELETE \
-     --include
+     --include \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:
@@ -274,9 +280,10 @@ Existing connectors can be deleted from the system by issuing an `HTTP/DELETE` t
 In order to delete a connector, you must know the ID of its housing [entity type](/docs/concepts/entity-types/) (`eid`) and it's connector ID (`cid`).
 
 ```shell
-curl --request DELETE \
+curl http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia \
+     --request DELETE \
      --include \
-     http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

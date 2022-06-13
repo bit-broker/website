@@ -8,7 +8,7 @@ description: APIs for creating and manipulating entity types
 Entity Types are a main component of the BitBroker system. You will find [more details about entity types](/docs/concepts/entity-types/), within the [key concepts](/docs/concepts/) section of this documentation.
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key).
+All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string for where you should insert your [coordinator API token](/docs/api-principles/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_You Coordinator API Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ## Creating a New Entity Type
@@ -22,6 +22,7 @@ curl http://bbk-coordinator:8001/v1/entity/country \
      --request POST \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Countries",  \
@@ -88,6 +89,7 @@ curl http://bbk-coordinator:8001/v1/entity/country \
      --request PUT \
      --include \
      --header "Content-Type: application/json" \
+     --header "x-bbk-auth-token: your-token-goes-here" \
      --data-binary @- << EOF
      { \
          "name": "Countries",  \
@@ -121,7 +123,8 @@ The validation rules for updated entity type information, are the same as that f
 You can obtain a list of all the existing entity types by issuing an `HTTP/GET` to the `/entity` end-point.
 
 ```shell
-curl http://bbk-coordinator:8001/v1/entity
+curl http://bbk-coordinator:8001/v1/entity \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -147,7 +150,8 @@ You can obtain the details of an existing entity type by issuing an `HTTP/GET` t
 In order to obtain details of an entity type, you must know it's entity type ID (`eid`).
 
 ```shell
-curl http://bbk-coordinator:8001/v1/entity/country
+curl http://bbk-coordinator:8001/v1/entity/country \
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will return a JSON object as follows:
@@ -176,9 +180,10 @@ Existing entity types can be deleted from the system by issuing an `HTTP/DELETE`
 In order to delete an entity type, you must know it's entity type ID (`eid`).
 
 ```shell
-curl --request DELETE \
+curl http://bbk-coordinator:8001/v1/entity/country \
+     --request DELETE \
      --include \
-     http://bbk-coordinator:8001/v1/entity/country
+     --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
 This will result in a response as follows:

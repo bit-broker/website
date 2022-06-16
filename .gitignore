@@ -6,3 +6,6 @@
 public/
 resources/
 node_modules/
+
+# Hugo system
+.hugo_build.lock

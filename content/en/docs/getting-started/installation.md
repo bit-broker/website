@@ -55,6 +55,7 @@ Start with a clean machine, with no remnants of previous BitBroker installations
 * [Kubernetes](https://kubernetes.io/) command line tools
 * [Helm](https://helm.sh/) command line tools
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* [cURL](https://curl.se/) command line tool
 
 {{% alert color="warning" %}}
 Before starting, make sure that Kubernetes is enabled within Docker Desktop. Settings » Kubernetes » Enable Kubernetes.
@@ -107,10 +108,18 @@ helm install --values values_local.yaml \
              --create-namespace bit-broker \
              --set bbk-auth-service.JWKS=$JWKS \
              --namespace bit-broker \
-             bit-broker/bit-broker
+               bit-broker/bit-broker
 ```
 
 This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for advanced users, and you can ignore these for now.
+
+It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
+
+```shell
+if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /dev/null http://localhost/coordinator/v1) == "401" ]; then echo "Ready"; else echo "Not Ready"; fi;
+```
+
+This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals its OK to proceed.
 
 ##### Bootstrap Coordinator Token
 

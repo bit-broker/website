@@ -1,7 +1,7 @@
 ---
 title: "Data Sharing Policy"
 linkTitle: "Policies"
-weight: 5
+weight: 6
 description: Create, manage and deploy data sharing policies to grant access to data
 ---
 

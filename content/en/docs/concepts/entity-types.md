@@ -1,7 +1,7 @@
 ---
 title: "Entity Types"
 linkTitle: "Entity Types"
-weight: 2
+weight: 3
 description: The types of entities which are the basis of a BitBroker instance
 ---
 

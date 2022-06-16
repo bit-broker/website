@@ -1,7 +1,7 @@
 ---
 title: "Users"
 linkTitle: "Users"
-weight: 1
+weight: 2
 description: Users and their roles within a BitBroker instance
 ---
 

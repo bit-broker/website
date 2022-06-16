@@ -7,3 +7,5 @@ description: Getting started with BitBroker, including demos, installation and b
 ---
 
 In this section we explore a number of ways to get you started using, deploying, operating and developing BitBroker.
+
+If you are new to BitBroker, you may want to start with [this quick overview](/docs/) or this [deeper introduction](/docs/concepts/introduction/).

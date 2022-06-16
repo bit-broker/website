@@ -1,7 +1,7 @@
 ---
 title: "The Catalog"
 linkTitle: "Catalog"
-weight: 4
+weight: 5
 description: The catalog and how it facilitates search, discovery and access
 ---
 

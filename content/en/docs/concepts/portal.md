@@ -1,7 +1,7 @@
 ---
 title: "Developer Portal"
 linkTitle: "Portal"
-weight: 7
+weight: 8
 description: Create, deploy and operate a branded developer portal to manage your data user community.
 ---
 

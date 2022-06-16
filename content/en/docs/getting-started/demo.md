@@ -1,7 +1,7 @@
 
 ---
 title: "Demos and Examples"
-linkTitle: "Demos & Examples"
+linkTitle: "Demonstrations"
 weight: 1
 description: Explore the demonstration instance of BitBroker
 ---

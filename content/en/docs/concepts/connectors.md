@@ -1,7 +1,7 @@
 ---
 title: "Data Connectors"
 linkTitle: "Connectors"
-weight: 3
+weight: 4
 description: Data connectors which for allow contribution of data into a BitBroker instance
 ---
 

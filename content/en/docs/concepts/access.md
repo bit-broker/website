@@ -1,7 +1,7 @@
 ---
 title: "Access and Keys"
 linkTitle: "Access"
-weight: 6
+weight: 7
 description: Managing data consumers and their associated data access keys
 ---
 

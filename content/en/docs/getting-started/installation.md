@@ -48,7 +48,38 @@ This flavour of deployment will give you full access to the complete feature set
 This section assumes have already installed [Kubernetes](https://kubernetes.io/) and [Helm](https://helm.sh/) command line tools. It also assumes you have installed and are running [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 {{% /alert %}}
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum._
+#### Prerequisites
+
+Start with a clean machine, with no remnants of previous BitBroker installations. Please ensure you have the following software installed, configured and operational:
+
+* [Kubernetes](https://kubernetes.io/) command line tools
+* [Helm](https://helm.sh/) command line tools
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+Make sure that your current Kubernetes context is `docker-desktop`:
+
+```
+kubectl config get-contexts
+kubectl config use-context docker-desktop
+```
+
+Create a brand new directory to act as a workspace for you installation:
+
+```
+mkdir bbk
+cd bbk
+```
+
+#### Installation
+
+
+
+
+
+
+
+
+
 
 ### Docker Compose Local Installation
 

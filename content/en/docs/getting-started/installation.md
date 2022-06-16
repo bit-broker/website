@@ -168,18 +168,19 @@ Like all BitBroker API end-points, these requires a working [authorisation](/doc
 
 If you want to completely uninstall this instance of BitBroker, you can follow these steps:
 
-```
+```shell
 helm uninstall bit-broker -n bit-broker
 kubectl delete -f https://app.getambassador.io/yaml/emissary/2.2.2/emissary-crds.yaml
 kubectl delete namespace bit-broker
 helm repo remove bit-broker
+docker ps -a | grep "bbkr/" | awk '{print $1}' | xargs docker rm
 rm values_local.*
 ```
 
 This will remove all the key elements which were created as part of the installation. If you want to go further and clear out all the [images](https://kubernetes.io/docs/concepts/containers/images/) which were downloaded too, use the following:
 
-```
-todo
+```shell
+docker images -a | grep "bbkr/" | awk '{print $3}' | xargs docker rmi
 ```
 
 ### Docker Compose Local Installation

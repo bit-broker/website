@@ -180,7 +180,7 @@ rm values_local.*
 This will remove all the key elements which were created as part of the installation. If you want to go further and clear out all the [images](https://kubernetes.io/docs/concepts/containers/images/) which were downloaded too, use the following:
 
 ```shell
-docker images -a | grep "bbkr/" | awk '{print $3}' | xargs docker rmi
+docker images -a | grep "bbkr/" | awk '{print $3}' | uniq | xargs docker rmi
 ```
 
 ### Docker Compose Local Installation

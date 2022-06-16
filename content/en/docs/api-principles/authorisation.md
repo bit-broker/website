@@ -71,7 +71,11 @@ Coordinator keys are obtained by utilising end-points on the Coordinator API, in
 Once you promote a user to be a coordinator, then their coordinator key will be returned in the body of the [response to that API call](/docs/coordinator/user/#promoting-a-user-to-coordinator).
 
 {{% alert color="info" %}}
-Fresh BitBroker installations come with a [bootstrap coordinator](todo) and with an associated [coordinator key](todo). It is possible, but _not recommended_, to use this boostrap user in normal operation. Instead, you should use the bootstrap key to create your own master coordinator user and then utilisie their key for further operations.
+Fresh BitBroker [installations](/docs/getting-started/installation/) come with a bootstrap coordinator user and with an associated [bootstrap coordinator token](/docs/getting-started/installation/#bootstrap-coordinator-token).
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+It is possible, but _not recommended_, to use the boostrap user in normal operation. Instead, you should use the [bootstrap coordinator token](/docs/getting-started/installation/#bootstrap-coordinator-token) to create your own master coordinator user and then utilisie their key for further operations.
 {{% /alert %}}
 
 If a coordinator key is lost, then a new key will have to be generated. This can be done by first [demoting the user](/docs/coordinator/user/#demoting-a-user-from-coordinator) from being a coordinator and then [promoting them](/docs/coordinator/user/#promoting-a-user-to-coordinator) again. Note that, in this scenario, the old coordinator key will be rescinded.

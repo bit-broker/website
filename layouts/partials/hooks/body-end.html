@@ -19,12 +19,15 @@ window.cookieconsent.initialise({
 
 window.onload = function() {
     document.querySelector("input#access-token").addEventListener("change", function(event) {
-        let TOKEN_HEADER = "x-bbk-auth-token:";
-        let TOKEN_PLACEHOLDER = "your-token-goes-here"
+        const TOKEN_HEADER = "x-bbk-auth-token:";
+        const TOKEN_PLACEHOLDER = "your-token-goes-here"
+
+        let entered = event.target.value.trim();
+        let token = entered.length ? entered : TOKEN_PLACEHOLDER;
 
         Array.from(document.getElementsByClassName("token string")).forEach(function(element) {
             if (element.textContent.includes(TOKEN_HEADER)) {
-                element.textContent = `"${ TOKEN_HEADER} ${ event.target.value.length ? event.target.value : TOKEN_PLACEHOLDER }"`;
+                element.textContent = `"${ TOKEN_HEADER } ${ token }"`;
             }
         });
     });

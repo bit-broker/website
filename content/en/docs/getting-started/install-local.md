@@ -22,6 +22,12 @@ As we will explain below, this user is linked to the [authorisation](/docs/api-p
 It is possible, but _not recommended_, to use the bootstrap user in normal operation. Instead, you should create your own master coordinator user and then use that for further operations.
 {{% /alert %}}
 
+### Development Only Headers
+
+{{% alert color="warning" %}}
+TODO
+{{% /alert %}}
+
 ### Docker Compose Local Installation
 
 In the section we will explore how to you can use our pre-prepared Docker Compose files to install a BitBroker instance on your local machine.
@@ -35,7 +41,7 @@ This section assumes you are familiar with [Containers](https://www.docker.com/r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-principles/authorisation/) will be bypassed. You will need to user [alternative development headers](todo) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-principles/authorisation/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -130,7 +136,7 @@ This type of install is suitable for _development purposes_ only.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-principles/authorisation/) will be bypassed. You will need to user [alternative development headers](todo) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-principles/authorisation/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}

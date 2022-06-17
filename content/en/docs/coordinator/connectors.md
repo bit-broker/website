@@ -46,7 +46,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
 ```
 
-The body of this response will contain the [connector ID](todo) and [connector key](todo) which the new data connector should utilise to make it's [data contributions](/docs/contributor/). For example:
+The body of this response will contain the connector ID and [connector key](/docs/api-principles/authorisation/) which the new data connector should utilise to make it's [data contributions](/docs/contributor/). For example:
 
 ```js
 {

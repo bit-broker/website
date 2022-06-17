@@ -95,7 +95,7 @@ Losing contributor keys can cause major distruption. Since the resolution involv
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Recreating a connector which was previously deleted, will result in the same [connector ID](todo), if the new connector has the exact same name.
+Recreating a connector which was previously deleted, will result in the same connector ID, if the new connector has the exact same name.
 {{% /alert %}}
 
 It is expected that the coordinator user who creates the data connector, will distribute the contribution key in a secure manner to the relevant party.

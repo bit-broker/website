@@ -31,7 +31,7 @@ _If_ you choose to stick to this convention, you will need to map these name to 
 
 #### Server Ports
 
-Each API service listens on a distinct, non-clashing port. Unless you configure it otherwise, even the [docker images](todo) are designed to start each service on its designated port.
+Each API service listens on a distinct, non-clashing port. Unless you configure it otherwise, even the [docker images](/docs/getting-started/install-local/#docker-compose-local-installation) are designed to start each service on its designated port.
 
 This port mapping makes it simple and unambiguous to bring up multiple (or indeed all) of these API services on the same physical machine, without them interfering with each other. The assigned service ports are as follows:
 

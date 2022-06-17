@@ -93,7 +93,7 @@ helm install --values values.yaml \
                bit-broker/bit-broker
 ```
 
-This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](todo), and you can ignore these for now.
+This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](/docs/getting-started/configuration/#advanced-use-cases), and you can ignore these for now.
 
 It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
 
@@ -243,7 +243,7 @@ helm install --values values_local.yaml \
                bit-broker/bit-broker
 ```
 
-This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](todo), and you can ignore these for now.
+This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](/docs/getting-started/configuration/#advanced-use-cases), and you can ignore these for now.
 
 It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
 

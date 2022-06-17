@@ -2,7 +2,7 @@
 ---
 title: "Configuring BitBroker"
 linkTitle: "Configuration"
-weight: 3
+weight: 4
 description: Configuration options for a BitBroker instance
 ---
 

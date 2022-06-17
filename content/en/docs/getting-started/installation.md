@@ -1,4 +1,3 @@
-
 ---
 title: "Installing BitBroker"
 linkTitle: "Installations"
@@ -30,7 +29,55 @@ This flavour of deployment will give you full access to the complete BitBroker f
 This section assumes have already installed [Kubernetes](https://kubernetes.io/) and [Helm](https://helm.sh/) command line tools.
 {{% /alert %}}
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum._
+#### Installation
+
+Add Helm repo, generate a JWKS and install Emissary Ingress CRDs
+
+```shell
+helm repo add bit-broker https://bit-broker.github.io/charts
+JWKS=$(docker run bbkr/auth-service:latest npm run --silent create-jwks)
+kubectl apply -f https://app.getambassador.io/yaml/emissary/2.2.2/emissary-crds.yaml
+```
+
+Save BitBroker default chart values
+
+```shell
+helm show values bit-broker/bit-broker > values.yaml
+```
+
+Update the `values.yaml` with the gateway required values:
+
+- Host address: Your base DNS host
+- SSL: Either enable `certificateIssuer` for automatic certificates with Let's Encrypt or setup your own `tlsSecret` secret
+
+Deploy BitBroker with Helm with the selected values
+
+```shell
+helm install --values values.yaml --create-namespace bit-broker bit-broker/bit-broker -n bit-broker
+```
+
+#### DNS Alias
+
+Get BitBroker service load balancer address
+
+```shell
+kubectl get svc --no-headers -o custom-columns=":status.loadBalancer.ingress[0].hostname" --selector=app.kubernetes.io/name=bbk-emissary-ingress -n bit-broker | head -1
+```
+
+Add a DNS ALIAS with your configured Host address
+
+{{% alert color="info" %}}
+Depending on the domain the procedure and naming terminology might be different.
+Here is an example documentation for AWS's [Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/route-53-create-alias-records/).
+{{% /alert %}}
+
+##### Bootstrap Coordinator Token
+
+Refer to the instruction below
+
+#### Testing Your Installation
+
+Refer to the instruction below
 
 ### Kubernetes Local Installation
 
@@ -52,10 +99,10 @@ This section assumes have already installed [Kubernetes](https://kubernetes.io/)
 
 Start with a clean machine, with no remnants of previous BitBroker installations. Please ensure you have the following software installed, configured and operational:
 
-* [Kubernetes](https://kubernetes.io/) command line tools
-* [Helm](https://helm.sh/) command line tools
-* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-* [cURL](https://curl.se/) command line tool
+- [Kubernetes](https://kubernetes.io/) command line tools
+- [Helm](https://helm.sh/) command line tools
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- [cURL](https://curl.se/) command line tool
 
 {{% alert color="warning" %}}
 Before starting, make sure that Kubernetes is enabled within Docker Desktop. Settings » Kubernetes » Enable Kubernetes.
@@ -127,7 +174,7 @@ A key thing to note is the results output, is the section which says: "Here is h
 
 All interactions with BitBroker stem, ultimately, from interactions with the [Coordinator API](/docs/coordinator/). This is the main administrative API for the whole system. In order to use this API you need an [access token](/docs/api-principles/authorisation/).
 
-Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator)  to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can be get started with this circular scenario?
+Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator) to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can be get started with this circular scenario?
 
 Whenever a fresh system is installed, a special _bootstrap coordinator token_ is produced. This token is valid for use with the [Coordinator API](/docs/coordinator/). You can use this token to get going with the process of then creating your own users and giving them coordinator status.
 

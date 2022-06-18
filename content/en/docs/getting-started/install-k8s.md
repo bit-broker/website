@@ -120,7 +120,7 @@ This is a long command and it will take a few seconds to complete. It will outpu
 If everything worked as expected, the BitBroker API servers will be up-and-running in your cloud waiting for calls. You can test this by using the sample call below:
 
 {{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
+Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ```shell
@@ -270,7 +270,7 @@ This is a long command and it will take a few seconds to complete. It will outpu
 If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below:
 
 {{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input id="access-token" type="text" size="64" placeholder="paste token here">
+Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ```shell

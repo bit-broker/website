@@ -15,20 +15,33 @@ window.cookieconsent.initialise({
     "showLink": false
 });
 
-// --- initialise API token replacement
+// --- installs code replacement items
 
 window.onload = function() {
-    document.querySelector("input#access-token").addEventListener("change", function(event) {
-        const TOKEN_HEADER = "x-bbk-auth-token:";
-        const TOKEN_PLACEHOLDER = "your-token-goes-here"
 
-        let entered = event.target.value.trim();
-        let token = entered.length ? entered : TOKEN_PLACEHOLDER;
+    var codes = []; // stores pre-changed code
+    var items = {}; // stores replacement items
 
-        Array.from(document.getElementsByClassName("token string")).forEach(function(element) {
-            if (element.textContent.includes(TOKEN_HEADER)) {
-                element.textContent = `"${ TOKEN_HEADER } ${ token }"`;
-            }
+    Array.from(document.querySelectorAll(".code-toolbar code")).forEach(function(element) {
+        element.setAttribute("id", `code_${ codes.length }`);  // zero based
+        codes.push(element.innerHTML);
+    });
+
+    Array.from(document.querySelectorAll("input.code-replace")).forEach(function(element) {
+        element.addEventListener("change", function(event) {
+            items[event.target.getAttribute('data-item')] = encodeURI(event.target.value.trim()); // always encode to preven XSS attacks
+
+            for (let i = 0 ; i < codes.length ; i++) {
+                let code = codes[i];
+
+                for (item in items) {
+                    if (items[item].length) {
+                       code = code.replaceAll(item, items[item]);
+                    }
+                }
+
+                document.getElementById(`code_${ i }`).innerHTML = code;
+            };
         });
     });
 };

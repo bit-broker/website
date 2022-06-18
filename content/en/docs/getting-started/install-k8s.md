@@ -57,7 +57,7 @@ This type of deployment will give you full access to the complete BitBroker feat
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-In all the sample calls below, we use the placeholder text `https://your-cloud-host`. Enter your cloud host base URL into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
+In all the sample calls below, we use the placeholder text `https://your-cloud-host` for the host base URL. Enter your cloud host base URL into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
 {{% /alert %}}
 
 #### Prerequisites

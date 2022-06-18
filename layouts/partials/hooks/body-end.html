@@ -65,7 +65,7 @@ window.onload = function() {
 
                 for (let j in items) {
                     if (items[j].value.length) {
-                       code = code.replaceAll(item, items[j].value);
+                       code = code.replaceAll(j, items[j].value);
                     }
                 }
 

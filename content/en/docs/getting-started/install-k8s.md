@@ -52,6 +52,11 @@ This section assumes you are familiar with [Kubernetes](https://kubernetes.io/) 
 This type of deployment will give you full access to the complete BitBroker feature set, including full policy enforcement. The system will be accessible to anyone to whom you grant access.
 {{% /alert %}}
 
+{{% alert color="primary" %}}
+In all the sample code below, we use the placeholder text `https://your-cloud-host`. Enter your cloud host base URL into the box below, in order to update the sample code with your cloud details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
+
+{{% /alert %}}
+
 #### Prerequisites
 
 Start with a clean machine, with no remnants of previous BitBroker installations. Please ensure you have the following software installed, configured and operational:
@@ -98,7 +103,7 @@ This step takes a few moments to complete. After it has finished, you will see a
 It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
 
 ```shell
-if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /dev/null http://your-cloud-host/coordinator/v1) == "401" ]; then echo "Ready"; else echo "Not Ready"; fi;
+if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /dev/null https://your-cloud-host/coordinator/v1) == "401" ]; then echo "Ready"; else echo "Not Ready"; fi;
 ```
 
 This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals its OK to proceed.
@@ -120,11 +125,11 @@ This is a long command and it will take a few seconds to complete. It will outpu
 If everything worked as expected, the BitBroker API servers will be up-and-running in your cloud waiting for calls. You can test this by using the sample call below:
 
 {{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" type="text" size="64" placeholder="paste token here">
+Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ```shell
-curl http://your-cloud-host/coordinator/v1 \
+curl https://your-cloud-host/coordinator/v1 \
      --header "x-bbk-auth-token: your-token-goes-here"
 ```
 
@@ -134,7 +139,7 @@ The base routes of all the three API servers respond with a small announcement:
 {
     "now": "2022-06-16T10:44:53.970Z",
     "name": "bit-broker coordinator service",
-    "base": "http://your-cloud-host/coordinator/v1",
+    "base": "https://your-cloud-host/coordinator/v1",
     "status": "production"
 }
 ```
@@ -270,7 +275,7 @@ This is a long command and it will take a few seconds to complete. It will outpu
 If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below:
 
 {{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" type="text" size="64" placeholder="paste token here">
+Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 
 ```shell

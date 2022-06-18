@@ -19,7 +19,7 @@ window.cookieconsent.initialise({
 
 window.onload = function() {
 
-    const MAX_LENGTH = 1024;
+    const LENGTH = { MAX: 1024, DISPLAY: 32 };
 
     var codes = []; // stores pre-changed code
     var items = {}; // stores replacement items
@@ -29,9 +29,23 @@ window.onload = function() {
         codes.push(element.innerHTML);
     });
 
-    Array.from(document.querySelectorAll("input.code-replace")).forEach(function(element) {
+    Array.from(document.querySelectorAll("input.code-replace")).forEach(function(element, index) {
+        let ack = document.createElement("div");
+        ack.setAttribute("id", `ack_${ index }`);
+        ack.style["margin-top"] = "8px";
+        ack.style["display"] = "none";
+        ack.innerHTML = "<span class=\"text-success\"><small>&nbsp;</small></span>";
+        element.parentNode.appendChild(ack);
+        element.setAttribute("data-ack", ack.getAttribute("id"));
+
         element.addEventListener("change", function(event) {
-            items[event.target.getAttribute('data-item')] = encodeURI(event.target.value.trim().substr(0, MAX_LENGTH)); // always encode to preven XSS attacks
+            let ackid = event.target.getAttribute("data-ack");
+            let item = event.target.getAttribute("data-item");
+            let name = event.target.getAttribute("data-name");
+            let value = event.target.value.trim().substr(0, LENGTH.MAX).replace(/\/+$/, ""); // removes trailing slashes
+
+            value = encodeURI(value); // always encode to prevent XSS attacks
+            items[item] = value;
 
             for (let i = 0 ; i < codes.length ; i++) {
                 let code = codes[i];
@@ -44,6 +58,10 @@ window.onload = function() {
 
                 document.getElementById(`code_${ i }`).innerHTML = code;
             };
+
+            let display = value.length < LENGTH.DISPLAY ? value : value.substr(0, LENGTH.DISPLAY) + '&hellip;';
+            document.querySelector(`#${ ackid } span small`).innerHTML = `Code samples <b>${ name }</b> updated with '${ display }'`;
+            document.querySelector(`#${ ackid }`).style["display"] = value.length ? "block" : "none";
         });
     });
 };

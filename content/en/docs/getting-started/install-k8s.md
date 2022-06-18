@@ -40,6 +40,10 @@ The bootstrap coordinator token is a different (longer) format, to normal coordi
 
 The detailed install steps below, will contain more information about how to extract and use this bootstrap token.
 
+{{% alert color="primary" %}}
+In all the sample calls below, we use a placeholder value for the bootstrap token. Enter your bootstrap coordinator token into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="bootstrap-token-goes-here" data-name="bootstrap token" type="text" size="64" placeholder="paste token here">
+{{% /alert %}}
+
 ### Cloud Kubernetes Installation
 
 In the section we will explore how to you can use our pre-prepared Helm charts to install a complete BitBroker instance into your cloud of choice. These charts will be downloaded directly from [Docker Hub](https://hub.docker.com/search?q=bbkr).
@@ -53,8 +57,7 @@ This type of deployment will give you full access to the complete BitBroker feat
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-In all the sample code below, we use the placeholder text `https://your-cloud-host`. Enter your cloud host base URL into the box below, in order to update the sample code with your cloud details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
-
+In all the sample calls below, we use the placeholder text `https://your-cloud-host`. Enter your cloud host base URL into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
 {{% /alert %}}
 
 #### Prerequisites
@@ -124,13 +127,11 @@ This is a long command and it will take a few seconds to complete. It will outpu
 
 If everything worked as expected, the BitBroker API servers will be up-and-running in your cloud waiting for calls. You can test this by using the sample call below:
 
-{{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
-{{% /alert %}}
+
 
 ```shell
 curl https://your-cloud-host/coordinator/v1 \
-     --header "x-bbk-auth-token: your-token-goes-here"
+     --header "x-bbk-auth-token: bootstrap-token-goes-here"
 ```
 
 The base routes of all the three API servers respond with a small announcement:
@@ -274,13 +275,9 @@ This is a long command and it will take a few seconds to complete. It will outpu
 
 If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below:
 
-{{% alert color="primary" %}}
-Paste in your bootstrap coordinator token into the box below, in order to update the sample call:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
-{{% /alert %}}
-
 ```shell
 curl http://localhost/coordinator/v1 \
-     --header "x-bbk-auth-token: your-token-goes-here"
+     --header "x-bbk-auth-token: bootstrap-token-goes-here"
 ```
 
 The base routes of all the three API servers respond with a small announcement:

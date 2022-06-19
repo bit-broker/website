@@ -3,6 +3,11 @@
     display: none;
 }
 
+input.code-replace {
+    min-width: 100%;
+    max-width: 100%;
+}
+
 .td-content .toggle {
 
     .mode-dev {

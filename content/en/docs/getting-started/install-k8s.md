@@ -83,15 +83,29 @@ kubectl config get-contexts
 
 #### Installation
 
-First let's prepare the charts we want install:
+First let's prepare the context we want install:
 
 ```shell
+helm repo add bit-broker https://bit-broker.github.io/charts
 JWKS=$(docker run bbkr/auth-service:latest npm run --silent create-jwks)
 kubectl apply -f https://app.getambassador.io/yaml/emissary/2.2.2/emissary-crds.yaml
-helm repo add bit-broker https://bit-broker.github.io/charts
 ```
 
-Now we are ready to run the cloud installation:
+Next let's extract and save the default chart values:
+
+```shell
+helm show values bit-broker/bit-broker > values.yaml
+```
+
+Next update `values.yaml` with your required values:
+
+Value | Description
+--- | ---
+`global.portal.host` | Your base DNS host
+`global.gateway.certificateIssuer` | Set to `true` for automatic certificates with Let's Encrypt
+`global.gateway.tlsSecret` | if `certificateIssuer` is false, setup your own secret here
+
+Now we are ready to run the cloud installation with the selected values:
 
 ```shell
 helm install --values values.yaml \
@@ -110,6 +124,16 @@ if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /de
 ```
 
 This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals its OK to proceed.
+
+##### Installing a DNS Alias
+
+If you want to add an alias to this installation into your [DNS record](https://en.wikipedia.org/wiki/Domain_Name_System), then you need to first get the service load balancer address:
+
+```shell
+kubectl get svc --no-headers -o custom-columns=":status.loadBalancer.ingress[0].hostname" --selector=app.kubernetes.io/name=bbk-emissary-ingress -n bit-broker | head -1
+```
+
+Then you can use this to add an ALIAS into your DNS record. Depending on the domain and the registrar, the procedure and naming terminology will be different. Here is an example procedure for AWS's [Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/route-53-create-alias-records/).
 
 ##### Bootstrap Coordinator Token
 
@@ -219,12 +243,12 @@ kubectl config use-context docker-desktop
 
 #### Installation
 
-First let's prepare the charts we want install:
+First let's prepare the context we want install:
 
 ```shell
+helm repo add bit-broker https://bit-broker.github.io/charts
 JWKS=$(docker run bbkr/auth-service:latest npm run --silent create-jwks)
 kubectl apply -f https://app.getambassador.io/yaml/emissary/2.2.2/emissary-crds.yaml
-helm repo add bit-broker https://bit-broker.github.io/charts
 ```
 
 Our pre-prepared Helm charts are, by default, configured for production, cloud environments. However, here we want to install to `localhost` only. So we need to make some modifications to the default chart to cater for this:

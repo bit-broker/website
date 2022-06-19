@@ -11,7 +11,7 @@ All the API sets within BitBroker require authorisation by callers. Whilst the p
 * [Contributor API](/docs/contributor/) - needed to contribute data to a designated entity type
 * [Consumer API](/docs/consumer/) - needed to access data via a policy definition
 
-Except in some [development modes](/docs/getting-started/installation/), there is no access to BitBroker services without authorisation and hence without having a corresponding authorisation key.
+Except in some [development modes](/docs/getting-started/install-local/#development-only-headers), there is no access to BitBroker services without authorisation and hence without having a corresponding authorisation key.
 
 #### Authorising API calls
 

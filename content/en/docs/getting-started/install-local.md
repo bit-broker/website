@@ -52,9 +52,23 @@ Consumer API | `8003`
 
 ### Development Only Headers
 
-{{% alert color="warning" %}}
-TODO
-{{% /alert %}}
+When installing BitBroker locally, [authorisation](/docs/api-conventions/authorisation/) is bypassed. In this scenario, you do _not_ need to supply authorisation tokens to any API.
+
+However, when using the [Consumer API](/docs/consumer/), you do still need to specify the policy you are using. This is so that BitBroker is aware of the [data segment](/docs/concepts/policy/#data-segment) which is in-play for consumer calls. This is achieved by specifying a development header value.
+
+Rather than the authorisation header:
+
+```
+x-bbk-auth-token: your-token-will-go-here
+```
+
+You _instead_ use the development header, as follows:
+
+```
+x-bbk-audience: your-policy-id-will-go-here
+```
+
+Failure to specify the development header on [Consumer API](/docs/consumer/) calls when in local mode, will lead to those requests being rejected.
 
 ### Bootstrap User
 

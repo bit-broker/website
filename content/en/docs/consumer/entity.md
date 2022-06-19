@@ -22,7 +22,23 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
+The Consumer API can be run in production _or_ development mode; each requiring a different header. If you are running a [local installation](/docs/getting-started/install-local/) of BitBroker, then you can switch the sample calls on this page to development mode by activating the toggle below. If you are unsure, leave this toggle off.<br/>
+<div class="toggle">
+  <label class="switch">
+    <input class="header" type="checkbox">  
+    <span class="slider">
+      <span>Apply development mode</span>
+    </span>
+  </label>
+</div>
+{{% /alert %}}
+
+{{% alert id="mode-prd" color="primary" %}}
+All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="paste token here">
+{{% /alert %}}
+
+{{% alert id="mode-dev" color="primary" %}}
+When installing BitBroker locally, [authorisation](/docs/api-conventions/authorisation/) is bypassed. In this scenario, you need to specify the policy you are using in a [development header](/docs/getting-started/install-local/#development-only-headers). Enter your desired policy in the box below to update all the sample calls on this page:<br/><br/>_Your Current Policy_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="paste token here" value="access-all-areas">
 {{% /alert %}}
 
 ### Entity Types Lists
@@ -31,7 +47,7 @@ You can query for a list of known entity types by issuing an `HTTP/GET` to the `
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity \
-     --header "x-bbk-auth-token: your-token-goes-here"
+     --header "x-bbk-auth-token: your-header-goes-here"
 ```
 
 This will return a JSON array as follows:
@@ -66,7 +82,7 @@ You can query for a list of entity instances of a given entity type by issuing a
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity/country \
-     --header "x-bbk-auth-token: your-token-goes-here"
+     --header "x-bbk-auth-token: your-header-goes-here"
 ```
 
 This will return an empty JSON array as follows:
@@ -110,7 +126,7 @@ You can ger the details of a particular entity instance by issuing an `HTTP/GET`
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0 \
-     --header "x-bbk-auth-token: your-token-goes-here"
+     --header "x-bbk-auth-token: your-header-goes-here"
 ```
 
 This will return a JSON object as follows:

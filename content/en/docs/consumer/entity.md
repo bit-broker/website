@@ -18,6 +18,10 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
+In our sample calls, we use the standard [server name and port](/docs/getting-started/install-local/#server-naming-and-ports) format outlined for [local installations](/docs/getting-started/install-local/) and [demos](/docs/getting-started/demo/). If you have an alternative API host base URL, then enter it in the box below to update all the sample calls on this page :<br/><br/>_Your API Host Base URL_<br/><input class="code-replace" data-item="http://bbk-consumer:8003" data-name="base url" type="text" size="64" placeholder="paste url here">
+{{% /alert %}}
+
+{{% alert color="primary" %}}
 All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" size="64" placeholder="paste token here">
 {{% /alert %}}
 

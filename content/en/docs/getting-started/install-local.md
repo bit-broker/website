@@ -14,7 +14,7 @@ In this section, we will cover in detail and step-by-step, all the different way
 
 ### Server Naming and Ports
 
-For consistency across the system, in local and development mode we use a set of standard _logical server names and ports_ for addressing the three principle API services.
+For consistency across the system, in local and development mode we use a set of standard _logical server name and port_ for addressing the three principle API services.
 
 This helps with readability and removes ambiguity, since some APIs share resource names. Also it reduces confusion, if you start multiple API servers on the same physical machine.
 
@@ -142,7 +142,7 @@ If everything worked as expected, the BitBroker API servers will be up-and-runni
 curl http://bbk-coordinator:8001/v1
 ```
 
-The base routes of all the three API servers respond with a small announcement:
+If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base routes of all the three API servers respond with a small announcement:
 
 ```js
 {
@@ -281,7 +281,7 @@ If everything worked as expected, the BitBroker API servers will be up-and-runni
 curl http://bbk-coordinator:8001/v1
 ```
 
-The base routes of all the three API servers respond with a small announcement:
+If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base routes of all the three API servers respond with a small announcement:
 
 ```js
 {

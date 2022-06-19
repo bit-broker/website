@@ -134,7 +134,7 @@ curl https://your-cloud-host/coordinator/v1 \
      --header "x-bbk-auth-token: bootstrap-token-goes-here"
 ```
 
-The base routes of all the three API servers respond with a small announcement:
+The base end-points of all the three API servers respond with a small announcement:
 
 ```js
 {
@@ -145,7 +145,7 @@ The base routes of all the three API servers respond with a small announcement:
 }
 ```
 
-Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these require a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 
@@ -280,7 +280,7 @@ curl http://localhost/coordinator/v1 \
      --header "x-bbk-auth-token: bootstrap-token-goes-here"
 ```
 
-The base routes of all the three API servers respond with a small announcement:
+The base end-points of all the three API servers respond with a small announcement:
 
 ```js
 {
@@ -291,7 +291,7 @@ The base routes of all the three API servers respond with a small announcement:
 }
 ```
 
-Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these require a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 

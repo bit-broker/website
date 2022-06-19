@@ -25,26 +25,11 @@ The header must be exactly as appears here with the same casing and without spac
 
 ##### Testing your Authorisation Key
 
-If can be useful to make test calls to the API to check that your key is valid and that your authorisation header is formatted correctly.
+It can be useful to make test calls to the API to check that your key is valid and that your authorisation header is formatted correctly.
 
-Each of the three API sets have a test end-point which can be used for this purpose. This is simply the base end-point of each service:
+The base end-point of all the three API servers respond with a small announcement. Like all BitBroker API end-points, these require a working authorisation to be in place. Hence, this announcement can be used for testing or verification purposes.
 
-API Service | Test End-point
---- | ---
-Coordinator API | `http://bbk-coordinator:8001/v1/`
-Contributor API | `http://bbk-contributor:8002/v1/`
-Consumer API | `http://bbk-consumer:8003/v1/`
-
-In each case, this returns a simple JSON structure as follows:
-
-```js
-{
-    "now": "2022-06-06T13:43:19.538Z",
-    "name": "bit-broker consumer service",
-    "base": "http://bbk-consumer:8003/v1",
-    "status": "production"
-}
-```
+See the section on testing installations for [Kubernetes](/docs/getting-started/install-k8s/#testing-your-installation) or [local](/docs/getting-started/install-local/#testing-your-installation) modes for more details.
 
 You are encouraged to make successful test calls to these end-points before launching into more complex scenarios.
 

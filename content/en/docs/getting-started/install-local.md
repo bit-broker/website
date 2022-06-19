@@ -142,7 +142,7 @@ If everything worked as expected, the BitBroker API servers will be up-and-runni
 curl http://bbk-coordinator:8001/v1
 ```
 
-If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base routes of all the three API servers respond with a small announcement:
+If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base end-points of all the three API servers respond with a small announcement:
 
 ```js
 {
@@ -281,7 +281,7 @@ If everything worked as expected, the BitBroker API servers will be up-and-runni
 curl http://bbk-coordinator:8001/v1
 ```
 
-If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base routes of all the three API servers respond with a small announcement:
+If you have not applied the standard [server name and port](#server-naming-and-ports) format, then you should use `http://localhost:8001` here as your API host base URL. The base end-points of all the three API servers respond with a small announcement:
 
 ```js
 {

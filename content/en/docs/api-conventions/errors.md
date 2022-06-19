@@ -1,7 +1,7 @@
 ---
 title: "Error Handling"
 linkTitle: "Errors"
-weight: 4
+weight: 3
 description: How API errors are handled and communicated
 ---
 

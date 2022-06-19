@@ -1,7 +1,7 @@
 ---
 title: "Authorisation and Tokens"
 linkTitle: "Authorisation"
-weight: 3
+weight: 2
 description: How to send authorised requests to BitBroker APIs
 ---
 

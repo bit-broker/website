@@ -71,13 +71,13 @@ This [example connector](https://github.com/bit-broker/examples/tree/main/connec
 
 * Initial dataset loaded from a file over HTTP
 * Supports for a range of file types: [JSON](https://www.json.org/json-en.html), [Microsoft Excel](https://www.microsoft.com/en-gb/microsoft-365/excel), [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), etc
-* Implements [catalog](http://localhost:1313/docs/concepts/catalog/) updating via [sessions](http://localhost:1313/docs/contributor/records/#sessions)
-* Implements all [webhook](http://localhost:1313/docs/contributor/webhooks/) end-points
+* Implements [catalog](/docs/concepts/catalog/) updating via [sessions](/docs/contributor/records/#sessions)
+* Implements all [webhook](/docs/contributor/webhooks/) end-points
 
 #### NodeJS » RDBMS
 
 This [example connector](https://github.com/bit-broker/examples/tree/main/connectors/nodejs/rdbms) is implemented in [NodeJS](https://nodejs.org/en/) and uses a [PostgreSQL](https://www.postgresql.org/) database as its source data store. Key characteristics of this connector are:
 
 * Initial dataset loaded via [SQL](https://en.wikipedia.org/wiki/SQL) calls on a [relational database](https://en.wikipedia.org/wiki/Relational_database#RDBMS)
-* Implements [catalog](http://localhost:1313/docs/concepts/catalog/) updating via [sessions](http://localhost:1313/docs/contributor/records/#sessions)
-* Implements all [webhook](http://localhost:1313/docs/contributor/webhooks/) end-points
+* Implements [catalog](/docs/concepts/catalog/) updating via [sessions](/docs/contributor/records/#sessions)
+* Implements all [webhook](/docs/contributor/webhooks/) end-points

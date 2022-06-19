@@ -1,8 +1,8 @@
 ---
-title: "API Principles"
-linkTitle: "API Principles"
+title: "API Conventions"
+linkTitle: "API Conventions"
 weight: 3
-description: Foundational principles which cut-across all the BitBroker API sets
+description: Foundational conventions which cut-across all the BitBroker API sets
 ---
 
 All the APIs within BitBroker conform to a common set of core principles. These are consistently applied across each API set:

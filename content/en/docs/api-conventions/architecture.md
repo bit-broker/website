@@ -1,6 +1,6 @@
 ---
-title: "API Structure and Format"
-linkTitle: "API Structure"
+title: "API Architecture"
+linkTitle: "Architecture"
 weight: 1
 description: How the APIs are structured and formatted
 ---
@@ -38,14 +38,14 @@ HTTP Response | Type | API Call State
 `HTTP/1.1 201 Created` | <div class="stamp">success</div> | The requested resource was successfully created - _the new resources URI will be returned in the `Location` attribute of the response header_
 `HTTP/1.1 204 OK` | <div class="stamp">success</div> | The request completed successfully, but there is _no data_ in the response body
 `HTTP/1.1 400 Bad Request` | <div class="stamp text-warning">error</div> | The request was rejected because it resulted in validation errors - _for example, a mandatory attribute was not sent in the request_
-`HTTP/1.1 401 Unauthorized` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an unapproved context - _for example, a supplied access key was not valid or has expired (most often a failure of [authorisation](/docs/api-principles/authorisation/))_
+`HTTP/1.1 401 Unauthorized` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an unapproved context - _for example, a supplied access key was not valid or has expired (most often a failure of [authorisation](/docs/api-conventions/authorisation/))_
 `HTTP/1.1 403 Forbidden` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an invalid or expired context - _for example, a supplied access key referring to a deleted policy_
 `HTTP/1.1 404 Not Found` | <div class="stamp text-warning">error</div> | The request was rejected because the specified resource is not present
 `HTTP/1.1 405 Method Not Allowed` | <div class="stamp text-warning">error</div> | The request was rejected because the action is not permitted - _for example, a user deleting themselves_
 `HTTP/1.1 409 Conflict` | <div class="stamp text-warning">error</div> | The request was rejected because the action would cause a conflict on existing resource state - _for example, creating a policy with a duplicate id_
 `HTTP/1.1 429 Too Many Requests` | <div class="stamp text-warning">error</div> | The request was rejected because a limit has been exceeded - _for example, the [policy defined](/docs/concepts/policy/) call rate or call quota has been breached_
 
-Whenever you receive an error response (`HTTP/1.1 4**`), the response body will contain further information within a [standard error response](/docs/api-principles/errors/) format.
+Whenever you receive an error response (`HTTP/1.1 4**`), the response body will contain further information within a [standard error response](/docs/api-conventions/errors/) format.
 
 {{% alert color="warning" %}}
 Responses of `HTTP/1.1 500 Server Error` should never be returned in normal operation. If you see such an error, do help us to identify and rectify the underlying problem. Please [raise an issue](https://github.com/bit-broker/bit-broker/issues) in our GitHub repositary describing, in as much detail as possible, the circumstances which lead to the error.

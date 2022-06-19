@@ -12,7 +12,7 @@ All Consumer API calls happen in the context of a [data sharing policy](/docs/co
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-Before you use this API, you should become familiar with the general, system-wide [API principles](/docs/api-principles/) - which are used across all three BitBroker API sets. This covers topics such as API structures, error reporting and handling, authorisation, server names and ports, etc.
+Before you use this API, you should become familiar with the general, system-wide [API conventions](/docs/api-conventions/) - which are used across all three BitBroker API sets. This covers topics such as API architecture, authorisation, error reporting and handling, etc.
 {{% /alert %}}
 
 #### Paging Lists
@@ -30,7 +30,7 @@ Attribute | Necessity | Description
 `limit` | <div class="stamp">optional</div> | An integer number of data records, between 1 and 250
 `offset` | <div class="stamp">optional</div> | A positive integer index of the earlier desired record
 
-If the paging parameters are incorrect, the API will respond with a [standard validation error](/docs/api-principles/errors/#validation-error-format) containing details of the violation.
+If the paging parameters are incorrect, the API will respond with a [standard validation error](/docs/api-conventions/errors/#validation-error-format) containing details of the violation.
 
 If the specified `offset` is greater than the count of records available, the API will return an empty list. Using `limit` and `offset` you can page your way through long list, getting the entire list a page at a time.
 

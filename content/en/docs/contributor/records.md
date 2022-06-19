@@ -18,7 +18,7 @@ A quick way to get going building your own data connectors is to adapt the [exam
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-principles/authorisation/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-principles/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-conventions/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
@@ -228,7 +228,7 @@ This simple hierarchy of three classes (`global`, `entity` and `instance`) is de
 * They understand that `instance` data is _ad-hoc_ and cannot be relied upon
 
 {{% alert color="warning" %}}
-If any record within the posted record set contains a validation error, then the entire set will be rejected. The call will return an `HTTP/1.1 400 Bad Request` response and the body of the response will contain details of every record validation error which was encountered in the [standard validation error format](/docs/api-principles/errors/#validation-error-format).
+If any record within the posted record set contains a validation error, then the entire set will be rejected. The call will return an `HTTP/1.1 400 Bad Request` response and the body of the response will contain details of every record validation error which was encountered in the [standard validation error format](/docs/api-conventions/errors/#validation-error-format).
 {{% /alert %}}
 
 {{% alert color="info" %}}

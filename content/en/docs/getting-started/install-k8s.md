@@ -20,11 +20,11 @@ For all Kubernetes installations, you should be aware of the ways in which fresh
 
 Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
 
-As we will explain below, this user is linked to the [authorisation](/docs/api-principles/authorisation/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
+As we will explain below, this user is linked to the [authorisation](/docs/api-conventions/authorisation/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
 
 #### Bootstrap Coordinator Token
 
-All interactions with BitBroker stem, ultimately, from interactions with the [Coordinator API](/docs/coordinator/). This is the main administrative API for the whole system. In order to use this API you need an [access token](/docs/api-principles/authorisation/).
+All interactions with BitBroker stem, ultimately, from interactions with the [Coordinator API](/docs/coordinator/). This is the main administrative API for the whole system. In order to use this API you need an [access token](/docs/api-conventions/authorisation/).
 
 Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator)  to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can be get started with this circular scenario?
 
@@ -145,7 +145,7 @@ The base routes of all the three API servers respond with a small announcement:
 }
 ```
 
-Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-principles/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 
@@ -291,7 +291,7 @@ The base routes of all the three API servers respond with a small announcement:
 }
 ```
 
-Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-principles/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these requires a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 

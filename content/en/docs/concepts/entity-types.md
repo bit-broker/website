@@ -37,6 +37,6 @@ However, in other instances, you maybe relying upon second and third parties to 
 
 In scenarios where the contributor community is diverse, it can be helpful to define clear rules as to the nature and quality of the incoming data. Rules can be defined to ensure consistency of data types, formats and representation schemes. It is also vital to ensure semantic alignment between similar concepts being contributed by different users.
 
-This can be achieved within a BitBroker system by specifying a [JSON schema](https://json-schema.org/) per entity type. Once this schema is in place, BitBroker will automatically validate all incoming records against it. Violations will be rejected and contributors [will be informed](/docs/api-principles/errors/#validation-error-format) as to the specific reasons why.
+This can be achieved within a BitBroker system by specifying a [JSON schema](https://json-schema.org/) per entity type. Once this schema is in place, BitBroker will automatically validate all incoming records against it. Violations will be rejected and contributors [will be informed](/docs/api-conventions/errors/#validation-error-format) as to the specific reasons why.
 
 Such schemas are an optional extra and may not be required in all instances. You can specify such schemas at the points you [create](/docs/coordinator/entity-types/#creating-a-new-entity-type) and/or [modify](/docs/coordinator/entity-types/#updating-an-entity-type) entity types.

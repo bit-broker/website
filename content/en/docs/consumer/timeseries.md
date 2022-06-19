@@ -18,7 +18,7 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-In our sample calls, we use the standard [server name and port](/docs/getting-started/install-local/#server-naming-and-ports) format outlined for [local installations](/docs/getting-started/install-local/) and [demos](/docs/getting-started/demo/). If you have an alternative API host base URL, then enter it in the box below to update all the sample calls on this page :<br/><br/>_Your API Host Base URL_<br/><input class="code-replace" data-item="http://bbk-consumer:8003" data-name="base url" type="text" size="64" placeholder="paste url here">
+In our sample calls, we use the standard [server name and port](/docs/getting-started/install-local/#server-naming-and-ports) format outlined for [local installations](/docs/getting-started/install-local/) and [demos](/docs/getting-started/demo/). If you have an alternative API host base URL, then enter it in the box below to update all the sample calls on this page :<br/><br/>_Your API Host Base URL_<br/><input class="code-replace" data-item="http://bbk-consumer:8003" data-name="base url" type="text" size="64" placeholder="enter url here">
 {{% /alert %}}
 
 {{% alert color="primary" %}}
@@ -34,11 +34,11 @@ The Consumer API can be run in production _or_ development mode; each requiring 
 {{% /alert %}}
 
 {{% alert id="mode-prd" color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="paste token here">
+All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="enter token here">
 {{% /alert %}}
 
 {{% alert id="mode-dev" color="primary" %}}
-When installing BitBroker locally, [authorisation](/docs/api-conventions/authorisation/) is bypassed. In this scenario, you need to specify the policy you are using in a [development header](/docs/getting-started/install-local/#development-only-headers). Enter your desired policy in the box below to update all the sample calls on this page:<br/><br/>_Your Current Policy_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="paste token here" value="access-all-areas">
+When installing BitBroker locally, [authorisation](/docs/api-conventions/authorisation/) is bypassed. In this scenario, you need to specify the policy you are using in a [development header](/docs/getting-started/install-local/#development-only-headers). Enter your desired policy in the box below to update all the sample calls on this page:<br/><br/>_Your Current Policy_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" size="64" placeholder="enter policy id here" value="access-all-areas">
 {{% /alert %}}
 
 ### Getting Timeseries Data

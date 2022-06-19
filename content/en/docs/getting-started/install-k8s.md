@@ -41,7 +41,7 @@ The bootstrap coordinator token is a different (longer) format, to normal coordi
 The detailed install steps below, will contain more information about how to extract and use this bootstrap token.
 
 {{% alert color="primary" %}}
-In all the sample calls below, we use a placeholder value for the bootstrap token. Enter your bootstrap coordinator token into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="bootstrap-token-goes-here" data-name="bootstrap token" type="text" size="64" placeholder="paste token here">
+In all the sample calls below, we use a placeholder value for the bootstrap token. Enter your bootstrap coordinator token into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="bootstrap-token-goes-here" data-name="bootstrap token" type="text" size="64" placeholder="enter token here">
 {{% /alert %}}
 
 ### Cloud Kubernetes Installation
@@ -57,7 +57,7 @@ This type of deployment will give you full access to the complete BitBroker feat
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-In all the sample calls below, we use the placeholder text `https://your-cloud-host` for the host base URL. Enter your cloud host base URL into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="paste url here">
+In all the sample calls below, we use the placeholder text `https://your-cloud-host` for the host base URL. Enter your cloud host base URL into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Cloud Host Base URL_<br/><input class="code-replace" data-item="https://your-cloud-host" data-name="base url" type="text" size="64" placeholder="enter url here">
 {{% /alert %}}
 
 #### Prerequisites

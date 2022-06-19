@@ -12,6 +12,50 @@ Local installations using [Docker Compose](#docker-compose-local-installation) o
 
 In this section, we will cover in detail and step-by-step, all the different ways in which you can install a BitBroker instance locally, to help you achieve your goals.
 
+### Server Naming and Ports
+
+For consistency across the system, in local and development mode we use a set of standard _logical server names and ports_ for addressing the three principle API services.
+
+This helps with readability and removes ambiguity, since some APIs share resource names. Also it reduces confusion, if you start multiple API servers on the same physical machine.
+
+#### Logical Server Names
+
+We use a convention of assigning each API service a logical server name as follows:
+
+API Service | Logical Server Name
+--- | ---
+Coordinator API | `bbk-coordinator`
+Contributor API | `bbk-contributor`
+Consumer API | `bbk-consumer`
+
+You will find these names used across all the [documentation](/docs) and in the [sample code](/docs/examples/). This is merely a convention and you do not need to use these names in your code. You can, instead, use your cloud URLs or even base IP addresses.
+
+_If_ you choose to stick to this convention, you will need to map these name to their ultimate end-points inside your [system hosts file](https://en.wikipedia.org/wiki/Hosts_(file)). Here is an example, mapping the standard logical server names to `localhost`.
+
+```
+127.0.0.1 bbk-coordinator
+127.0.0.1 bbk-contributor
+127.0.0.1 bbk-consumer
+```
+
+#### Server Ports
+
+Each API service listens on a distinct, non-clashing port. Unless you configure it otherwise, even the [docker images](#docker-compose-local-installation) are designed to start each service on its designated port.
+
+This port mapping makes it simple and unambiguous to bring up multiple (or indeed all) of these API services on the same physical machine, without them interfering with each other. The assigned service ports are as follows:
+
+API Service | Server Port
+--- | ---
+Coordinator API | `8001`
+Contributor API | `8002`
+Consumer API | `8003`
+
+### Development Only Headers
+
+{{% alert color="warning" %}}
+TODO
+{{% /alert %}}
+
 ### Bootstrap User
 
 Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
@@ -20,12 +64,6 @@ As we will explain below, this user is linked to the [authorisation](/docs/api-c
 
 {{% alert color="warning" %}}
 It is possible, but _not recommended_, to use the bootstrap user in normal operation. Instead, you should create your own master coordinator user and then use that for further operations.
-{{% /alert %}}
-
-### Development Only Headers
-
-{{% alert color="warning" %}}
-TODO
 {{% /alert %}}
 
 ### Docker Compose Local Installation

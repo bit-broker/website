@@ -229,19 +229,13 @@ This will have created a `bit-broker` directory and you should move into it:
 cd bit-broker
 ```
 
-First let's start by preparing our instance's environment file. For a standard local install, we can simple copy the existing one which came with the repository:
-
-```
-cp .env.example ,env
-```
-
 For development purposes, BitBroker has a handy shell script called `bbk.sh` which can be used to manage the system in local install mode. You can use this to prepare your new clone:
 
 ```shell
 ./development/scripts/bbk.sh unpack
 ```
 
-The `unpack` step, makes sure that all the dependant node packages needed to operate the system are downloaded and ready.
+The `unpack` step, makes sure that all the dependant node packages needed to operate the system are downloaded and ready. It also creates a `.env` file automatically, by using the settings in the `.env.example` file.
 
 Now you can start BitBroker by simply using:
 

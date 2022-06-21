@@ -5,6 +5,10 @@ weight: 2
 description: Users and their roles within a BitBroker instance
 ---
 
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/coordinator/user/)
+{{% /alert %}}
+
 All activity within BitBroker is parcelled out to known Users and what they can and can't do is governed by what roles they play. In this section, we will learn about users: how to create, update and delete them and how user roles are employed to partition functionality and responsibility.
 
 ## User Roles

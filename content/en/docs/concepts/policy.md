@@ -5,6 +5,10 @@ weight: 6
 description: Create, manage and deploy data sharing policies to grant access to data
 ---
 
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/coordinator/policy/)
+{{% /alert %}}
+
 Data sharing policies are the main back-bone of the BitBroker system. They are defined by [coordinators](/docs/concepts/users/#coordinators), who use them to specify the exact context in which they permit data to be accessed by [consumers](/docs/concepts/users/#consumers).
 
 Policy definitions can only by submitted by coordinators via the corresponding end-points in the [Coordinator API](/docs/coordinator/policy/). Once a policy is deployed, [accesses](/docs/concepts/access/) can be [created](/docs/coordinator/access/#creating-a-new-access) which allow consumers to interact with the data specified in the ways allowed.

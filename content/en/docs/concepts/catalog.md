@@ -5,6 +5,10 @@ weight: 5
 description: The catalog and how it facilitates search, discovery and access
 ---
 
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/consumer/catalog/)
+{{% /alert %}}
+
 The BitBroker catalog is a place where the existence of all the [entity instances](/docs/concepts/entity-types/#entity-instances) in the domain space are stored, enumerable and searchable. It also provides the route for [consumers](/docs/concepts/users/#consumers) to search, discover and use entity instance data.
 
 The BitBroker catalog performs the following specific functions:

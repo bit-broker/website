@@ -5,6 +5,10 @@ weight: 3
 description: The types of entities which are the basis of a BitBroker instance
 ---
 
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/coordinator/entity-types/)
+{{% /alert %}}
+
 All information within BitBroker is stored and presented within the context of a high level enumeration called Entity Types.
 
 Entity types are the object types which are naturally present within the domain under consideration. You can define any create and set of entity types which make sense for your deployed instance. Only [coordinator users](/docs/concepts/users/#coordinators) have the ability to [create delete and modify entity types](/docs/coordinator/entity-types/).

@@ -1,5 +1,5 @@
 ---
-title: "Connectors"
+title: "Data Connectors"
 linkTitle: "Connectors"
 weight: 3
 description: APIs for creating and manipulating data connectors

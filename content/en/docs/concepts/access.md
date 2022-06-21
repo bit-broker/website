@@ -1,9 +1,13 @@
 ---
-title: "Access and Keys"
+title: "User Data Access"
 linkTitle: "Access"
 weight: 7
 description: Managing data consumers and their associated data access keys
 ---
+
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/coordinator/access/)
+{{% /alert %}}
 
 Access to data within a BitBroker instance is always permitted within the context of a [consumer](/docs/concepts/users/#consumers) and a [policy](/docs/concepts/policy/). The connection between these two system concepts is called an access.
 

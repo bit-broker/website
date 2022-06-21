@@ -5,6 +5,10 @@ weight: 4
 description: Data connectors which for allow contribution of data into a BitBroker instance
 ---
 
+{{% alert color="primary" %}}
+Read the corresponding API documentation [here](/docs/coordinator/connectors/)
+{{% /alert %}}
+
 BitBroker is a contribution based system, meaning that data contributed by a community of [users](/concepts/users/#contributors). In some cases, these contributors will be people you have direct control over (and may well be other roles you yourself are playing). However, in other instances, you maybe relying upon second and third parties to be contributing data into your BitBroker instance.
 
 The vector through which data contribution is managed is the concept of data connectors. Each [entity type](/docs/concepts/entity-types/) within the system should have at least one data connector. However, it is entirely possible for an entity type to be sharing multiple data connectors, all contributing [entity instance records](/docs/concepts/entity-types/#entity-instances) for that type.

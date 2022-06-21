@@ -1,4 +1,7 @@
 [build]
-environment = { HUGO_VERSION = "0.82.0" }
-command = "npm install && cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
 publish = "public"
+command = "npm install && cd themes/docsy && git submodule update -f --init && cd ../.. && hugo"
+
+[build.environment]
+  HUGO_VERSION = "0.82.0"
+  HUGO_ENV = "production"

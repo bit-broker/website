@@ -23,7 +23,7 @@ All errors will be present in a common structure as follows:
 
 In such circumstances, there will only ever be one `error` object with the following attributes:
 
-Attribute | Presense | Description
+Attribute | Presence | Description
 --- | --- | ---
 `code` | <div class="stamp">always</div> | The standard [HTTP response code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 `status` | <div class="stamp">always</div> | The standard text associated with the HTTP response code
@@ -54,13 +54,13 @@ In situations which lead to a validation error on inbound data, the response cod
 }
 ```
 
-Here the message attributes will be as follows:
+Here, the message attributes will be as follows:
 
-Attribute | Presense | Description
+Attribute | Presence | Description
 --- | --- | ---
 `message` | <div class="stamp">always</div> | An array of validation error objects
 `message.name` | <div class="stamp">always</div> | A string indicating the id of the erroring attribute - _this can be present multiple times, when there are multiple validation issues with the same attribute_
-`message.index` | <div class="stamp">always</div> | A integer indicating the index of the erroring item, when it is within an array - _this will be null for attributes which are not arrays_
+`message.index` | <div class="stamp">always</div> | An integer indicating the index of the erroring item, when it is within an array - _this will be null for attributes which are not arrays_
 `message.reason` | <div class="stamp">always</div> | A string indicating the validation error
 
 The validation error structure is designed to make it simple to integrate such errors into an end-user experience.

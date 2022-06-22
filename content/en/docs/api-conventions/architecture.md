@@ -24,7 +24,7 @@ HTTP Method | Resource Action
 
 All data exchange with BitBroker APIs, both to and from the server, is in [JavaScript Object Notation](https://www.json.org/json-en.html) (JSON) format.
 
-When posting data via an API (most often as part of a _create_ or _update_ action), the message body must be valid JSON document and all the JSON keys within it should be "double-quoted". If you are seeing validation errors indicating the JSON is incorrectly formed, you might want to try a [JSON validator](https://jsonlint.com/) to get more detailed validation information.
+When posting data via an API (most often as part of a _create_ or _update_ action), the message body must be a valid JSON document and all the JSON keys within it should be "double-quoted". If you are seeing validation errors indicating the JSON is incorrectly formed, you might want to try a [JSON validator](https://jsonlint.com/) to get more detailed validation information.
 
 When posting data via an API, the HTTP header `Content-Type` should always be set to `application/json`.
 
@@ -35,7 +35,7 @@ RESTful APIs use HTTP response codes to indicate the return status from the call
 HTTP Response | Type | API Call State
 --- | --- | ---
 `HTTP/1.1 200 OK` | <div class="stamp">success</div> | The request completed successfully and data is present in the response body
-`HTTP/1.1 201 Created` | <div class="stamp">success</div> | The requested resource was successfully created - _the new resources URI will be returned in the `Location` attribute of the response header_
+`HTTP/1.1 201 Created` | <div class="stamp">success</div> | The requested resource was successfully created - _the new resource's URI will be returned in the `Location` attribute of the response header_
 `HTTP/1.1 204 OK` | <div class="stamp">success</div> | The request completed successfully, but there is _no data_ in the response body
 `HTTP/1.1 400 Bad Request` | <div class="stamp text-warning">error</div> | The request was rejected because it resulted in validation errors - _for example, a mandatory attribute was not sent in the request_
 `HTTP/1.1 401 Unauthorized` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an unapproved context - _for example, a supplied access key was not valid or has expired (most often a failure of [authorization](/docs/api-conventions/authorization/))_
@@ -48,7 +48,7 @@ HTTP Response | Type | API Call State
 Whenever you receive an error response (`HTTP/1.1 4**`), the response body will contain further information within a [standard error response](/docs/api-conventions/errors/) format.
 
 {{% alert color="warning" %}}
-Responses of `HTTP/1.1 500 Server Error` should never be returned in normal operation. If you see such an error, do help us to identify and rectify the underlying problem. Please [raise an issue](https://github.com/bit-broker/bit-broker/issues) in our GitHub repositary describing, in as much detail as possible, the circumstances which lead to the error.
+Responses of `HTTP/1.1 500 Server Error` should never be returned in normal operation. If you see such an error, do help us to identify and rectify the underlying problem. Please [raise an issue](https://github.com/bit-broker/bit-broker/issues) in our GitHub repository describing, in as much detail as possible, the circumstances which lead to the error.
 {{% /alert %}}
 
 #### API Versioning
@@ -59,7 +59,7 @@ As the system develops, there may be changes to the API structure to encompass n
 For now, there is only one version of each of the API sets.
 {{% /alert %}}
 
-All the APIs within BitBroker include a version string as the lead resource. For example the `/v1/` part of the following:
+All the APIs within BitBroker include a version string as the lead resource. For example, the `/v1/` part of the following:
 
 ```
 http://bbk-coordinator:8001/v1/user

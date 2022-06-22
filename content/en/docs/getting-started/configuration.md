@@ -13,12 +13,12 @@ Whilst it is sometimes necessary to change some configuration, you should perfor
 {{% /alert %}}
 
 {{% alert color="info" %}}
-If you follow the installation guides for either [Kubernetes](/docs/getting-started/install-k8s/) or for [local](/docs/getting-started/install-local/), then these configuration issues will be taken care of for you, in that process. There is no need to hand-configure, unless your needs are specific and unusual. 
+If you follow the installation guides for either [Kubernetes](/docs/getting-started/install-k8s/) or for [local](/docs/getting-started/install-local/), then these configuration issues will be taken care of for you, in that process. There is no need to hand-configure, unless your needs are specific and unusual.
 {{% /alert %}}
 
 ### Environment Settings
 
-In this section we outline the details of our installation environment file. This file is called `.env` and resides at the root of the BitBroker file layout.
+In this section, we outline the details of our installation environment file. This file is called `.env` and resides at the root of the BitBroker file layout.
 
 There is _no_ master record for this in the repository, however there is a file called `.env.example`, which contains all the most common parameters. You can activate this common set by simply copying this file:
 
@@ -57,7 +57,7 @@ You will also see some parameters starting with `TESTS_` in the `.env.example`. 
 
 ### Advanced Use Cases
 
-In this section we outline the details of some more advanced use cases.
+In this section, we outline the details of some more advanced use cases.
 
 {{% alert color="warning" %}}
 Sorry, this section is pending. Come back soon...

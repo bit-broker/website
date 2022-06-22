@@ -16,7 +16,7 @@ In this section, we will cover in detail and step-by-step, all the different way
 
 For consistency across the system, in local and development mode we use a set of standard _logical server name and port_ for addressing the three principle API services.
 
-This helps with readability and removes ambiguity, since some APIs share resource names. Also it reduces confusion, if you start multiple API servers on the same physical machine.
+This helps with readability and removes ambiguity, since some APIs share resource names. Also, it reduces confusion, if you start multiple API servers on the same physical machine.
 
 #### Logical Server Names
 
@@ -28,7 +28,7 @@ Coordinator API | `bbk-coordinator`
 Contributor API | `bbk-contributor`
 Consumer API | `bbk-consumer`
 
-You will find these names used across all the [documentation](/docs) and in the [sample code](/docs/examples/). This is merely a convention and you do not need to use these names in your code. You can, instead, use your cloud URLs or even base IP addresses.
+You will find these names used across all the [documentation](/docs) and in the [sample code](/docs/examples/). This is merely a convention; you do not need to use these names in your code. You can, instead, use your cloud URLs or even base IP addresses.
 
 _If_ you choose to stick to this convention, you will need to map these name to their ultimate end-points inside your [system hosts file](https://en.wikipedia.org/wiki/Hosts_(file)). Here is an example, mapping the standard logical server names to `localhost`.
 
@@ -93,7 +93,7 @@ This section assumes you are familiar with [Containers](https://www.docker.com/r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -111,7 +111,7 @@ Start with a clean machine, with no remnants of previous BitBroker installations
 Before starting, make sure that you don't have any other service listening on ports which BitBroker will use for local installs.
 {{% /alert %}}
 
-Create a brand new directory to act as a workspace for you installation:
+Create a brand new directory to act as a workspace for your installation:
 
 ```shell
 mkdir bbk
@@ -132,7 +132,7 @@ This will have created a `bit-broker` directory and you should move into it:
 cd bit-broker
 ```
 
-First let's start by preparing our instance's environment file. For a standard local install, we can simple copy the existing one which came with the repository:
+First, let's start by preparing our instance's environment file. For a standard local install, we can simply copy the existing one which came with the repository:
 
 ```shell
 cp .env.example .env
@@ -150,7 +150,7 @@ If you are going to develop on BitBroker, either for building [data connectors](
 
 #### Testing Your Installation
 
-If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorization tokens.
+If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode, you don't need to specify any authorization tokens.
 
 ```shell
 curl http://bbk-coordinator:8001/v1
@@ -181,14 +181,14 @@ This will delete the Git cloned folder created earlier.
 
 ### Direct Installation on a Physical Machine
 
-In the section we will explore how to you can install a BitBroker instance directly onto your local machine.
+In the section, we will explore how to you can install a BitBroker instance directly onto your local machine.
 
 {{% alert color="warning" %}}
 This type of install is suitable for _development purposes_ only.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -208,7 +208,7 @@ Start with a clean machine, with no remnants of previous BitBroker installations
 Before starting, make sure that you don't have any other service listening on ports which BitBroker will use for local installs.
 {{% /alert %}}
 
-Create a brand new directory to act as a workspace for you installation:
+Create a brand new directory to act as a workspace for your installation:
 
 ```shell
 mkdir bbk
@@ -235,7 +235,7 @@ For development purposes, BitBroker has a handy shell script called `bbk.sh` whi
 ./development/scripts/bbk.sh unpack
 ```
 
-The `unpack` step, makes sure that all the dependant node packages needed to operate the system are downloaded and ready. It also creates a `.env` file automatically, by using the settings in the `.env.example` file.
+The `unpack` step, makes sure that all the dependent node packages needed to operate the system are downloaded and ready. It also creates a `.env` file automatically, by using the settings in the `.env.example` file.
 
 Now you can start BitBroker by simply using:
 
@@ -261,7 +261,7 @@ The `reset` command given the following output:
   └──────────────────────────────┘
 ```
 
-At this point, your BitBroker installation is up and running on your local machine. You can test it by running the steps below. But first, lets just see what other commands the `bbk.sh` script supports:
+At this point, your BitBroker installation is up and running on your local machine. You can test it by running the steps below. But first, let's just see what other commands the `bbk.sh` script supports:
 
 ```shell
 ./development/scripts/bbk.sh <command>
@@ -283,7 +283,7 @@ If you are going to develop on BitBroker, either for building [data connectors](
 
 #### Testing Your Installation
 
-If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorization tokens.
+If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode, you don't need to specify any authorization tokens.
 
 ```shell
 curl http://bbk-coordinator:8001/v1

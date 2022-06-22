@@ -37,7 +37,7 @@ Whilst BitBroker advertises its own key space to its [consumers](/docs/concepts/
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Whenever your webhook is called, it will be in the context of an _on-demand request_ - meaning that the call is in the direct line of response to a waiting user of the [Consumer API](/docs/consumer/). Hence, you should endeavour to respond to webhook calls in a timely manner. Information about poorly performing data connectors will be available to coordinator users.
+Whenever your webhook is called, it will be in the context of an _on-demand request_ - meaning that the call is in the direct line of response to a waiting user of the [Consumer API](/docs/consumer/). Hence, you should endeavor to respond to webhook calls in a timely manner. Information about poorly performing data connectors will be available to coordinator users.
 {{% /alert %}}
 
 ### Entity End-point

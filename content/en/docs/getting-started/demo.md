@@ -51,7 +51,7 @@ All the [source code for this demo](https://github.com/bit-broker/examples/tree/
 Here we provide a range of [data connectors](/docs/concepts/connectors/) to help you understand what they are and how to build your own. Indeed, it is hoped that you can simple modify one of these data connectors to achieve your own data submission aims.
 
 {{% alert color="info" %}}
-We will endeavour to increase the example data connectors here over time. Offering more choices of both data sources and implementation languages. We welcome help from the community on this and [you are encouraged](https://github.com/bit-broker/.github/blob/main/profile/README.md) to submit your own data connectors in the sample set.
+We will endeavor to increase the example data connectors here over time. Offering more choices of both data sources and implementation languages. We welcome help from the community on this and [you are encouraged](https://github.com/bit-broker/.github/blob/main/profile/README.md) to submit your own data connectors in the sample set.
 {{% /alert %}}
 
 We currently have two types of example connector:

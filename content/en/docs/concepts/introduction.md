@@ -5,11 +5,11 @@ weight: 1
 description: A step-by-step introduction to the BitBroker system
 ---
 
-In this section, we will go through all the key concepts which you need to understand to get the best out of BitBroker. The system is made up of a series of interlocking concepts and its important to understand how these operate and interact.
+In this section, we will go through all the key concepts which you need to understand to get the best out of BitBroker. The system is made up of a series of interlocking concepts and it's important to understand how these operate and interact.
 
 #### Step # 1 - Create Users
 
-All activity within BitBroker is parcelled out to known _Users_ and what they can and can’t do is governed by what roles they play. The first step is to learn how to create users and how to assign them roles, depending on what you want them to be able to do.
+All activity within BitBroker is parceled out to known _Users_ and what they can and can’t do is governed by what roles they play. The first step is to learn how to create users and how to assign them roles, depending on what you want them to be able to do.
 
 Read more about [Users](/docs/concepts/users/).
 
@@ -33,7 +33,7 @@ Read more about the [Catalog](/docs/concepts/catalog/).
 
 #### Step # 5 - Create Policy
 
-_Data Sharing Policies_ are the main back-bone of the BitBroker system. They are defined by coordinator users, who use them to specify the exact context in which they permit data to be accessed by consumers. In this step you can learn how to define and manage these vital policies.
+_Data Sharing Policies_ are the main back-bone of the BitBroker system. They are defined by coordinator users, who use them to specify the exact context in which they permit data to be accessed by consumers. In this step, you can learn how to define and manage these vital policies.
 
 Read more about [Policies](/docs/concepts/policy/).
 

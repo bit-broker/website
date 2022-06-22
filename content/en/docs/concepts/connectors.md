@@ -2,7 +2,7 @@
 title: "Data Connectors"
 linkTitle: "Connectors"
 weight: 4
-description: Data connectors which for allow contribution of data into a BitBroker instance
+description: Data connectors which allow contribution of data into a BitBroker instance
 ---
 
 {{% alert color="primary" %}}
@@ -32,7 +32,7 @@ As part of the creation process for connectors, the system will generate a conne
 }
 ```
 
-Armed with these two items, data connectors can go ahead and contribute [entity instance records](/docs/concepts/entity-types/#entity-instances) into [the catalog](/docs/concepts/catalog/), by using the [Contributor API](/docs/contributor/). You should direct new data connectors to the [contributor documentation](/docs/contributor/records/) in order get them started with their implementation.
+Armed with these two items, data connectors can go ahead and contribute [entity instance records](/docs/concepts/entity-types/#entity-instances) into [the catalog](/docs/concepts/catalog/), by using the [Contributor API](/docs/contributor/). You should direct new data connectors to the [contributor documentation](/docs/contributor/records/) in order to get them started with their implementation.
 
 {{% alert color="info" %}}
 Connector authors should be aware of the important distinction between _data_ and _metadata_ within the context of the BitBroker [catalog](/docs/concepts/catalog/).
@@ -56,7 +56,7 @@ Coordinators can use the mechanism of [entity schemas](/docs/concepts/entity-typ
 
 ##### Live vs Staging Connectors
 
-By default, newly created connectors are not "live". This means that data which they contribute will _not_ be visible within the [Consumer API](/docs/consumer/). Implementing a data connector can be a tricky operation and may require a few attempts before data is being delivered to a sufficient quality. Hence it is useful to isolate contributions from certain connectors into a "staging space" - so that it doesn't pollute the public space visible to [consumers](/docs/concepts/users/#consumers).
+By default, newly created connectors are not "live". This means that data which they contribute will _not_ be visible within the [Consumer API](/docs/consumer/). Implementing a data connector can be a tricky operation and may require a few attempts before data is being delivered to a sufficient quality. Hence, it is useful to isolate contributions from certain connectors into a "staging space" - so that it doesn't pollute the public space visible to [consumers](/docs/concepts/users/#consumers).
 
 In order to make a connector's data visible, it must be [promoted to live status](/docs/coordinator/connectors/#promoting-a-connector-to-live). Only [coordinator](/docs/concepts/users/#coordinators) users can promote connectors in this way. They can also [demote connectors](/docs/coordinator/connectors/#demoting-a-connector-from-live), if they believe their data should no longer be publically visible.
 

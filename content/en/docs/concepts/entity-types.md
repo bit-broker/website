@@ -11,7 +11,7 @@ Read the corresponding API documentation [here](/docs/coordinator/entity-types/)
 
 All information within BitBroker is stored and presented within the context of a high level enumeration called Entity Types.
 
-Entity types are the object types which are naturally present within the domain under consideration. You can define any create and set of entity types which make sense for your deployed instance. Only [coordinator users](/docs/concepts/users/#coordinators) have the ability to [create delete and modify entity types](/docs/coordinator/entity-types/).
+Entity types are the object types which are naturally present within the domain under consideration. You can define any create and set of entity types which make sense for your deployed instance. Only [coordinator users](/docs/concepts/users/#coordinators) have the ability to [create, delete and modify entity types](/docs/coordinator/entity-types/).
 
 For example, here are some entity type enumerations which may naturally occur in different domains of operation:
 
@@ -21,7 +21,7 @@ Transport | `bus-stop`, `bus`, `timetable`, `station`, `road`, `route`, `train`,
 Health | `patient`, `prescription`, `doctor`, `treatment`, `condition`, etc
 Manufacturing | `robot`, `tool`, `belt`, `factory`, `shift`, `quota`, `order`, etc
 
-You should choose your entity types with care, since they are difficult to modify once system is operational.
+You should choose your entity types with care, since they are difficult to modify once a system is operational.
 
 {{% alert color="info" %}}
 Entity types should be real-world concepts which an [average user](/docs/concepts/users/#consumers) would instinctively understand. They can represent physical, logical or virtual concepts within your domain. Typically, an entity type will be a _noun_ within the domain space.

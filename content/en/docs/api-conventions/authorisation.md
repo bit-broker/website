@@ -1,41 +1,41 @@
 ---
-title: "Authorisation and Tokens"
-linkTitle: "Authorisation"
+title: "Authorization and Tokens"
+linkTitle: "Authorization"
 weight: 2
-description: How to send authorised requests to BitBroker APIs
+description: How to send authorized requests to BitBroker APIs
 ---
 
-All the API sets within BitBroker require authorisation by callers. Whilst the process for authorisation is common across the APIs, the context and reasons for authorisation differ:
+All the API sets within BitBroker require authorization by callers. Whilst the process for authorization is common across the APIs, the context and reasons for authorization differ:
 
 * [Coordinator API](/docs/coordinator/) - needed to administer a BitBroker instance
 * [Contributor API](/docs/contributor/) - needed to contribute data to a designated entity type
 * [Consumer API](/docs/consumer/) - needed to access data via a policy definition
 
-Except in some [development modes](/docs/getting-started/install-local/#development-only-headers), there is no access to BitBroker services without authorisation and hence without having a corresponding authorisation key.
+Except in some [development modes](/docs/getting-started/install-local/#development-only-headers), there is no access to BitBroker services without authorization and hence without having a corresponding authorization key.
 
 #### Authorising API calls
 
-When you have obtained the relevant authorisation key ([see below](#obtaining-an-authorisation-key)), you can use it to authorise API calls by using a specified HTTP header attribute. The same authorisation header structure is used for all three BitBroker API sets.
+When you have obtained the relevant authorization key ([see below](#obtaining-an-authorization-key)), you can use it to authorize API calls by using a specified HTTP header attribute. The same authorization header structure is used for all three BitBroker API sets.
 
 ```
 x-bbk-auth-token: your-token-will-go-here
 ```
 
-The header must be exactly as appears here with the same casing and without spaces. If you do not correctly specify the authorisation header, or you use an invalid authorisation key, you will get an `HTTP/1.1 401 Unauthorized` error.
+The header must be exactly as appears here with the same casing and without spaces. If you do not correctly specify the authorization header, or you use an invalid authorization key, you will get an `HTTP/1.1 401 Unauthorized` error.
 
-##### Testing your Authorisation Key
+##### Testing your Authorization Key
 
-It can be useful to make test calls to the API to check that your key is valid and that your authorisation header is formatted correctly.
+It can be useful to make test calls to the API to check that your key is valid and that your authorization header is formatted correctly.
 
-The base end-point of all the three API servers respond with a small announcement. Like all BitBroker API end-points, these require a working authorisation to be in place. Hence, this announcement can be used for testing or verification purposes.
+The base end-point of all the three API servers respond with a small announcement. Like all BitBroker API end-points, these require a working authorization to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 See the section on testing installations for [Kubernetes](/docs/getting-started/install-k8s/#testing-your-installation) or [local](/docs/getting-started/install-local/#testing-your-installation) modes for more details.
 
 You are encouraged to make successful test calls to these end-points before launching into more complex scenarios.
 
-#### Obtaining an Authorisation Key
+#### Obtaining an Authorization Key
 
-The method used to obtain an authorisation key differs across the three API sets. However, once you have a key, the [mechanics of authorisation](#authorising-api-calls) is the same. All keys are in the form of a long hexadecimal string such as:
+The method used to obtain an authorization key differs across the three API sets. However, once you have a key, the [mechanics of authorization](#authorising-api-calls) is the same. All keys are in the form of a long hexadecimal string such as:
 
 ```
 4735d360-dc03-499c-91ce-68dfc1554691.5d5c9eab-1d9c-4c88-9478-9f4ab35568a7.423c9101-315a-4929-a64c-9b905837799c
@@ -44,12 +44,12 @@ The method used to obtain an authorisation key differs across the three API sets
 These keys should be kept by their owner in a secure location and never shared with unauthorized users.
 
 {{% alert color="warning" %}}
-BitBroker does not retain an accesible copy of authorisation keys. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
+BitBroker does not retain an accesible copy of authorization keys. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
 {{% /alert %}}
 
 ##### Obtaining a Coordinator Key
 
-Coordinator keys are required to authorise calls to the [Coordinator API](/docs/coordinator/). This API is used to perform administrative services for a BitBroker instance.
+Coordinator keys are required to authorize calls to the [Coordinator API](/docs/coordinator/). This API is used to perform administrative services for a BitBroker instance.
 
 Coordinator keys are obtained by utilising end-points on the Coordinator API, in order to promote a user to coordinator status. To do this you must first [create a new user](/docs/coordinator/user/#creating-a-new-user) and then you must [promote that user](/docs/coordinator/user/#promoting-a-user-to-coordinator) to be a coordinator.
 
@@ -67,7 +67,7 @@ If a coordinator key is lost, then a new key will have to be generated. This can
 
 ##### Obtaining a Contributor Key
 
-Contributor keys are required to authorise calls to the [Contributor API](/docs/contributor/). This API is used to contribute data to a designated [entity type](/docs/concepts/entity-types/).
+Contributor keys are required to authorize calls to the [Contributor API](/docs/contributor/). This API is used to contribute data to a designated [entity type](/docs/concepts/entity-types/).
 
 Contributor keys are obtained by utilising end-points on the [Coordinator API](/docs/coordinator/), in order to [create a connector](/docs/coordinator/connectors/#creating-a-new-connector) on a given entity type.
 
@@ -87,7 +87,7 @@ It is expected that the coordinator user who creates the data connector, will di
 
 ##### Obtaining a Consumer Key
 
-Consumer keys are required to authorise calls to the [Consumer API](/docs/consumer/). This API is used to access data via a policy definition.
+Consumer keys are required to authorize calls to the [Consumer API](/docs/consumer/). This API is used to access data via a policy definition.
 
 Consumer keys are obtained by utilising end-points on the [Coordinator API](/docs/coordinator/). To do this you must [create an access](/docs/coordinator/access/#creating-a-new-access), which is a link between a user and a policy defintion.
 

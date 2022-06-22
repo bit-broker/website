@@ -29,11 +29,11 @@ It allows organizations to share data with third-parties in the context of robus
 BitBroker lets data owners share data with confidence.
 {{% /alert %}}
 
-Using BitBroker you can leverage the expertise of external players to help analyse, process and realise the latent value within your data. Services provided by the system are:
+Using BitBroker you can leverage the expertise of external players to help analyze, process and realize the latent value within your data. Services provided by the system are:
 
 Service | Description
  ---: | ---
- &nbsp;Connect heterogenous data sets | BitBroker is a great way to bring order into an otherwise chaotic data environment. It helps organise data from complex and heterogenous backend systems, presenting a more consistent view to data consumers.
+ &nbsp;Connect heterogeneous data sets | BitBroker is a great way to bring order into an otherwise chaotic data environment. It helps organize data from complex and heterogeneous backend systems, presenting a more consistent view to data consumers.
 Controlled data contribution | BitBroker allows for a community of people to contribute data; however, it is not a free-for-all. Coordinators decide _who_ can contribute and _what_ they can contribute. They can set schematic expectations per data type, allowing BitBroker to police all contributions to ensure they are compliant.
 Comprehensive cataloging | Unless asked it to, BitBroker _does not take a copy_ of data. Instead, it indexes all the entity instances in the domain and facilitates the search and discovery of these. Policy based access is then brokered via the core engine, meaning that the consumer is never made aware of the source details of any data.
 Flexible data sharing policies | Coordinators can create and deploy any number of data sharing policies. These define which data segments are visible, how they can be accessed and the legal basis for any use. Once deployed, BitBroker will police the policy on your behalf, giving you confidence that data is only being accessed and used as you would want it to be.
@@ -50,7 +50,7 @@ BitBroker is not for everyone. Sometimes, people just want to share data openly,
 
 However, in situations where more control is required, then BitBroker can become a key enabling resource. Deploying BitBroker makes most sense when:
 
-* You want to share data from multiple, complex and heterogenous backend systems
+* You want to share data from multiple, complex and heterogeneous backend systems
 * You want to share data with a wide and diverse set of people
 * You want to create and deploy policies, such that only defined people, can access defined subsets, via defined routes
 * You want to apply different licenses, to different people, at different times
@@ -64,7 +64,7 @@ Perhaps your needs are simpler...
 
 BitBroker is also a great solution to bring together different data sources within an organization and to present them in a simple and modern API.
 
-Using very little effort, multiple, legacy data applications can be plugged into a BitBroker - enabling cross-siloed information sharing. Users can access this via a simple, RESTful API. You can plug the data into your favourite business applications or build an application from the range of sample applications you will find documented here.
+Using very little effort, multiple, legacy data applications can be plugged into a BitBroker - enabling cross-siloed information sharing. Users can access this via a simple, RESTful API. You can plug the data into your favorite business applications or build an application from the range of sample applications you will find documented here.
 
 ## Ready to get started?
 
@@ -72,9 +72,9 @@ Here are some great jumping-off points for BitBroker:
 
 * Try out our [interactive demos](/docs/getting-started/demo/) of a live BitBroker instance.
 * Find out how to [get started](/docs/getting-started/) with your own BitBroker.
-* Learn more about the [key concepts](/docs/concepts/) which underly BitBroker.
+* Learn more about the [key concepts](/docs/concepts/) which underpin BitBroker.
 * Explore [sample applications](/docs/getting-started/demo/#demo-applications) and [data connectors](/docs/getting-started/demo/#demo-data-connectors) to help you build your own BitBroker instance.
 
 ### Contributing to BitBroker
 
-BitBroker is an open source project under the [Apache 2 license](https://www.apache.org/licenses/LICENSE-2.0). We welcome contributions from anyone who is interested in helping to make BitBroker better. If you would like to contribute, then you should start by reading out [contribution guide](https://github.com/bit-broker/.github/blob/main/profile/README.md) and then [get in-touch](mailto://team@bit-broker.io) with the core team.
+BitBroker is an open source project under the [Apache 2 license](https://www.apache.org/licenses/LICENSE-2.0). We welcome contributions from anyone who is interested in helping to make BitBroker better. If you would like to contribute, then you should start by reading our [contribution guide](https://github.com/bit-broker/.github/blob/main/profile/README.md) and then [get in-touch](mailto://team@bit-broker.io) with the core team.

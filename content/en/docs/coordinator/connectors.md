@@ -18,7 +18,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Connector
@@ -50,7 +50,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
 ```
 
-The body of this response will contain the connector ID and [connector key](/docs/api-conventions/authorisation/) which the new data connector should utilise to make it's [data contributions](/docs/contributor/). For example:
+The body of this response will contain the connector ID and [connector key](/docs/api-conventions/authorization/) which the new data connector should utilize to make it's [data contributions](/docs/contributor/). For example:
 
 ```js
 {
@@ -64,7 +64,7 @@ It is expected that coordinator user will _securely_ distribute the connector ID
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Connector keys are _not_ stored within the system. If you lose this connector key, you will be forced to delete and recreate the connector to obtain a new one. This can have [major implications](/docs/api-conventions/authorisation/#obtaining-a-contributor-key) for an operating instance.
+Connector keys are _not_ stored within the system. If you lose this connector key, you will be forced to delete and recreate the connector to obtain a new one. This can have [major implications](/docs/api-conventions/authorization/#obtaining-a-contributor-key) for an operating instance.
 {{% /alert %}}
 
 The following validation rules will be applied for the body of a new connector request.
@@ -178,7 +178,7 @@ This will return a JSON object as follows:
 ```
 
 {{% alert color="info" %}}
-[Connector keys](/docs/api-conventions/authorisation/#obtaining-a-contributor-key) are not stored in an accessible way within the system and hence not present in this returned document.
+[Connector keys](/docs/api-conventions/authorization/#obtaining-a-contributor-key) are not stored in an accessible way within the system and hence not present in this returned document.
 {{% /alert %}}
 
 Other sections of this document will explain what the [`is_live`](#promoting-a-connector-to-live) and [`in_session`](docs/contributor/records/#sessions) attributes refer to.

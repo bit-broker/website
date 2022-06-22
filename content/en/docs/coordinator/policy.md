@@ -12,7 +12,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Policy

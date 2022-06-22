@@ -20,18 +20,18 @@ For all Kubernetes installations, you should be aware of the ways in which fresh
 
 Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
 
-As we will explain below, this user is linked to the [authorisation](/docs/api-conventions/authorisation/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
+As we will explain below, this user is linked to the [authorization](/docs/api-conventions/authorization/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
 
 #### Bootstrap Coordinator Token
 
-All interactions with BitBroker stem, ultimately, from interactions with the [Coordinator API](/docs/coordinator/). This is the main administrative API for the whole system. In order to use this API you need an [access token](/docs/api-conventions/authorisation/).
+All interactions with BitBroker stem, ultimately, from interactions with the [Coordinator API](/docs/coordinator/). This is the main administrative API for the whole system. In order to use this API, you need an [access token](/docs/api-conventions/authorization/).
 
-Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator)  to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can be get started with this circular scenario?
+Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator)  to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can we get started with this circular scenario?
 
 Whenever a fresh system is installed using Kubernetes, a special _bootstrap coordinator token_ is produced. This token is valid for use with the [Coordinator API](/docs/coordinator/). You can use this token to get going with the process of then creating your own users and giving them coordinator status.
 
 {{% alert color="warning" %}}
-It is possible, but _not recommended_, to use the bootstrap coordinator token in normal operation. Instead, you should use it to create your own master coordinator user and then utilise their token for further operations.
+It is possible, but _not recommended_, to use the bootstrap coordinator token in normal operation. Instead, you should use it to create your own master coordinator user and then utilize their token for further operations.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -46,7 +46,7 @@ In all the sample calls below, we use a placeholder value for the bootstrap toke
 
 ### Cloud Kubernetes Installation
 
-In the section we will explore how to you can use our pre-prepared Helm charts to install a complete BitBroker instance into your cloud of choice. These charts will be downloaded directly from [Docker Hub](https://hub.docker.com/search?q=bbkr).
+In the section, we will explore how to you can use our pre-prepared Helm charts to install a complete BitBroker instance into your cloud of choice. These charts will be downloaded directly from [Docker Hub](https://hub.docker.com/search?q=bbkr).
 
 {{% alert color="primary" %}}
 This section assumes you are familiar with [Kubernetes](https://kubernetes.io/) and [Helm](https://helm.sh/). If you are new to these technologies, we advise that you become familiar with them first, before trying out the steps outlined below.
@@ -68,7 +68,7 @@ Start with a clean machine, with no remnants of previous BitBroker installations
 * [Helm](https://helm.sh/) command line tools
 * [cURL](https://curl.se/) command line tool (used for testing installs only)
 
-Create a brand new directory to act as a workspace for you installation:
+Create a brand new directory to act as a workspace for your installation:
 
 ```shell
 mkdir bbk
@@ -83,7 +83,7 @@ kubectl config get-contexts
 
 #### Installation
 
-First let's prepare the context we want install:
+First, let's prepare the context we want to install:
 
 ```shell
 helm repo add bit-broker https://bit-broker.github.io/charts
@@ -91,7 +91,7 @@ JWKS=$(docker run bbkr/auth-service:latest npm run --silent create-jwks)
 kubectl apply -f https://app.getambassador.io/yaml/emissary/2.2.2/emissary-crds.yaml
 ```
 
-Next let's extract and save the default chart values:
+Next, let's extract and save the default chart values:
 
 ```shell
 helm show values bit-broker/bit-broker > values.yaml
@@ -117,13 +117,13 @@ helm install --values values.yaml \
 
 This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](/docs/getting-started/configuration/#advanced-use-cases), and you can ignore these for now.
 
-It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
+It can take a few moments for the system to come into existence and for it to complete its initialization steps. You can test that the system is up-and-ready, by the using this command:
 
 ```shell
 if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /dev/null https://your-cloud-host/coordinator/v1) == "401" ]; then echo "Ready"; else echo "Not Ready"; fi;
 ```
 
-This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals its OK to proceed.
+This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals it's OK to proceed.
 
 ##### Installing a DNS Alias
 
@@ -169,7 +169,7 @@ The base end-points of all the three API servers respond with a small announceme
 }
 ```
 
-Like all BitBroker API end-points, these require a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these require a working [authorization](/docs/api-conventions/authorization/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 
@@ -192,7 +192,7 @@ docker images -a | grep "bbkr/" | awk '{print $3}' | uniq | xargs docker rmi
 
 ### Local Kubernetes Installation
 
-In the section we will explore how to you can use our pre-prepared Helm charts to install a complete BitBroker instance on your local machine. These charts will be downloaded directly from [Docker Hub](https://hub.docker.com/search?q=bbkr).
+In the section, we will explore how to you can use our pre-prepared Helm charts to install a complete BitBroker instance on your local machine. These charts will be downloaded directly from [Docker Hub](https://hub.docker.com/search?q=bbkr).
 
 {{% alert color="warning" %}}
 This type of install is suitable for _development purposes_ only.
@@ -227,7 +227,7 @@ Before starting, make sure that Kubernetes is enabled within Docker Desktop. Set
 Before starting, make sure that you don't have any other service listening on `port 80` of your `localhost`.
 {{% /alert %}}
 
-Create a brand new directory to act as a workspace for you installation:
+Create a brand new directory to act as a workspace for your installation:
 
 ```shell
 mkdir bbk
@@ -243,7 +243,7 @@ kubectl config use-context docker-desktop
 
 #### Installation
 
-First let's prepare the context we want install:
+First, let's prepare the context we want to install:
 
 ```shell
 helm repo add bit-broker https://bit-broker.github.io/charts
@@ -275,13 +275,13 @@ helm install --values values_local.yaml \
 
 This step takes a few moments to complete. After it has finished, you will see a series of notes which discuss some key points about your installation. The sections on JWKS, Auth Service and Rate Service are for [advanced use cases](/docs/getting-started/configuration/#advanced-use-cases), and you can ignore these for now.
 
-It can take a few moments for the system to come into existence and for it to complete its initialisation steps. You can test that the system is up-and-ready, by the using this command:
+It can take a few moments for the system to come into existence and for it to complete its initialization steps. You can test that the system is up-and-ready, by the using this command:
 
 ```shell
 if [ $(curl --max-time 5 --write-out '%{http_code}' --silent --head --output /dev/null http://localhost/coordinator/v1) == "401" ]; then echo "Ready"; else echo "Not Ready"; fi;
 ```
 
-This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals its OK to proceed.
+This will output `Not Ready` until all the servers are up, after which it will output `Ready`. Keep trying this command until it signals it's OK to proceed.
 
 ##### Bootstrap Coordinator Token
 
@@ -315,7 +315,7 @@ The base end-points of all the three API servers respond with a small announceme
 }
 ```
 
-Like all BitBroker API end-points, these require a working [authorisation](/docs/api-conventions/authorisation/) to be in place. Hence, this announcement can be used for testing or verification purposes.
+Like all BitBroker API end-points, these require a working [authorization](/docs/api-conventions/authorization/) to be in place. Hence, this announcement can be used for testing or verification purposes.
 
 #### Uninstallation
 

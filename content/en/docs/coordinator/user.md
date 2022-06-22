@@ -16,7 +16,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorisation/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New User
@@ -57,7 +57,7 @@ Attribute | Necessity | Validation Rules
 Email addresses need to be unique across an operating BitBroker instance. If you attempt to create a user with a duplicate email address, it will result in an `HTTP/1.1 409 Conflict` response.
 {{% /alert %}}
 
-New users will be present in the system right away. They can immediately take part as data consumers by being [assigned policy-based, consumer keys](/docs/api-conventions/authorisation/#obtaining-a-consumer-key). However, [a further step](#promoting-a-user-to-coordinator) is required to promote them to have coordinator status.
+New users will be present in the system right away. They can immediately take part as data consumers by being [assigned policy-based, consumer keys](/docs/api-conventions/authorization/#obtaining-a-consumer-key). However, [a further step](#promoting-a-user-to-coordinator) is required to promote them to have coordinator status.
 
 ## Updating a User
 
@@ -200,7 +200,7 @@ This will result in a response as follows:
 HTTP/1.1 200 OK
 ```
 
-The body of this response will contain the coordinator key, which the newly promoted user should utilise [to authorise](/docs/api-conventions/authorisation/) their own calls to the Coordinator API. For example:
+The body of this response will contain the coordinator key, which the newly promoted user should utilize [to authorize](/docs/api-conventions/authorization/) their own calls to the Coordinator API. For example:
 
 ```
 4735d360-dc03-499c-91ce-68dfc1554691.5d5c9eab-1d9c-4c88-9478-9f4ab35568a7.423c9101-315a-4929-a64c-9b905837799c

@@ -52,11 +52,11 @@ Consumer API | `8003`
 
 ### Development Only Headers
 
-When installing BitBroker locally, [authorisation](/docs/api-conventions/authorisation/) is bypassed. In this scenario, you do _not_ need to supply authorisation tokens to any API.
+When installing BitBroker locally, [authorization](/docs/api-conventions/authorization/) is bypassed. In this scenario, you do _not_ need to supply authorization tokens to any API.
 
 However, when using the [Consumer API](/docs/consumer/), you do still need to specify the policy you are using. This is so that BitBroker is aware of the [data segment](/docs/concepts/policy/#data-segment) which is in-play for consumer calls. This is achieved by specifying a development header value.
 
-Rather than the authorisation header:
+Rather than the authorization header:
 
 ```
 x-bbk-auth-token: your-token-will-go-here
@@ -74,7 +74,7 @@ Failure to specify the development header on [Consumer API](/docs/consumer/) cal
 
 Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
 
-As we will explain below, this user is linked to the [authorisation](/docs/api-conventions/authorisation/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
+As we will explain below, this user is linked to the [authorization](/docs/api-conventions/authorization/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
 
 {{% alert color="warning" %}}
 It is possible, but _not recommended_, to use the bootstrap user in normal operation. Instead, you should create your own master coordinator user and then use that for further operations.
@@ -93,7 +93,7 @@ This section assumes you are familiar with [Containers](https://www.docker.com/r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorisation/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -150,7 +150,7 @@ If you are going to develop on BitBroker, either for building [data connectors](
 
 #### Testing Your Installation
 
-If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorisation tokens.
+If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorization tokens.
 
 ```shell
 curl http://bbk-coordinator:8001/v1
@@ -188,7 +188,7 @@ This type of install is suitable for _development purposes_ only.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorisation/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to user [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -283,7 +283,7 @@ If you are going to develop on BitBroker, either for building [data connectors](
 
 #### Testing Your Installation
 
-If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorisation tokens.
+If everything worked as expected, the BitBroker API servers will be up-and-running on `localhost` waiting for calls. You can test this by using the sample call below. In this local mode you don't need to specify any authorization tokens.
 
 ```shell
 curl http://bbk-coordinator:8001/v1

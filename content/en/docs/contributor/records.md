@@ -18,7 +18,7 @@ A quick way to get going building your own data connectors is to adapt the [exam
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorisation](/docs/api-conventions/authorisation/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-conventions/authorisation/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-conventions/authorization/#obtaining-a-contributor-key). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
 {{% /alert %}}
 
 {{% alert color="primary" %}}

@@ -8,10 +8,10 @@ description: Explore the demonstration instance of BitBroker
 
 Here you will find information about a range of BitBroker demo applications and connectors to help you understand what BitBroker is and how it can operate in complex data sharing scenarios.
 
-Most importantly it will help you get started building your own applications which use BitBroker data or your own [data connectors](/docs/concepts/connectors/) to contribute data into the system.
+Most importantly, it will help you get started building your own applications which use BitBroker data or your own [data connectors](/docs/concepts/connectors/) to contribute data into the system.
 
 {{% alert color="info" %}}
-Our [examples repository](https://github.com/bit-broker/examples) includes support for deploying the example connectors and applications against a BitBroker deployment, via a set of [supporting scripts](https://github.com/bit-broker/examples/tree/main/development/scripts). This can be via either [Helm](https://helm.sh/) or [Docker-Compose](https://docs.docker.com/compose/).
+Our [example's repository](https://github.com/bit-broker/examples) includes support for deploying the example connectors and applications against a BitBroker deployment, via a set of [supporting scripts](https://github.com/bit-broker/examples/tree/main/development/scripts). This can be via either [Helm](https://helm.sh/) or [Docker-Compose](https://docs.docker.com/compose/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -24,11 +24,11 @@ We have a number of example applications, which allow users to explore [policy](
 
 #### Data Explorer
 
-[This application](https://demo.bit-broker.io/apps/explorer/) allows you explore the entire [Consumer API](/docs/consumer/) by directly trying out a number of interactive scenarios. It has a set of example data and polices already pre-installed and running.
+[This application](https://demo.bit-broker.io/apps/explorer/) allows you to explore the entire [Consumer API](/docs/consumer/) by directly trying out a number of interactive scenarios. It has a set of example data and polices already pre-installed and running.
 
 You can explore using the [Catalog API](/docs/consumer/catalog/) to try different, complex catalog queries. You can see how the results of these queries differ in the light of different policies - which you can switch between simply in the application.
 
-Once you have executed a query and obtain [entity instance records](/docs/concepts/entity-types/#entity-instances) you can use the [Entity API](/docs/consumer/entity/) to browse the whole list and inspect the details of individual entities.
+Once you have executed a query and obtain [entity instance records](/docs/concepts/entity-types/#entity-instances), you can use the [Entity API](/docs/consumer/entity/) to browse the whole list and inspect the details of individual entities.
 
 Finally, for `country` data, you can also see the [Timeseries API](/docs/consumer/timeseries/) in actions and integrated with a [charting library](https://www.chartjs.org/).
 
@@ -38,7 +38,7 @@ All the [source code for this demo](https://github.com/bit-broker/examples/tree/
 
 #### Mapping Sample
 
-[This application](https://demo.bit-broker.io/apps/map/) allows you explore the [Consumer API](/docs/consumer/) via the medium of a mapping application. It has a set of example data and polices already pre-installed and running. The geographical attributes within the example data is used to populate a map view of the data records.
+[This application](https://demo.bit-broker.io/apps/map/) allows you to explore the [Consumer API](/docs/consumer/) via the medium of a mapping application. It has a set of example data and polices already pre-installed and running. The geographical attributes within the example data are used to populate a map view of the data records.
 
 You can explore how the application outputs are changed in the light of different policies - which you can switch between simply in the application.
 
@@ -48,7 +48,7 @@ All the [source code for this demo](https://github.com/bit-broker/examples/tree/
 
 ### Demo Data Connectors
 
-Here we provide a range of [data connectors](/docs/concepts/connectors/) to help you understand what they are and how to build your own. Indeed, it is hoped that you can simple modify one of these data connectors to achieve your own data submission aims.
+Here we provide a range of [data connectors](/docs/concepts/connectors/) to help you understand what they are and how to build your own. Indeed, it is hoped that you can simply modify one of these data connectors to achieve your own data submission aims.
 
 {{% alert color="info" %}}
 We will endeavor to increase the example data connectors here over time. Offering more choices of both data sources and implementation languages. We welcome help from the community on this and [you are encouraged](https://github.com/bit-broker/.github/blob/main/profile/README.md) to submit your own data connectors in the sample set.

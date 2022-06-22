@@ -17,7 +17,7 @@ All user activity within BitBroker is divided between three logical user roles. 
 
 These are "logical" roles and it is perfectly possible for one _actual_ person to be adopting more than one role within an deployed instance.
 
-In practice, users assume a role by being in receipt of an [access key](/docs/api-conventions/authorisation/), which grants them the ability to perform actions using the corresponding API.
+In practice, users assume a role by being in receipt of an [access key](/docs/api-conventions/authorization/), which grants them the ability to perform actions using the corresponding API.
 
 In the section we will outline what the three user roles are. Later sections of this documentation will go on to  explain how to [create users and grant them such roles](/docs/coordinator/user/).
 

@@ -12,7 +12,7 @@ All Consumer API calls happen in the context of a [data sharing policy](/docs/co
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-Before you use this API, you should become familiar with the general, system-wide [API conventions](/docs/api-conventions/) - which are used across all three BitBroker API sets. This covers topics such as API architecture, authorisation, error reporting and handling, etc.
+Before you use this API, you should become familiar with the general, system-wide [API conventions](/docs/api-conventions/) - which are used across all three BitBroker API sets. This covers topics such as API architecture, authorization, error reporting and handling, etc.
 {{% /alert %}}
 
 #### Paging Lists

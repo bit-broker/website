@@ -38,7 +38,7 @@ HTTP Response | Type | API Call State
 `HTTP/1.1 201 Created` | <div class="stamp">success</div> | The requested resource was successfully created - _the new resources URI will be returned in the `Location` attribute of the response header_
 `HTTP/1.1 204 OK` | <div class="stamp">success</div> | The request completed successfully, but there is _no data_ in the response body
 `HTTP/1.1 400 Bad Request` | <div class="stamp text-warning">error</div> | The request was rejected because it resulted in validation errors - _for example, a mandatory attribute was not sent in the request_
-`HTTP/1.1 401 Unauthorized` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an unapproved context - _for example, a supplied access key was not valid or has expired (most often a failure of [authorisation](/docs/api-conventions/authorisation/))_
+`HTTP/1.1 401 Unauthorized` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an unapproved context - _for example, a supplied access key was not valid or has expired (most often a failure of [authorization](/docs/api-conventions/authorization/))_
 `HTTP/1.1 403 Forbidden` | <div class="stamp text-warning">error</div> | The request was rejected because it contains an invalid or expired context - _for example, a supplied access key referring to a deleted policy_
 `HTTP/1.1 404 Not Found` | <div class="stamp text-warning">error</div> | The request was rejected because the specified resource is not present
 `HTTP/1.1 405 Method Not Allowed` | <div class="stamp text-warning">error</div> | The request was rejected because the action is not permitted - _for example, a user deleting themselves_

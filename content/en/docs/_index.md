@@ -18,7 +18,7 @@ This documentation is still work-in-progress and will be updated as the project 
 
 _BitBroker is an open source, end-to-end, data sharing solution._
 
-It allows organisations to share data with third-parties in the context of robust policy definitions. These policies ensure that:
+It allows organizations to share data with third-parties in the context of robust policy definitions. These policies ensure that:
 
 * Agreed people can get access to the data
 * … only the specified data segment is visible to them
@@ -62,7 +62,7 @@ BitBroker lets you build confidence with your data consumers, by enabling progre
 
 Perhaps your needs are simpler...
 
-BitBroker is also a great solution to bring together different data sources within an organisation and to present them in a simple and modern API.
+BitBroker is also a great solution to bring together different data sources within an organization and to present them in a simple and modern API.
 
 Using very little effort, multiple, legacy data applications can be plugged into a BitBroker - enabling cross-siloed information sharing. Users can access this via a simple, RESTful API. You can plug the data into your favourite business applications or build an application from the range of sample applications you will find documented here.
 

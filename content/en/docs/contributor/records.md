@@ -29,7 +29,7 @@ The sample calls in this section will not work as-is. Contributor API calls requ
 
 We will assume for the purposes of this section that an [entity type](/docs/concepts/entity-types/) and it's associated [data connector](/docs/concepts/connectors/) have been created and a are present within the system. Further, that the connector ID and key, which were obtained when the [data connecter was created](/docs/coordinator/connectors/#creating-a-new-connector), have been recorded and are available.
 
-Data can now be contributed into [the catalog](/docs/concepts/catalog/) by this data connector, but within the context of it's parent entity type only. Hence, we say that a single connector contributes "entity instance records". If one organisation wants to contribute data to multiple entity types, then they must do this via multiple data connectors.
+Data can now be contributed into [the catalog](/docs/concepts/catalog/) by this data connector, but within the context of it's parent entity type only. Hence, we say that a single connector contributes "entity instance records". If one organization wants to contribute data to multiple entity types, then they must do this via multiple data connectors.
 
 The process of contributing entity instance records into [the catalog](/docs/concepts/catalog/) breaks down into three steps:
 

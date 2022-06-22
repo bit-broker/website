@@ -56,7 +56,7 @@ We will endeavour to increase the example data connectors here over time. Offeri
 
 We currently have two types of example connector:
 
-* File based - dataset loaded direcly from a file
+* File based - dataset loaded directly from a file
 * RDBMS - data drawn from a relational database
 
 All implementations upload data to the BitBroker [catalog](/docs/concepts/catalog/). They also fetch and return third-party data in their entity [webhooks](/docs/contributor/webhooks/) for the example `country` dataset, and both support time series data for the `country` dataset.

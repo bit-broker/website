@@ -31,7 +31,7 @@ It is envisaged that there will only be a small number of coordinater users with
 
 Contributors are users who have permission to contribute data within the context of a single specified entity type, via access to the [Contributor API](/docs/contributor/). Such rights can only be granted by a coordinator user.
 
-If a person or organisation is contributing data to _many_ entity types within a single instance, they will be adopting multiple, different contributor roles in order to achieve this. Hence the number of contributors is linked to the number of [data connectors](/docs/concepts/connectors/) which is linked to the number of [entity types](/docs/concepts/entity-types/).
+If a person or organization is contributing data to _many_ entity types within a single instance, they will be adopting multiple, different contributor roles in order to achieve this. Hence the number of contributors is linked to the number of [data connectors](/docs/concepts/connectors/) which is linked to the number of [entity types](/docs/concepts/entity-types/).
 
 #### Consumers
 

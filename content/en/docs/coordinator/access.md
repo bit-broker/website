@@ -41,7 +41,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/policy/country
 ```
 
-The body of this response will contain the access key, which the user should utilize [to authorize](/docs/api-conventions/authorization/) their calls to the [Consumer API](/docs/consumer/). For example:
+The body of this response will contain the authorization token, which the user should utilize [to authorize](/docs/api-conventions/authorization/) their calls to the [Consumer API](/docs/consumer/). For example:
 
 ```
 7b4cb14a-7227-4be2-80a8-4550b841b4f4.2edbb472-f278-4a0d-91db-9d21ada03c77.037d5a90-a26b-4b9f-ab57-57d4309d487c
@@ -71,7 +71,7 @@ This will result in a response as follows:
 HTTP/1.1 204 No Content
 ```
 
-The body of this response will contain the _new_ access key, which the user should utilize [to authorize](/docs/api-conventions/authorization/) their calls to the [Consumer API](/docs/consumer/). For example:
+The body of this response will contain the _new_ authorization token, which the user should utilize [to authorize](/docs/api-conventions/authorization/) their calls to the [Consumer API](/docs/consumer/). For example:
 
 ```
 2f5ddf4b-e1cd-484f-a218-fdc4b27c5c02.ed46b1eb-01b8-46de-868a-f08a99416716.4f466f48-3e9b-4aa6-a94f-e0aab49d9b94
@@ -82,7 +82,7 @@ It is expected that coordinator user will _securely_ distribute this new consume
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Reissuing a new access key will invalidate the previous (now old) access key.
+Reissuing a new authorization token will invalidate the previous (now old) authorization token.
 {{% /alert %}}
 
 ## List of Accesses

@@ -40,7 +40,7 @@ Timeseries data has [separate paging semantics](/docs/consumer/timeseries/#pagin
 
 #### Rate and Quota Limits
 
-All Consumer API calls happen within the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines a _rate and quota limit_ on calls you can make with the Consumer API. These should have been communicated to you by the coordinator user who gave you your consumer access key.
+All Consumer API calls happen within the context of a [data sharing policy](/docs/concepts/policy/). Amongst other things, policy defines a _rate and quota limit_ on calls you can make with the Consumer API. These should have been communicated to you by the coordinator user who gave you your consumer authorization token.
 
 * Rate - the maximum calls-per-second that you are allowed to make (e.g. 250)
 * Quota - the total calls you can make in a given period (e.g. 86,400 per day)
@@ -77,10 +77,10 @@ Type | Description
 `terms` | The terms and conditions of use for the data
 
 {{% alert color="warning" %}}
-Please respect the legal basis under which the data is being shared. Coordinator users have the power to rescind consumer access keys and hence cut-off access to data for users who breach the legal context.
+Please respect the legal basis under which the data is being shared. Coordinator users have the power to rescind consumer authorization tokens and hence cut-off access to data for users who breach the legal context.
 {{% /alert %}}
 
-It is possible that the coordinator user who gave you your consumer access key will have more information about the legal basis of use of the data. They may require you to perform additional legal steps in order to be given a consumer access key.
+It is possible that the coordinator user who gave you your consumer authorization token will have more information about the legal basis of use of the data. They may require you to perform additional legal steps in order to be given a consumer authorization token.
 
 #### Accessing "Staged" Records
 

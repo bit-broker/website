@@ -141,4 +141,4 @@ Type | Description
 `source` | Information about the source or origination of the data
 `terms` | The terms and conditions of use for the data
 
-It is possible that you may have more information about the legal basis on the use of your data by consumers. You may, for example, require consumers to perform additional legal steps in order to be given a consumer access key. This is outside the current scope of BitBroker.
+It is possible that you may have more information about the legal basis on the use of your data by consumers. You may, for example, require consumers to perform additional legal steps in order to be given a consumer authorization token. This is outside the current scope of BitBroker.

@@ -23,7 +23,7 @@ A quick way to get going building data connectors is to adapt the [example conne
 
 Whether or not the contribution is coming from internal or external players, the first step in managing the process is to [create a data connector](/docs/coordinator/connectors/#creating-a-new-connector) - housed within the [entity type](/docs/concepts/entity-types/) for which it has permission to submit records. Creating and managing data connectors can only be done by [coordinator users](/docs/concepts/users/#coordinators).
 
-As part of the creation process for connectors, the system will generate a connector ID and an access key. These will be returned to the coordinator user in response to the creation request. The coordinator should communicate these items in a secure manner to the party responsible for implementing the data connector. Here is an example of these items:
+As part of the creation process for connectors, the system will generate a connector ID and an authorization token. These will be returned to the coordinator user in response to the creation request. The coordinator should communicate these items in a secure manner to the party responsible for implementing the data connector. Here is an example of these items:
 
 ```js
 {

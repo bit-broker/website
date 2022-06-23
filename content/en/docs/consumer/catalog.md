@@ -290,3 +290,25 @@ curl http://bbk-consumer:8003/v1/catalog \
         }
       }'
 ```
+
+### Querying for Timeseries
+
+You can also search for entity instances which have timeseries associated with them, by using catalog query calls. For example:
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --header "x-bbk-auth-token: your-header-goes-here" \
+     --data-urlencode 'q={ "timeseries.population.value": "people" }'
+```
+
+This call will find all entity instances which have a timeseries called `population` with values of `people`.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --header "x-bbk-auth-token: your-header-goes-here" \
+     --data-urlencode 'q={ "timeseries.noise.unit": "decibel" }'
+```
+
+This call will find all entity instances which have a timeseries called `noise` with a unit of `decibel`.

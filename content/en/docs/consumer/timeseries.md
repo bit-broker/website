@@ -18,6 +18,10 @@ All Consumer API calls happen within the context of a [data sharing policy](/doc
 {{% /alert %}}
 
 {{% alert color="primary" %}}
+In the [Catalog API](/docs/consumer/catalog/) documentation, you can find [examples](/docs/consumer/catalog/#querying-for-timeseries) of how to search for entity instances which have timeseries associated with them.
+{{% /alert %}}
+
+{{% alert color="primary" %}}
 In our sample calls, we use the standard [server name and port](/docs/getting-started/install-local/#server-naming-and-ports) format outlined for [local installations](/docs/getting-started/install-local/) and [demos](/docs/getting-started/demo/). If you have an alternative API host base URL, then enter it in the box below to update all the sample calls on this page :<br/><br/>_Your API Host Base URL_<br/><input class="code-replace" data-item="http://bbk-consumer:8003" data-name="base url" type="text" placeholder="enter url here">
 {{% /alert %}}
 

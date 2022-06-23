@@ -5,7 +5,7 @@ weight: 1
 description: The catalog API enabling search and discovery services for entity instances
 ---
 
-All the entity instances being managed by BitBroker are recorded with [the catalog](/concepts/catalog/). This Catalog API is used to search this index and to discover entity instances which are needed by applications. The Catalog API returns list of entity instances, which are then accessible via the [Entity API](/docs/consumer/entity/).
+All the entity instances being managed by BitBroker are recorded with [the catalog](/concepts/catalog/). This Catalog API is used to search this index and to discover entity instances which are needed by applications. The Catalog API returns a list of entity instances, which are then accessible via the [Entity API](/docs/consumer/entity/).
 
 In this section, we will explore the capabilities of the Catalog API in depth.
 
@@ -78,15 +78,15 @@ Would return the following JSON array:
 ]
 ```
 
-Here we have one matching entity instance. The API returns [Entity API](/docs/consumer/entity/) links to matching instance.
+Here we have one matching entity instance. The API returns [Entity API](/docs/consumer/entity/) links to matching instances.
 
 {{% alert color="primary" %}}
-In the examples here we show the query strings in readable JSON format, but when actual calls are made the query string is required to be [url encoded](https://www.w3schools.com/tags/ref_urlencode.asp).
+In the examples here we show the query strings in readable JSON format, but when actual calls are made, the query string is required to be [url encoded](https://www.w3schools.com/tags/ref_urlencode.asp).
 {{% /alert %}}
 
 ### Querying Options
 
-Here we will go through each available query option one-by-one, giving an example of each.
+Here, we will go through each available query option one-by-one, giving an example of each.
 
 {{% alert color="info" %}}
 All query strings are [url encoded](https://www.w3schools.com/tags/ref_urlencode.asp) JSON objects. The query string syntax used is loosely based on the query language used within [Mongo DB](https://www.mongodb.com/).
@@ -242,7 +242,7 @@ curl http://bbk-consumer:8003/v1/catalog \
 
 #### Geo Spatial Queries
 
-The `$near` operator is used to find entity instances close to a [GeoJSON](https://geojson.org/) geometry. The `$min` and `$max` parameters are specified in metres. You must specify either one of `$min` or `$max` or both together. The `$geometry` attribute must be present.
+The `$near` operator is used to find entity instances close to a [GeoJSON](https://geojson.org/) geometry. The `$min` and `$max` parameters are specified in meters. You must specify either one of `$min` or `$max` or both together. The `$geometry` attribute must be present.
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \

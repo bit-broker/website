@@ -5,7 +5,7 @@ weight: 2
 description: The entity API enabling direct access to entity types and entity instances
 ---
 
-The Entity API is used to retrieve information about entity instances which are present within [the catalog](/docs/concepts/catalog/). You can use this API to get list of such entity instances or to get details of one particular entity instance. Calls to the Entity API are most often a result of a query to the [Catalog API](/docs/consumer/catalog/).
+The Entity API is used to retrieve information about entity instances which are present within [the catalog](/docs/concepts/catalog/). You can use this API to get a list of such entity instances or to get details of one particular entity instance. Calls to the Entity API are most often a result of a query to the [Catalog API](/docs/consumer/catalog/).
 
 In this section, we will explore the capabilities of the Entity API in depth.
 
@@ -70,7 +70,7 @@ This will return a JSON array as follows:
 ]
 ```
 
-Each entity type which you are permitted to see, will be returned within this array.
+Each entity type, which you are permitted to see, will be returned within this array.
 
 {{% alert color="info" %}}
 Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging-lists)
@@ -114,7 +114,7 @@ This will return an empty JSON array as follows:
 ]
 ```
 
-Each entity instance which you are permitted to see, will be returned within this array.
+Each entity instance, which you are permitted to see, will be returned within this array.
 
 {{% alert color="info" %}}
 Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging-lists)
@@ -122,7 +122,7 @@ Lists retrieved from this API will be returned in [pages](/docs/consumer/#paging
 
 ### Entity Instance Details
 
-You can ger the details of a particular entity instance by issuing an `HTTP/GET` to the `/entity/:type/:id` end-point.
+You can get the details of a particular entity instance by issuing an `HTTP/GET` to the `/entity/:type/:id` end-point.
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0 \

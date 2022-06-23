@@ -32,7 +32,7 @@ Attribute | Necessity | Description
 
 If the paging parameters are incorrect, the API will respond with a [standard validation error](/docs/api-conventions/errors/#validation-error-format) containing details of the violation.
 
-If the specified `offset` is greater than the count of records available, the API will return an empty list. Using `limit` and `offset` you can page your way through long list, getting the entire list a page at a time.
+If the specified `offset` is greater than the count of records available, the API will return an empty list. Using `limit` and `offset` you can page your way through a long list, getting the entire list a page at a time.
 
 {{% alert color="info" %}}
 Timeseries data has [separate paging semantics](/docs/consumer/timeseries/#paging-timeseries), which is more attuned to it's time-value pair data points.
@@ -80,11 +80,11 @@ Type | Description
 Please respect the legal basis under which the data is being shared. Coordinator users have the power to rescind consumer access keys and hence cut-off access to data for users who breach the legal context.
 {{% /alert %}}
 
-It is possible that the coordinator user who gave you your consumer access key will have more information about the legal basis of use of the data. They may require you to perform additional legal steps in order to be given an consumer access key.
+It is possible that the coordinator user who gave you your consumer access key will have more information about the legal basis of use of the data. They may require you to perform additional legal steps in order to be given a consumer access key.
 
 #### Accessing "Staged" Records
 
-It is important to understand that [data connectors](/docs/concepts/connectors/) might be in a _live_ or _staged_ state. That is their contribution might be approved for the live catalog, or might be being held back into a staging space only.
+It is important to understand that [data connectors](/docs/concepts/connectors/) might be in a _live_ or _staged_ state. That is, their contribution might be approved for the live catalog, or might be being held back into a staging space only.
 
 When staged, any records they contributed will not be visible in any part of the Consumer API. This concept is [outlined in more detail](/docs/concepts/connectors/#live-vs-staging-connectors) in the key concepts documentation.
 

@@ -45,7 +45,7 @@ When installing BitBroker locally, [authorization](/docs/api-conventions/authori
 
 You can query for a list timeseries data by issuing an `HTTP/GET` to the `/entity/:type/:id/timeseries/:tsid` end-point.
 
-Timeseries are always housed within a parent entity type and each has a unique ID on that entity type. Hence you will need to know the entity type ID (`type`), the entity instance ID ('id') and timeseries ID ('tsid'), in order to get access to such data points.
+Timeseries are always housed within a parent entity type and each has a unique ID on that entity type. Hence, you will need to know the entity type ID (`type`), the entity instance ID ('id') and timeseries ID ('tsid'), in order to get access to such data points.
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0/timeseries/population \
@@ -84,10 +84,10 @@ Attribute | Presence | Description
 `to` | <div class="stamp">sometimes</div> | When present, an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) formatted date
 `value` | <div class="stamp">always</div> | A valid JSON data type or object
 
-The exact nature of the `value` attribute will depend upon the context of the timeseries you are using. It might be as simple as a integer, or as complex as an object.
+The exact nature of the `value` attribute will depend upon the context of the timeseries you are using. It might be as simple as an integer, or as complex as an object.
 
 {{% alert color="info" %}}
-The timeseries will always be returned sorted on the `from` attribute. Taking the first item of an returned array, should always represent the latest data point.
+The timeseries will always be returned sorted on the `from` attribute. Taking the first item of a returned array, should always represent the latest data point.
 {{% /alert %}}
 
 #### Paging Timeseries

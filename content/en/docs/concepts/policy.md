@@ -94,7 +94,7 @@ Attribute | Necessity | Description
 `enabled` | <div class="stamp">required</div> | Whether or not to use access control
 `quota` | <div class="stamp">optional</div> | An object describing allowable data quotas
 `quota.max_number` | <div class="stamp">optional</div> | A number of calls for the quota
-`quota.interval_type` | <div class="stamp">optional</div> | The quota period of either 'day' or 'month'
+`quota.interval_type` | <div class="stamp">optional</div> | The quota period of either `day` or `month`
 `rate` | <div class="stamp">optional</div> | The maximum calls-per-second rate
 
 If you do not want to use the access control section, you can simply specify `false` for the `enabled` attribute. In this case, all other attributes will be ignored and the consumer will enjoy unrestricted access rates to the [Consumer API](/docs/consumer/).

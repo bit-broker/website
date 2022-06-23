@@ -45,7 +45,7 @@ When installing BitBroker locally, [authorization](/docs/api-conventions/authori
 
 You can query for a list timeseries data by issuing an `HTTP/GET` to the `/entity/:type/:id/timeseries/:tsid` end-point.
 
-Timeseries are always housed within a parent entity type and each has a unique ID on that entity type. Hence, you will need to know the entity type ID (`type`), the entity instance ID ('id') and timeseries ID ('tsid'), in order to get access to such data points.
+Timeseries are always housed within a parent entity type and each has a unique ID on that entity type. Hence, you will need to know the entity type ID (`type`), the entity instance ID (`id`) and timeseries ID (`tsid`), in order to get access to such data points.
 
 ```shell
 curl http://bbk-consumer:8003/v1/entity/country/34c3ab32774042098ddc0ffa9878e4a1a60b33c0/timeseries/population \

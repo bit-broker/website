@@ -18,7 +18,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Access
@@ -48,7 +48,7 @@ The body of this response will contain the authorization token, which the user s
 ```
 
 {{% alert color="primary" %}}
-It is expected that coordinator user will _securely_ distribute this consumer key to the user.
+It is expected that coordinator user will _securely_ distribute this consumer authorization token to the user.
 {{% /alert %}}
 
 ## Reissuing an Access
@@ -78,7 +78,7 @@ The body of this response will contain the _new_ authorization token, which the 
 ```
 
 {{% alert color="primary" %}}
-It is expected that coordinator user will _securely_ distribute this new consumer key to the user.
+It is expected that coordinator user will _securely_ distribute this new consumer authorization token to the user.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -168,7 +168,7 @@ This will return a JSON object as follows:
 ```
 
 {{% alert color="info" %}}
-[Consumer keys](/docs/api-conventions/authorization/#obtaining-a-consumer-key) are not stored in an accessible way within the system and hence not present in this returned document.
+[Consumer authorization tokens](/docs/api-conventions/authorization/#obtaining-a-consumer-token) are not stored in an accessible way within the system and hence not present in this returned document.
 {{% /alert %}}
 
 ## Deleting an Access

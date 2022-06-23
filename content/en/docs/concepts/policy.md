@@ -17,7 +17,7 @@ A policy definition is made up of three sections. We will outline each in detail
 
 ### Data Segment
 
-The _data segment_ section of a policy definition, defines the maximum subset of data which will be visible when users access the [Consumer API](/docs/consumer/) via a policy key. The combination of a consumer key a policy key, is locked within a data segment. There is no action they can perform with the Consumer API to break out in the wider [catalog](/docs/concepts/catalog/) of data.
+The _data segment_ section of a policy definition, defines the maximum subset of data which will be visible when users access the [Consumer API](/docs/consumer/) via a policy key. The combination of a consumer authorization token and a policy key, is locked within a data segment. There is no action they can perform with the Consumer API to break out in the wider [catalog](/docs/concepts/catalog/) of data.
 
 A data segment definition is made up of the following attributes:
 

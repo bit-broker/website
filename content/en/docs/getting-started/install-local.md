@@ -93,7 +93,7 @@ This section assumes you are familiar with [Containers](https://www.docker.com/r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [authorization token management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -188,7 +188,7 @@ This type of install is suitable for _development purposes_ only.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [key management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
+This type of deployment will give you access to a _partial_ BitBroker feature set. Whilst the policy [data segment](/docs/concepts/policy/#data-segment) will be enforced, [access controls](/docs/concepts/policy/#access-control) and [authorization token management](/docs/api-conventions/authorization/) will be bypassed. You will need to use [alternative development headers](#development-only-headers) to access the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="info" %}}

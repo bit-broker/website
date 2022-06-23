@@ -12,7 +12,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-key). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Policy
@@ -150,11 +150,11 @@ HTTP/1.1 204 No Content
 ```
 
 {{% alert color="warning" %}}
-Great care should be taken when updating policies, since keys may have been issued in the previous context. The ability to change the definition of live policies is a powerful feature, but comes with responsibility.
+Great care should be taken when updating policies, since authorization tokens may have been issued in the previous context. The ability to change the definition of live policies is a powerful feature, but comes with responsibility.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-The new policy definition will come into play right away (after a small propagation delay). Keys issued prior to the change, will automatically become subject to the new definition.
+The new policy definition will come into play right away (after a small propagation delay). Authorization tokens issued prior to the change, will automatically become subject to the new definition.
 {{% /alert %}}
 
 The validation rules for updated policy information, are the same as that for [creating new policies](#creating-a-new-policy).
@@ -252,5 +252,5 @@ HTTP/1.1 204 No Content
 ```
 
 {{% alert color="warning" %}}
-Any keys which were issued for this policy will no longer return any results for any of the end-points which form the [Consumer API](/docs/consumer/).
+Any authorization tokens which were issued for this policy will no longer return any results for any of the end-points which form the [Consumer API](/docs/consumer/).
 {{% /alert %}}

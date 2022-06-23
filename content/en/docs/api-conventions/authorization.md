@@ -47,23 +47,23 @@ These keys should be kept by their owner in a secure location and never shared w
 BitBroker does not retain an accessible copy of authorization tokens. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
 {{% /alert %}}
 
-##### Obtaining a Coordinator Key
+##### Obtaining a Coordinator Authorization Token
 
-Coordinator keys are required to authorize calls to the [Coordinator API](/docs/coordinator/). This API is used to perform administrative services for a BitBroker instance.
+Coordinator authorization tokens are required to authorize calls to the [Coordinator API](/docs/coordinator/). This API is used to perform administrative services for a BitBroker instance.
 
-Coordinator keys are obtained by utilizing end-points on the Coordinator API, in order to promote a user to coordinator status. To do this you must first [create a new user](/docs/coordinator/user/#creating-a-new-user) and then you must [promote that user](/docs/coordinator/user/#promoting-a-user-to-coordinator) to be a coordinator.
+Coordinator authorization tokens are obtained by utilizing end-points on the Coordinator API, in order to promote a user to coordinator status. To do this you must first [create a new user](/docs/coordinator/user/#creating-a-new-user) and then you must [promote that user](/docs/coordinator/user/#promoting-a-user-to-coordinator) to be a coordinator.
 
-Once you promote a user to be a coordinator, then their coordinator key will be returned in the body of the [response to that API call](/docs/coordinator/user/#promoting-a-user-to-coordinator).
+Once you promote a user to be a coordinator, then their coordinator authorization token will be returned in the body of the [response to that API call](/docs/coordinator/user/#promoting-a-user-to-coordinator).
 
 {{% alert color="info" %}}
 Fresh BitBroker [installations](/docs/getting-started/installation/) come with a bootstrap coordinator user and with an associated [bootstrap coordinator token](/docs/getting-started/installation/#bootstrap-coordinator-token).
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-It is possible, but _not recommended_, to use the bootstrap user in normal operation. Instead, you should use the [bootstrap coordinator token](/docs/getting-started/installation/#bootstrap-coordinator-token) to create your own master coordinator user and then utilize their key for further operations.
+It is possible, but _not recommended_, to use the bootstrap user in normal operation. Instead, you should use the [bootstrap coordinator token](/docs/getting-started/installation/#bootstrap-coordinator-token) to create your own master coordinator user and then utilize their token for further operations.
 {{% /alert %}}
 
-If a coordinator key is lost, then a new key will have to be generated. This can be done by first [demoting the user](/docs/coordinator/user/#demoting-a-user-from-coordinator) from being a coordinator and then [promoting them](/docs/coordinator/user/#promoting-a-user-to-coordinator) again. Note that, in this scenario, the old coordinator key will be rescinded.
+If a coordinator authorization token is lost, then a new token will have to be generated. This can be done by first [demoting the user](/docs/coordinator/user/#demoting-a-user-from-coordinator) from being a coordinator and then [promoting them](/docs/coordinator/user/#promoting-a-user-to-coordinator) again. Note that, in this scenario, the old coordinator authorization token will be rescinded.
 
 ##### Obtaining a Contributor Key
 
@@ -85,12 +85,12 @@ Recreating a connector which was previously deleted, will result in the same con
 
 It is expected that the coordinator user, who creates the data connector, will distribute the contribution key in a secure manner to the relevant party.
 
-##### Obtaining a Consumer Key
+##### Obtaining a Consumer Token
 
-Consumer keys are required to authorize calls to the [Consumer API](/docs/consumer/). This API is used to access data via a policy definition.
+Consumer authorization tokens are required to authorize calls to the [Consumer API](/docs/consumer/). This API is used to access data via a policy definition.
 
-Consumer keys are obtained by utilizing end-points on the [Coordinator API](/docs/coordinator/). To do this you must [create an access](/docs/coordinator/access/#creating-a-new-access), which is a link between a user and a policy definition.
+Consumer authorization tokens are obtained by utilizing end-points on the [Coordinator API](/docs/coordinator/). To do this you must [create an access](/docs/coordinator/access/#creating-a-new-access), which is a link between a user and a policy definition.
 
-Once you create such an access, then the consumer key will be returned in the body of the [response to that API call](/docs/coordinator/access/#creating-a-new-access).
+Once you create such an access, then the consumer authorization token will be returned in the body of the [response to that API call](/docs/coordinator/access/#creating-a-new-access).
 
-If a consumer key is lost, then you can [reissue the access](/docs/coordinator/access/#reissuing-an-access) to obtain a new key. Note that, in this scenario, the old consumer key will be rescinded.
+If a consumer authorization token is lost, then you can [reissue the access](/docs/coordinator/access/#reissuing-an-access) to obtain a new token. Note that, in this scenario, the old consumer authorization token will be rescinded.

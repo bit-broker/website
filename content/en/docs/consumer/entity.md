@@ -34,7 +34,7 @@ The Consumer API can be run in production _or_ development mode; each requiring 
 {{% /alert %}}
 
 {{% alert id="mode-prd" color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [consumer API token](/docs/api-conventions/authorization/#obtaining-a-consumer-token). This key should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Token_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [consumer API authorization token](/docs/api-conventions/authorization/#obtaining-a-consumer-token). This authorization token should have been provided to you by the coordinator user who administers the BitBroker instance. If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Consumer API Authorization Token_<br/><input class="code-replace" data-item="your-header-goes-here" data-name="header" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 {{% alert id="mode-dev" color="primary" %}}

@@ -25,7 +25,7 @@ The header must be exactly as it appears here, with the same casing and without 
 
 ##### Testing your Authorization Token
 
-It can be useful to make test calls to the API to check that your key is valid and that your authorization header is formatted correctly.
+It can be useful to make test calls to the API to check that your authorization token is valid and that your authorization header is formatted correctly.
 
 The base end-point of all the three API servers respond with a small announcement. Like all BitBroker API end-points, these require a working authorization to be in place. Hence, this announcement can be used for testing or verification purposes.
 
@@ -35,16 +35,16 @@ You are encouraged to make successful test calls to these end-points before laun
 
 #### Obtaining an Authorization Token
 
-The method used to obtain an authorization token differs across the three API sets. However, once you have a key, the [mechanics of authorization](#authorising-api-calls) are the same. All keys are in the form of a long hexadecimal string, such as:
+The method used to obtain an authorization token differs across the three API sets. However, once you have a authorization token, the [mechanics of authorization](#authorising-api-calls) are the same. All authorization tokens are in the form of a long hexadecimal string, such as:
 
 ```
 4735d360-dc03-499c-91ce-68dfc1554691.5d5c9eab-1d9c-4c88-9478-9f4ab35568a7.423c9101-315a-4929-a64c-9b905837799c
 ```
 
-These keys should be kept by their owner in a secure location and never shared with unauthorized users.
+These authorization tokens should be kept by their owner in a secure location and never shared with unauthorized users.
 
 {{% alert color="warning" %}}
-BitBroker does not retain an accessible copy of authorization tokens. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
+BitBroker does not retain an accessible copy of authorization tokens. If tokens are lost, new tokens will have to be generated as per the instructions below. The lost authorization tokens will then be rescinded.
 {{% /alert %}}
 
 ##### Obtaining a Coordinator Authorization Token
@@ -65,25 +65,25 @@ It is possible, but _not recommended_, to use the bootstrap user in normal opera
 
 If a coordinator authorization token is lost, then a new token will have to be generated. This can be done by first [demoting the user](/docs/coordinator/user/#demoting-a-user-from-coordinator) from being a coordinator and then [promoting them](/docs/coordinator/user/#promoting-a-user-to-coordinator) again. Note that, in this scenario, the old coordinator authorization token will be rescinded.
 
-##### Obtaining a Contributor Key
+##### Obtaining a Contributor Authorization Token
 
-Contributor keys are required to authorize calls to the [Contributor API](/docs/contributor/). This API is used to contribute data to a designated [entity type](/docs/concepts/entity-types/).
+Contributor authorization tokens are required to authorize calls to the [Contributor API](/docs/contributor/). This API is used to contribute data to a designated [entity type](/docs/concepts/entity-types/).
 
-Contributor keys are obtained by utilizing end-points on the [Coordinator API](/docs/coordinator/), in order to [create a connector](/docs/coordinator/connectors/#creating-a-new-connector) on a given entity type.
+Contributor authorization tokens are obtained by utilizing end-points on the [Coordinator API](/docs/coordinator/), in order to [create a connector](/docs/coordinator/connectors/#creating-a-new-connector) on a given entity type.
 
-Once the connector is created, then its contribution key will be returned in the body of the [response to that API call](/docs/coordinator/connectors/#creating-a-new-connector). More information about [data connectors](/docs/concepts/connectors/) and data contribution is available in the [key concepts](/docs/concepts/) section of this documentation.
+Once the connector is created, then its contribution authorization token will be returned in the body of the [response to that API call](/docs/coordinator/connectors/#creating-a-new-connector). More information about [data connectors](/docs/concepts/connectors/) and data contribution is available in the [key concepts](/docs/concepts/) section of this documentation.
 
-If a contributor key is lost, then a new key will have to be generated. This can be done by first [deleting the connector](/docs/coordinator/connectors/#deleting-a-connector) and then [creating it afresh](/docs/coordinator/connectors/#creating-a-new-connector). Note that, in this scenario, the old contributor key will be rescinded.
+If a contributor authorization token is lost, then a new token will have to be generated. This can be done by first [deleting the connector](/docs/coordinator/connectors/#deleting-a-connector) and then [creating it afresh](/docs/coordinator/connectors/#creating-a-new-connector). Note that, in this scenario, the old contributor authorization token will be rescinded.
 
 {{% alert color="warning" %}}
-Losing contributor keys can cause major disruption. Since the resolution involves deletion and the re-creation of the connector, all the associated data records will be lost and will have to be reinserted into [the catalog](/docs/concepts/catalog/) by the new connector.
+Losing contributor authorization tokens can cause major disruption. Since the resolution involves deletion and the re-creation of the connector, all the associated data records will be lost and will have to be reinserted into [the catalog](/docs/concepts/catalog/) by the new connector.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 Recreating a connector which was previously deleted, will result in the same connector ID, if the new connector has the exact same name.
 {{% /alert %}}
 
-It is expected that the coordinator user, who creates the data connector, will distribute the contribution key in a secure manner to the relevant party.
+It is expected that the coordinator user, who creates the data connector, will distribute the contribution authorization token in a secure manner to the relevant party.
 
 ##### Obtaining a Consumer Token
 

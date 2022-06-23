@@ -12,7 +12,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API authorization token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Authorization Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Entity Type
@@ -205,5 +205,5 @@ Deleting an entity type will also delete all [data connectors](/docs/concepts/co
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Any [policy](/docs/concepts/policy/) keys which were issued where this entity type formed part of the [data segment](/docs/concepts/policy/#data-segment), will no longer return entity instances of this type. In some circumstances, this could render policy keys unfit for purpose.
+Any [policy](/docs/concepts/policy/) authorization tokens which were issued where this entity type formed part of the [data segment](/docs/concepts/policy/#data-segment), will no longer return entity instances of this type. In some circumstances, this could render policy authorization tokens unfit for purpose.
 {{% /alert %}}

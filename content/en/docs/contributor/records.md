@@ -18,7 +18,7 @@ A quick way to get going building your own data connectors is to adapt the [exam
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [contributor API token](/docs/api-conventions/authorization/#obtaining-a-contributor-token). This key should have been provided to you by the coordinator user who created your data connector within BitBroker.
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [contributor API authorization token](/docs/api-conventions/authorization/#obtaining-a-contributor-token). This authorization token should have been provided to you by the coordinator user who created your data connector within BitBroker.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
@@ -27,7 +27,7 @@ The sample calls in this section will not work as-is. Contributor API calls requ
 
 ## Contributing Records to the Catalog
 
-We will assume for the purposes of this section that an [entity type](/docs/concepts/entity-types/) and it's associated [data connector](/docs/concepts/connectors/) have been created and are present within the system. Further, that the connector ID and key, which were obtained when the [data connecter was created](/docs/coordinator/connectors/#creating-a-new-connector), have been recorded and are available.
+We will assume for the purposes of this section that an [entity type](/docs/concepts/entity-types/) and it's associated [data connector](/docs/concepts/connectors/) have been created and are present within the system. Further, that the connector ID and authorization token, which were obtained when the [data connecter was created](/docs/coordinator/connectors/#creating-a-new-connector), have been recorded and are available.
 
 Data can now be contributed into [the catalog](/docs/concepts/catalog/) by this data connector, but within the context of its parent entity type only. Hence, we say that a single connector contributes "entity instance records". If one organization wants to contribute data to multiple entity types, then they must do this via multiple data connectors.
 

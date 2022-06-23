@@ -17,7 +17,7 @@ A policy definition is made up of three sections. We will outline each in detail
 
 ### Data Segment
 
-The _data segment_ section of a policy definition, defines the maximum subset of data which will be visible when users access the [Consumer API](/docs/consumer/) via a policy key. The combination of a consumer authorization token and a policy key, is locked within a data segment. There is no action they can perform with the Consumer API to break out in the wider [catalog](/docs/concepts/catalog/) of data.
+The _data segment_ section of a policy definition, defines the maximum subset of data which will be visible when users access the [Consumer API](/docs/consumer/) via a policy authorization token. The combination of a consumer authorization token and a policy authorization token, is locked within a data segment. There is no action they can perform with the Consumer API to break out in the wider [catalog](/docs/concepts/catalog/) of data.
 
 A data segment definition is made up of the following attributes:
 
@@ -87,7 +87,7 @@ will be returned like this, for in-policy calls:
 
 ### Access Control
 
-The _access control_ section of a policy definition, defines the ways in which users can interact with the [Consumer API](/docs/consumer/) via a policy key. An access control definition is made up of the following attributes:
+The _access control_ section of a policy definition, defines the ways in which users can interact with the [Consumer API](/docs/consumer/) via a policy authorization token. An access control definition is made up of the following attributes:
 
 Attribute | Necessity | Description
 --- | --- | ---
@@ -112,7 +112,7 @@ As an example, if you specify the following:
 }
 ```
 
-Users with a policy key will be able to make calls at a maximum rate of 250-per-second and with a maximum quota of 86,400-per-day.
+Users with a policy authorization token will be able to make calls at a maximum rate of 250-per-second and with a maximum quota of 86,400-per-day.
 
 {{% alert color="info" %}}
 If a consumer breaches a rate or quota limit, then calls to any part of the [Consumer API](/docs/consumer/) will respond `HTTP/1.1 429 Too Many Requests` error. This response will persist until the breach has expired.

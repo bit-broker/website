@@ -18,7 +18,7 @@ In our sample calls, we use the standard [server name and port](/docs/getting-st
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
+All API calls in BitBroker require [authorization](/docs/api-conventions/authorization/). The sample calls below contain a placeholder string where you should insert your [coordinator API authorization token](/docs/api-conventions/authorization/#obtaining-a-coordinator-token). If you already have a token, enter it in the box below to update all the sample calls on this page:<br/><br/>_Your Coordinator API Authorization Token_<br/><input class="code-replace" data-item="your-token-goes-here" data-name="token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ## Creating a New Connector
@@ -60,7 +60,7 @@ The body of this response will contain the connector ID and [connector authoriza
 ```
 
 {{% alert color="info" %}}
-It is expected that the coordinator user will _securely_ distribute the connector ID and key to the operator of the new data connector.
+It is expected that the coordinator user will _securely_ distribute the connector ID and authorization token to the operator of the new data connector.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -305,5 +305,5 @@ Deleting a connector will also remove its ability to contribute data. No further
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Any [policy](/docs/concepts/policy/) keys which were issued where this connector's records formed part of the [data segment](/docs/concepts/policy/#data-segment), will no longer return entity instances contributed by it. In some circumstances, this could render policy keys unfit for purpose.
+Any [policy](/docs/concepts/policy/) authorization tokens which were issued where this connector's records formed part of the [data segment](/docs/concepts/policy/#data-segment), will no longer return entity instances contributed by it. In some circumstances, this could render policy authorization tokens unfit for purpose.
 {{% /alert %}}

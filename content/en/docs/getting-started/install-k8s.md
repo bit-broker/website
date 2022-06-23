@@ -28,7 +28,7 @@ All interactions with BitBroker stem, ultimately, from interactions with the [Co
 
 Using this API, new users can be [created](/docs/coordinator/user/#creating-a-new-user) and then [promoted](/docs/coordinator/user/#promoting-a-user-to-coordinator)  to have coordinator status. This results in the production of a new coordinator access token for them. But this act of promotion itself, requires permission. So how can we get started with this circular scenario?
 
-Whenever a fresh system is installed using Kubernetes, a special _bootstrap coordinator token_ is produced. This token is valid for use with the [Coordinator API](/docs/coordinator/). You can use this token to get going with the process of then creating your own users and giving them coordinator status.
+Whenever a fresh system is installed using Kubernetes, a special _bootstrap coordinator authorization token_ is produced. This token is valid for use with the [Coordinator API](/docs/coordinator/). You can use this token to get going with the process of then creating your own users and giving them coordinator status.
 
 {{% alert color="warning" %}}
 It is possible, but _not recommended_, to use the bootstrap coordinator token in normal operation. Instead, you should use it to create your own master coordinator user and then utilize their token for further operations.
@@ -41,7 +41,7 @@ The bootstrap coordinator token is a different (longer) format, to normal coordi
 The detailed install steps below, will contain more information about how to extract and use this bootstrap token.
 
 {{% alert color="primary" %}}
-In all the sample calls below, we use a placeholder value for the bootstrap token. Enter your bootstrap coordinator token into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Bootstrap Coordinator Token_<br/><input class="code-replace" data-item="bootstrap-token-goes-here" data-name="bootstrap token" type="text" placeholder="enter token here">
+In all the sample calls below, we use a placeholder value for the bootstrap token. Enter your bootstrap coordinator token into the box below, in order to update the sample calls with your install details:<br/><br/>_Your Bootstrap Coordinator Authorization Token_<br/><input class="code-replace" data-item="bootstrap-token-goes-here" data-name="bootstrap token" type="text" placeholder="enter token here">
 {{% /alert %}}
 
 ### Cloud Kubernetes Installation

@@ -1,15 +1,15 @@
 ---
-title: "Hosting a Webhooks"
+title: "Hosting a Webhook"
 linkTitle: "Webhooks"
 weight: 3
 description: How to use webhooks to incorporate live and on-demand data
 ---
 
-It is an expectation that the BitBroker catalog contains information which is useful to enable search and discovery of entity instances. Hence it contains key metadata - but it does not normally contain actual entity data. This is pulled on-demand via a webhook hosted by the data connector who contributed the entity record.
+It is an expectation that the BitBroker catalog contains information which is useful to enable search and discovery of entity instances. Hence, it contains key metadata - but it does not normally contain actual entity data. This is pulled on-demand via a webhook hosted by the data connector who contributed the entity record.
 
 The distinction between data and metadata [is covered in more detail](/docs/concepts/catalog/#data-vs-metadata) in the [key concepts](/docs/concepts/) documentation. Depending on how data and metadata is balanced in a BitBroker instance, there may or may not be a requirement to host a webhook.
 
-In this section we will outline how to implement a webhook within a data container.
+In this section, we will outline how to implement a webhook within a data container.
 
 {{% alert color="primary" %}}
 A quick way to get going integrating a webhook into your own data connector is to adapt the [example connectors](/docs/examples/connectors/) which have been built for a range of data sources.
@@ -26,14 +26,14 @@ The first step is to register your webhook with BitBroker. This is done when the
 
 Your webhook should be an HTTP server which is capable of receiving calls from the BitBroker instance. You can host this server in any manner you like, however the coordinator of your BitBroker may have their own hosting and security requirements of it.
 
-You need to maintain your webhook so that it is always available to its connected BitBroker instance. If you webhook is down or inaccessible when BitBroker needs it, this will result in a poor experience for [consumers](/docs/concepts/users/#consumers) using the [Consumer API](/docs/consumer/). In this scenario, they will only see partial records. Information about misbehaving data connectors will be available to coordinator users.
+You need to maintain your webhook so that it is always available to its connected BitBroker instance. If your webhook is down or inaccessible when BitBroker needs it, this will result in a poor experience for [consumers](/docs/concepts/users/#consumers) using the [Consumer API](/docs/consumer/). In this scenario, they will only see partial records. Information about misbehaving data connectors will be available to coordinator users.
 
 ## Required End-points
 
 You are required to implement _two_ end-points as part of your webhook deployment.
 
 {{% alert color="primary" %}}
-Whilst BitBroker advertises its own key space to its [consumers](/docs/concepts/users/#consumers) , there is no need for data connectors to take heed of these. They can continue to concern themselves with only their own domain key space. When BitBroker makes requests of your webhook, it will only ever use own key space.
+Whilst BitBroker advertises its own key space to its [consumers](/docs/concepts/users/#consumers), there is no need for data connectors to take heed of these. They can continue to concern themselves with only their own domain key space. When BitBroker makes requests of your webhook, it will only ever use its own key space.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -86,7 +86,7 @@ For example, consider this (previously submitted) catalog record:
 }
 ```
 
-If their is a call for the detail of this record made on the [Consumer API](/docs/consumer/), the system will callback on the enitiy end-point as follows:
+If there is a call for the detail of this record made on the [Consumer API](/docs/consumer/), the system will callback on the entity end-point as follows:
 
 ```
 HTTP/GET /entity/country/GB
@@ -162,7 +162,7 @@ Attribute | Information
 --- | ---
 `start` | Should be treated as _inclusive_ of the range being requested<br/>When not supplied, assume a `start` from the _latest_ timeseries point
 `end` | Should be treated as _exclusive_ of the range being requested<br/>When present, this will always after the `start`<br/>Never present without `start` also being present<br/>When not supplied, defer to the `limit` count
-`limit` | Takes prescedence over the `start` and `end` range<br/>The `end` may not be reached, if `limit` is breached first
+`limit` | Takes precedence over the `start` and `end` range<br/>The `end` may not be reached, if `limit` is breached first
 
 Then the webhook should respond timeseries data points as follows:
 
@@ -191,7 +191,7 @@ Attribute | Necessity | Description
 `value` | <div class="stamp">required</div> | A valid JSON data type or object
 
 {{% alert color="info" %}}
-You should return your timeseries points with the latest first. Taking the first item of an returned array, should always represent the latest data point.
+You should return your timeseries points with the latest first. Taking the first item of a returned array, should always represent the latest data point.
 {{% /alert %}}
 
 Specifying both `from` and `to` is rare - in most cases, only a `from` will be present. You can place any data type which makes sense for your timeseries in the `value` attribute. But this should be consistent across all the timeseries points you return.

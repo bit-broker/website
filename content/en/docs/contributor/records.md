@@ -7,7 +7,7 @@ description: How connectors contribute entity instance records to BitBroker
 
 All the data being managed by a BitBroker instance, enters the system via the [Contribution API](/docs/contributor/). The process of contributing such data is documented in detail in this section.
 
-In this section, we will consider the basic use case of contributing entity instance records. Laters sections of this documentation will detail how you can contribute [live, on-demand data](/docs/contributor/webhooks/#entity-end-point) and [timeseries data](/docs/contributor/webhooks/#timeseries-end-point).
+In this section, we will consider the basic use case of contributing entity instance records. Later sections of this documentation will detail how you can contribute [live, on-demand data](/docs/contributor/webhooks/#entity-end-point) and [timeseries data](/docs/contributor/webhooks/#timeseries-end-point).
 
 {{% alert color="primary" %}}
 Contributing data is tightly bound with the concepts of [entity types](/docs/concepts/entity-types/) and their associated [data connectors](/docs/concepts/connectors/). All contributions happen in the context of these important system elements. It is vital that you fully understand these and other [key concepts](/docs/concepts/) before using this API to contribute records.
@@ -22,14 +22,14 @@ All API calls in BitBroker require [authorization](/docs/api-conventions/authori
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-The sample calls in this section will not work as-is. Contributor API calls require the use of session IDs, which are generated on-demand. Hence the sample calls here are merely illustrative.
+The sample calls in this section will not work as-is. Contributor API calls require the use of session IDs, which are generated on-demand. Hence, the sample calls here are merely illustrative.
 {{% /alert %}}
 
 ## Contributing Records to the Catalog
 
-We will assume for the purposes of this section that an [entity type](/docs/concepts/entity-types/) and it's associated [data connector](/docs/concepts/connectors/) have been created and a are present within the system. Further, that the connector ID and key, which were obtained when the [data connecter was created](/docs/coordinator/connectors/#creating-a-new-connector), have been recorded and are available.
+We will assume for the purposes of this section that an [entity type](/docs/concepts/entity-types/) and it's associated [data connector](/docs/concepts/connectors/) have been created and are present within the system. Further, that the connector ID and key, which were obtained when the [data connecter was created](/docs/coordinator/connectors/#creating-a-new-connector), have been recorded and are available.
 
-Data can now be contributed into [the catalog](/docs/concepts/catalog/) by this data connector, but within the context of it's parent entity type only. Hence, we say that a single connector contributes "entity instance records". If one organization wants to contribute data to multiple entity types, then they must do this via multiple data connectors.
+Data can now be contributed into [the catalog](/docs/concepts/catalog/) by this data connector, but within the context of its parent entity type only. Hence, we say that a single connector contributes "entity instance records". If one organization wants to contribute data to multiple entity types, then they must do this via multiple data connectors.
 
 The process of contributing entity instance records into [the catalog](/docs/concepts/catalog/) breaks down into three steps:
 
@@ -37,14 +37,14 @@ The process of contributing entity instance records into [the catalog](/docs/con
 1. Upsert and/or delete records into this session
 1. Close the session
 
-These steps are achieved via an HTTP based API which we outline in detail below. Each data connector will have a private end-point on this API which is waiting for its contributions.
+These steps are achieved via an HTTP based API, which we outline in detail below. Each data connector will have a private end-point on this API which is waiting for its contributions.
 
 {{% alert color="primary" %}}
 It is important to understand the distinction between _data_ and _metadata_ in the context of the BitBroker instance. It is an expectation that only metadata is being contributed into the catalog and that live data is kept back for on-demand requests. This distinction is [outlined in more detail](/docs/concepts/catalog/#data-vs-metadata) in the key concepts documentation.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-It is important to understand that data connectors might be in a _live_ or _staged_ state. That is their contribution might be approved for the live catalog, or might be being held back into a staging space only. This concept is [outlined in more detail](/docs/concepts/connectors/#live-vs-staging-connectors) in the key concepts documentation. There is a [mechanism available](/docs/consumer/#accessing-staged-records) in the [Consumer API](/docs/consumer/) which allows data connectors to see how their records will look alongside other existing public records.
+It is important to understand that data connectors might be in a _live_ or _staged_ state. That is, their contribution might be approved for the live catalog, or might be being held back into a staging space only. This concept is [outlined in more detail](/docs/concepts/connectors/#live-vs-staging-connectors) in the key concepts documentation. There is a [mechanism available](/docs/consumer/#accessing-staged-records) in the [Consumer API](/docs/consumer/) which allows data connectors to see how their records will look alongside other existing public records.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -53,7 +53,7 @@ If your connector is marked as "non-live", your data contribution will _not_ bec
 
 ### Sessions
 
-Sessions are used by the Contribution API to manage inbound data coming from the community of data connectors. Sessions allow the connectors to contribute entity instance records in well defined ways, which are respectful of the state management of the source data store.
+Sessions are used by the Contribution API to manage inbound data coming from the community of data connectors. Sessions allow the connectors to contribute entity instance records in well-defined ways, which are respectful of the state management of the source data store.
 
 BitBroker supports three types of sessions: _stream_, _accrue_ and _replace_. Each one provides for different update and delete contexts.
 
@@ -89,7 +89,7 @@ stream | <div class="stamp">close<br/>`false`</div> | no operation - session dat
 
 #### Accrue Sessions
 
-Accrue sessions are useful when entity instance records should only become visible as a complete sets. In this scenario, the entity instance records contributed within a session, only become visible via the [Consumer API](/docs/consumer/) when the session is closed - and hence only as a complete set.
+Accrue sessions are useful when entity instance records should only become visible as complete sets. In this scenario, the entity instance records contributed within a session, only become visible via the [Consumer API](/docs/consumer/) when the session is closed - and hence only as a complete set.
 
 New records are in addition to existing records in the catalog and removal must be explicitly requested. When you close an accrue session, you must specify a commit state as `true` or `false`. Closing the session with `true` makes the contributed records visible in the Consumer API, but closing it with `false` will discard all the records contributed within that session.
 
@@ -111,13 +111,13 @@ replace | <div class="stamp">open</div>  | session data not visible, but previou
 replace | <div class="stamp">close<br/>`true`</div> | session data now becomes visible and replaces _all_ previous data
 replace | <div class="stamp">close<br/>`false`</div> | session data is discarded and previous data persists
 
-As you can see, picking the right session type is vitally important to ensure you make best use of the catalog. In general, you should aim to use a `stream` type session where you can, as this is the simplest.
+As you can see, picking the right session type is vitally important to ensure you make the best use of the catalog. In general, you should aim to use a `stream` type session where you can, as this is the simplest.
 
-If you don't want clients to be able to see intermediate updates in the catalog, then `accrue` and `replace` may be a better options. Where you don't want to (or can't) store any state about what you previously sent to the catalog, then `replace` is probably the best option.
+If you don't want clients to be able to see intermediate updates in the catalog, then `accrue` and `replace` may be better options. Where you don't want to (or can't) store any state about what you previously sent to the catalog, then `replace` is probably the best option.
 
 ### Using Sessions
 
-There are only three HTTP calls which your data connectors need make in order to contribute records into the catalog the catalog.
+There are only three HTTP calls which your data connectors need make in order to contribute records into the catalog.
 
 #### Opening a Session
 
@@ -153,14 +153,14 @@ Once you have an open session, you can post two types of actions to it in order 
 * `delete` to _remove_ an existing record from the catalog
 
 {{% alert color="info" %}}
-You can only make changes to your own records within the catalog. Your data connector will have no affect on records which came from other connectors - even if you share an entity type with them.
+You can only make changes to your own records within the catalog. Your data connector will have no effect on records which came from other connectors - even if you share an entity type with them.
 {{% /alert %}}
 
 Entity instance records can be upserted or deleted by issuing an `HTTP/POST` to the `/connector/:cid/session/:sid/:action` end-point.
 
 In order to post record actions, you must know the connector ID (`cid`). This should have been communicated to you by the coordinator user who created your data connector within BitBroker. You must also know the session ID (`sid`), which was returned in the previous step where a [session was opened](#opening-a-session).
 
-Finally you will also need to select one of the two valid `actions` from `upsert` and `delete`. These should be specified in lowercase and without any spaces.
+Finally, you will also need to select one of the two valid `actions` from `upsert` and `delete`. These should be specified in lowercase and without any spaces.
 
 ```shell
 curl http://bbk-contributor:8002/v1/connector/9afcf3235500836c6fcd9e82110dbc05ffbb734b/session/4527eff4-d9cf-41c0-9ecc-8e06b57fcf54/upsert \
@@ -185,7 +185,7 @@ Your upsert and delete actions will be executed in the strict order in which the
 Care should be taken to ensure that the session ID (`sid`) used to post updates is the ID which was returned in the last call to [open a session](#opening-a-session). If you send an old, invalid or mismatched session ID, it will result in an `HTTP/1.1 403 Forbidden` response. This will have no impact on any existing open session.
 {{% /alert %}}
 
-In the example above, we upsert an empty array - this is obviously not useful. Lets now look in detail about how records are inserted, update and deleted using this API call.
+In the example above, we upsert an empty array - this is obviously not useful. Let's now look in detail about how records are inserted, update and deleted using this API call.
 
 ##### Upserting records
 
@@ -211,11 +211,11 @@ These attributes are required to be present for entity instance in the system, r
 Attribute | Description
 --- | ---
 `id` | Your domain key for this entity instance
-`name` | A human readable name describing this entity instance
+`name` | A human-readable name describing this entity instance
 
 ###### Entity Attributes
 
-These attributes are required to be present for entity instance in the system, of a given entity type. This set of attributes will have been communicated to you by the coordinator user who created your connector within BitBroker. It will documented in the form of a [JSON schema](https://json-schema.org/).
+These attributes are required to be present for entity instance in the system, of a given entity type. This set of attributes will have been communicated to you by the coordinator user who created your connector within BitBroker. It will presented in the form of a [JSON schema](https://json-schema.org/).
 
 ###### Instance Attributes
 
@@ -236,7 +236,7 @@ The catalog will decide whether to insert or update your record based upon the d
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Your records are scoped to be within you data connector space only. You cannot affect records delivered by another data connector, even within the same entity type and even if you have a clashing key space.
+Your records are scoped to be within your data connector space only. You cannot affect records delivered by another data connector, even within the same entity type and even if you have a clashing key space.
 {{% /alert %}}
 
 Here is the post body for an example upsert request for a set of three records:
@@ -345,7 +345,7 @@ After entity instance records have been posted, you can be close a session by is
 
 In order to post record actions, you must know the connector ID (`cid`). This should have been communicated to you by the coordinator user who created your data connector within BitBroker. You must also know the session ID (`sid`), which was returned in the previous step where a [session was opened](#opening-a-session).
 
-Finally you will also need to select one of the two valid `commits` from `true` and `false`. These should be specified in lowercase and without any spaces.
+Finally, you will also need to select one of the two valid `commits` from `true` and `false`. These should be specified in lowercase and without any spaces.
 
 ```shell
 curl http://bbk-contributor:8002/v1/connector/9afcf3235500836c6fcd9e82110dbc05ffbb734b/session/4527eff4-d9cf-41c0-9ecc-8e06b57fcf54/close/true \

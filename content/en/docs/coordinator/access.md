@@ -146,7 +146,7 @@ This will return a JSON array as follows:
 
 You can obtain the details of an existing access by issuing an `HTTP/GET` to the `/user/:uid/access/:pid` end-point.
 
-Accesses are always created within the context of a [user](/docs/concepts/users/) and a [policy](/docs/concepts/policy/). Hence, you must know the user ID (`uid`) and the policy ID (`pid`) to get it's details.
+Accesses are always created within the context of a [user](/docs/concepts/users/) and a [policy](/docs/concepts/policy/). Hence, you must know the user ID (`uid`) and the policy ID (`pid`) to get its details.
 
 ```shell
 curl http://bbk-coordinator:8001/v1/user/2/access/over-a-billion \
@@ -191,5 +191,5 @@ HTTP/1.1 204 No Content
 ```
 
 {{% alert color="warning" %}}
-Once the access is deleted the key issued with it will no longer return any results for any of the end-points which form the [Consumer API](/docs/consumer/).
+Once the access is deleted, the key issued with it will no longer return any results for any of the end-points which form the [Consumer API](/docs/consumer/).
 {{% /alert %}}

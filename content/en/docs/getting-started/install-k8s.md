@@ -18,7 +18,7 @@ For all Kubernetes installations, you should be aware of the ways in which fresh
 
 #### Bootstrap User
 
-Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
+Every fresh installation of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
 
 As we will explain below, this user is linked to the [authorization](/docs/api-conventions/authorization/) of API calls. The user is also important for the up-coming [web portal](/docs/concepts/portal/) BitBroker control interface.
 

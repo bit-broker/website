@@ -50,7 +50,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/entity/country
 ```
 
-The following validation rules will be applied for the body of a new entity type request.
+The following validation rules will be applied to the body of a new entity type request.
 
 Attribute | Necessity | Validation Rules
 --- | --- | ---
@@ -86,7 +86,7 @@ You should choose your entity type IDs (`eid`) with care, as these cannot be cha
 
 Existing entity types can have their profile updated by issuing an `HTTP/PUT` to the `/entity/:eid` end-point.
 
-In order to update an entity type, you must know it's entity type ID (`eid`).
+In order to update an entity type, you must know its entity type ID (`eid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country \
@@ -151,7 +151,7 @@ Each entity type on the system will be returned within this array. Note: There i
 
 You can obtain the details of an existing entity type by issuing an `HTTP/GET` to the `/entity/:eid` end-point.
 
-In order to obtain details of an entity type, you must know it's entity type ID (`eid`).
+In order to obtain details of an entity type, you must know its entity type ID (`eid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country \
@@ -181,7 +181,7 @@ This will return a JSON object as follows:
 
 Existing entity types can be deleted from the system by issuing an `HTTP/DELETE` to the `/entity/:eid` end-point.
 
-In order to delete an entity type, you must know it's entity type ID (`eid`).
+In order to delete an entity type, you must know its entity type ID (`eid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/entity/country \

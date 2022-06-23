@@ -50,7 +50,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/entity/country/connector/wikipedia
 ```
 
-The body of this response will contain the connector ID and [connector key](/docs/api-conventions/authorization/) which the new data connector should utilize to make it's [data contributions](/docs/contributor/). For example:
+The body of this response will contain the connector ID and [connector key](/docs/api-conventions/authorization/), which the new data connector should utilize to make its [data contributions](/docs/contributor/). For example:
 
 ```js
 {
@@ -60,14 +60,14 @@ The body of this response will contain the connector ID and [connector key](/doc
 ```
 
 {{% alert color="info" %}}
-It is expected that coordinator user will _securely_ distribute the connector ID and key to the operator of the new data connector.
+It is expected that the coordinator user will _securely_ distribute the connector ID and key to the operator of the new data connector.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
 Connector keys are _not_ stored within the system. If you lose this connector key, you will be forced to delete and recreate the connector to obtain a new one. This can have [major implications](/docs/api-conventions/authorization/#obtaining-a-contributor-key) for an operating instance.
 {{% /alert %}}
 
-The following validation rules will be applied for the body of a new connector request.
+The following validation rules will be applied to the body of a new connector request.
 
 Attribute | Necessity | Validation Rules
 --- | --- | ---
@@ -297,7 +297,7 @@ HTTP/1.1 204 No Content
 ```
 
 {{% alert color="warning" %}}
-Deleting a connector will also remove all the records which it has contributed to the [the Catalog](/docs/concepts/catalog/).
+Deleting a connector will also remove all the records which it has contributed to [the Catalog](/docs/concepts/catalog/).
 {{% /alert %}}
 
 {{% alert color="warning" %}}

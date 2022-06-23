@@ -8,7 +8,7 @@ description: APIs for creating and manipulating users
 Users are a main component of the BitBroker system. You will find [more details about users](/docs/concepts/users/), within the [key concepts](/docs/concepts/) section of this documentation.
 
 {{% alert color="info" %}}
-Every fresh install of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
+Every fresh installation of BitBroker comes with one preinstalled user (`uid: 1`). This user is automatically created when the system is bought-up for the first time.
 {{% /alert %}}
 
 {{% alert color="primary" %}}
@@ -46,7 +46,7 @@ Location: http://bbk-coordinator:8001/v1/user/2
 
 The ID for the new user will be returned within the `Location` attribute of the response header.
 
-The following validation rules will be applied for the body of a new user request.
+The following validation rules will be applied to the body of a new user request.
 
 Attribute | Necessity | Validation Rules
 --- | --- | ---
@@ -150,7 +150,7 @@ This will return a JSON object as follows:
 }
 ```
 
-Later sections of this document will explain what the [`coordinator`](#promoting-a-user-to-coordinator), [`accesses`](/docs/coordinator/access/) and [`addendum`](#user-addendum-information)attributes refer to.
+Later sections of this document will explain what the [`coordinator`](#promoting-a-user-to-coordinator), [`accesses`](/docs/coordinator/access/) and [`addendum`](#user-addendum-information) attributes refer to.
 
 ## Finding a User via Email Address
 
@@ -207,7 +207,7 @@ The body of this response will contain the coordinator key, which the newly prom
 ```
 
 {{% alert color="info" %}}
-It is expected that _promoting_ user will _securely_ distribute this coordinator key to the _promoted_ user.
+It is expected that the _promoting_ user will _securely_ distribute this coordinator key to the _promoted_ user.
 {{% /alert %}}
 
  Promoted users will gain coordinator privileges right away. When getting details for such users, their coordinator status will be reflected in the `coordinator` attribute:
@@ -266,7 +266,7 @@ If you attempt to demote a user who is _not_ a coordinator, it will result in an
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Demoting a user has no impact on any policy keys which they maybe holding for the [Consumer API](/docs/consumer/).
+Demoting a user has no impact on any policy keys which they may be holding for the [Consumer API](/docs/consumer/).
 {{% /alert %}}
 
 {{% alert color="warning" %}}
@@ -293,7 +293,7 @@ HTTP/1.1 204 No Content
 ```
 
 {{% alert color="info" %}}
-Any policy keys which were assigned to a deleted user will be rescinded as part of the deletion process. [Consumer API](/docs/consumer/) requests requests made with such keys will fail (after a short propagation delay).
+Any policy keys which were assigned to a deleted user will be rescinded as part of the deletion process. [Consumer API](/docs/consumer/) requests made with such keys will fail (after a short propagation delay).
 {{% /alert %}}
 
 {{% alert color="warning" %}}

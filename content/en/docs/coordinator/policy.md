@@ -65,7 +65,7 @@ HTTP/1.1 201 Created
 Location: http://bbk-coordinator:8001/v1/policy/country
 ```
 
-The following validation rules will be applied for the body of a new policy request.
+The following validation rules will be applied to the body of a new policy request.
 
 Attribute | Necessity | Validation Rules
 --- | --- | ---
@@ -73,16 +73,16 @@ Attribute | Necessity | Validation Rules
 `name` | <div class="stamp">required</div> | String between 1 and 64 characters long
 `description` | <div class="stamp">required</div> | String between 1 and 2048 characters long
 `access_control` | <div class="stamp">required</div> | An object describing how data can be accessed
-`access_control.enabled` | <div class="stamp">required</div> | A boolean string either 'true' or 'false'
+`access_control.enabled` | <div class="stamp">required</div> | A boolean string either `true` or `false`
 `access_control.quota` | <div class="stamp">optional</div> | An object describing allowable data quotas
 `access_control.quota.max_number` | <div class="stamp">optional</div> | An integer greater than 0
-`access_control.quota.interval_type` | <div class="stamp">optional</div> | One of an enumeration of either 'day' or 'month'
+`access_control.quota.interval_type` | <div class="stamp">optional</div> | One of an enumeration of either `day` or `month`
 `access_control.rate` | <div class="stamp">optional</div> | An integer greater than 0
 `data_segment` | <div class="stamp">required</div> | An object outlining the shared data subset
 `data_segment.segment_query` | <div class="stamp">required</div> | A valid [catalog query](/docs/consumer/catalog/), from the [Consumer API](/docs/consumer/)
 `data_segment.field_masks` | <div class="stamp">optional</div> | An array of strings<br/>An empty array
-`legal_context` | <div class="stamp">optional</div> | An array of 0 to 100 of object outling the legal basis of data sharing
-`legal_context.type` | <div class="stamp">required</div> | One of an enumeration 'attribution', 'contact', 'license', 'note', 'source' or 'terms'
+`legal_context` | <div class="stamp">optional</div> | An array of 0 to 100 of object outlining the legal basis of data sharing
+`legal_context.type` | <div class="stamp">required</div> | One of an enumeration `attribution`, `contact` `license`, `note`, `source` or `terms`
 `legal_context.text` | <div class="stamp">required</div> | String between 1 and 256 characters long
 `legal_context.link` | <div class="stamp">required</div> | String between 1 and 1024 characters long<br/>Must conform to URI format
 
@@ -97,14 +97,14 @@ You should choose your policy IDs (`pid`) with care, as these cannot be changed 
 {{% /alert %}}
 
 {{% alert color="primary" %}}
-Data sharing policies are complex objects. You should refer to the [the detailed explanation](/docs/concepts/policy/) of these of the [key concepts](/docs/concepts/) area, if you are unclear about any aspects of their construction.
+Data sharing policies are complex objects. You should refer to [the detailed explanation](/docs/concepts/policy/) of these of the [key concepts](/docs/concepts/) area, if you are unclear about any aspects of their construction.
 {{% /alert %}}
 
 ## Updating a Policy
 
 Existing policies can have their profile updated by issuing an `HTTP/PUT` to the `/policy/:pid` end-point.
 
-In order to update a policy, you must know it's policy ID (`pid`).
+In order to update a policy, you must know its policy ID (`pid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
@@ -188,7 +188,7 @@ Each policy on the system will be returned within this array. Note: There is cur
 
 You can obtain the details of an existing policy by issuing an `HTTP/GET` to the `/policy/:pid` end-point.
 
-In order to obtain details of a policy, you must know it's policy ID (`pid`).
+In order to obtain details of a policy, you must know its policy ID (`pid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/policy/over-a-billion \
@@ -236,7 +236,7 @@ This will return a JSON object as follows:
 
 Existing policies can be deleted from the system by issuing an `HTTP/DELETE` to the `/policy/:pid` end-point.
 
-In order to delete a policy, you must know it's policy ID (`pid`).
+In order to delete a policy, you must know its policy ID (`pid`).
 
 ```shell
 curl http://bbk-coordinator:8001/v1/policy/over-a-billion \

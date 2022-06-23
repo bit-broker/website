@@ -11,19 +11,19 @@ All the API sets within BitBroker require authorization by callers. Whilst the p
 * [Contributor API](/docs/contributor/) - needed to contribute data to a designated entity type
 * [Consumer API](/docs/consumer/) - needed to access data via a policy definition
 
-Except in some [development modes](/docs/getting-started/install-local/#development-only-headers), there is no access to BitBroker services without authorization and hence without having a corresponding authorization key.
+Except in some [development modes](/docs/getting-started/install-local/#development-only-headers), there is no access to BitBroker services without authorization and hence without having a corresponding authorization token.
 
 #### Authorizing API calls
 
-When you have obtained the relevant authorization key ([see below](#obtaining-an-authorization-key)), you can use it to authorize API calls by using a specified HTTP header attribute. The same authorization header structure is used for all three BitBroker API sets.
+When you have obtained the relevant authorization token ([see below](#obtaining-an-authorization-token)), you can use it to authorize API calls by using a specified HTTP header attribute. The same authorization header structure is used for all three BitBroker API sets.
 
 ```
 x-bbk-auth-token: your-token-will-go-here
 ```
 
-The header must be exactly as it appears here, with the same casing and without spaces. If you do not correctly specify the authorization header, or you use an invalid authorization key, you will get an `HTTP/1.1 401 Unauthorized` error.
+The header must be exactly as it appears here, with the same casing and without spaces. If you do not correctly specify the authorization header, or you use an invalid authorization token, you will get an `HTTP/1.1 401 Unauthorized` error.
 
-##### Testing your Authorization Key
+##### Testing your Authorization Token
 
 It can be useful to make test calls to the API to check that your key is valid and that your authorization header is formatted correctly.
 
@@ -33,9 +33,9 @@ See the section on testing installations for [Kubernetes](/docs/getting-started/
 
 You are encouraged to make successful test calls to these end-points before launching into more complex scenarios.
 
-#### Obtaining an Authorization Key
+#### Obtaining an Authorization Token
 
-The method used to obtain an authorization key differs across the three API sets. However, once you have a key, the [mechanics of authorization](#authorising-api-calls) are the same. All keys are in the form of a long hexadecimal string, such as:
+The method used to obtain an authorization token differs across the three API sets. However, once you have a key, the [mechanics of authorization](#authorising-api-calls) are the same. All keys are in the form of a long hexadecimal string, such as:
 
 ```
 4735d360-dc03-499c-91ce-68dfc1554691.5d5c9eab-1d9c-4c88-9478-9f4ab35568a7.423c9101-315a-4929-a64c-9b905837799c
@@ -44,7 +44,7 @@ The method used to obtain an authorization key differs across the three API sets
 These keys should be kept by their owner in a secure location and never shared with unauthorized users.
 
 {{% alert color="warning" %}}
-BitBroker does not retain an accessible copy of authorization keys. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
+BitBroker does not retain an accessible copy of authorization tokens. If keys are lost, new keys will have to be generated as per the instructions below. The lost keys will then be rescinded.
 {{% /alert %}}
 
 ##### Obtaining a Coordinator Key

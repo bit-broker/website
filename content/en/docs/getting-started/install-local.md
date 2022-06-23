@@ -275,8 +275,10 @@ command:
   logs   → tails all bbk services logs
   db     → start a sql session
   wipe   → resets the bbk database
+  drop   → drops the bbk database
   bounce → stop » start
   reset  → stop » wipe » start
+  clean  → stop » drop
 ```
 
 If you are going to develop on BitBroker, either for building [data connectors](/docs/concepts/connectors/) or for [contributing to the core system](/docs/#contributing-to-bitbroker), then this mode of install can provide a fast and low friction installation technique.
@@ -305,7 +307,7 @@ If you have not applied the standard [server name and port](#server-naming-and-p
 If you want to completely uninstall this instance of BitBroker, you can follow these steps, from the top-level `bit-broker` folder:
 
 ```shell
-./development/scripts/bbk.sh stop
+./development/scripts/bbk.sh clean
 cd ..
 rm -rm bit-broker
 ```

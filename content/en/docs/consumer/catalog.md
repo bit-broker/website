@@ -173,7 +173,7 @@ curl http://bbk-consumer:8003/v1/catalog \
 
 #### In / Not In
 
-The `$in` and `$nin` operators are for searching within arrays only.
+The `$in` and `$nin` operators are for searching with array parameters.
 
 ```shell
 curl http://bbk-consumer:8003/v1/catalog \
@@ -191,6 +191,31 @@ curl http://bbk-consumer:8003/v1/catalog \
      --data-urlencode 'q={ "name": {
          "$nin": ["United Kingdom", "India", "France"]
      } }'
+```
+
+#### Contains
+
+The `$contains` operator is for searching within array values.
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --header "x-bbk-auth-token: your-header-goes-here" \
+     --data-urlencode 'q={ "entity.languages": { "$contains": [ "Japanese" ] } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --header "x-bbk-auth-token: your-header-goes-here" \
+     --data-urlencode 'q={ "entity.languages": { "$contains": [ "Japanese", "English" ] } }'
+```
+
+```shell
+curl http://bbk-consumer:8003/v1/catalog \
+     --get \
+     --header "x-bbk-auth-token: your-header-goes-here" \
+     --data-urlencode 'q={ "entity.location.coordinates": { "$contains": [ -3.435973, 55.378051 ] } }'
 ```
 
 #### Logical Operators
